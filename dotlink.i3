@@ -10,3 +10,4 @@
 .nethackrc,.nethackrc
 .conkyrc,.conkyrc
 .aliases,.aliases
+.npmrc,.npmrc
