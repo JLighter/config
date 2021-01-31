@@ -1,0 +1,48 @@
+{
+  "coc.preferences.useQuickfixForLocations": true,
+  "coc.preferences.snippets.enable": true,
+  "coc.preferences.extensionUpdateCheck": "never",
+  "suggest.maxCompleteItemCount": 15,
+  "suggest.localityBonus": true,
+  "suggest.fixInsertedWord": true,
+  "suggest.triggerCompletionWait": 100,
+  "suggest.autoTrigger": "always",
+  "suggest.disableMenu": true,
+  "suggest.snippetIndicator": "",
+  "suggest.floatEnable": true,
+  "suggest.enablePreselect": true,
+  "suggest.enablePreview": true,
+  "suggest.noselect": false,
+  "suggest.echodocSupport": true,
+  "diagnostic.enable": true,
+  "diagnostic.displayByAle": false,
+  "signature.triggerSignatureWait": 100,
+  "signature.enable": true,
+  "cSpell.userWords": [
+    "Cardline",
+    "immanens",
+    "metas",
+    "scapy",
+    "sirv"
+  ],
+  "git.enableGutters": false,
+  "git.realtimeGutters": false,
+  "eslint.enable": false,
+  "eslint.filetypes": [
+    "javascript",
+    "typescript"
+  ],
+  "tsserver.enableJavascript": true,
+  "typescript.referencesCodeLens.enable": false,
+  "typescript.preferences.quoteStyle": "single",
+  "javascript.preferences.quoteStyle": "single",
+  "prettier.singleQuote": true,
+  "prettier.jsxSingleQuote": true,
+  "html.filetypes": [
+    "html",
+    "handlebars",
+    "htmldjango",
+    "django",
+    "blade"
+  ]
+}

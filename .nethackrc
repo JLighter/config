@@ -1,0 +1,359 @@
+# This is an example nethackrc file. You should edit this to suit your needs
+
+# This editor is vi-like. Type ESC a couple times, then ':q!' (without quotes)
+# to exit if you get stuck. To save, hit ESC and then ZZ or type ':wq'
+# (without quotes.) To insert text, hit 'i' to enter insert mode.
+
+# Here are some examples of reasonable defaults:
+
+OPTIONS=showexp,showscore,time,color
+OPTIONS=autodig,fruit:slime mold,boulder:0,autoquiver
+OPTIONS=norest_on_space
+OPTIONS=sortpack
+OPTIONS=autopickup
+OPTIONS=autoopen
+#OPTIONS=autodig
+OPTIONS=pickup_types:$
+OPTIONS=pickup_burden:S
+OPTIONS=pickup_thrown
+OPTIONS=disclose:-i -a +v -g +c +o
+
+OPTIONS=number_pad:0
+
+OPTIONS=suppress_alert:3.4.3
+OPTIONS=lit_corridor
+
+# The following are options not in vanilla NetHack:
+#
+OPTIONS=use_darkgray
+#
+#OPTIONS=showborn
+#
+#OPTIONS=hp_monitor
+#
+MENUCOLOR=" blessed "=green
+MENUCOLOR=" holy "=green
+MENUCOLOR=" cursed "=red
+MENUCOLOR=" unholy "=red
+MENUCOLOR=" cursed .* (being worn)"=orange&underline
+#
+# OPTIONS=paranoid_hit,paranoid_quit,paranoid_remove
+#
+OPTIONS=sortloot:full
+#
+#OPTIONS=showbuc
+#
+#OPTIONS=win_edge
+#
+#OPTIONS=show_obj_sym
+#
+#OPTIONS=!bones
+#OPTIONS=race:dwarf
+#OPTIONS=role:valkyrie
+OPTIONS=pettype:dog
+
+OPTIONS=altmeta
+
+# See http://nethackwiki.com/wiki/Curses_interface
+OPTIONS=windowtype:curses
+OPTIONS=symset:curses
+OPTIONS=splash_screen	
+OPTIONS=mouse_support
+# OPTIONS=perm_invent
+OPTIONS=msg_window:single
+OPTIONS=fixinv
+
+# Always show pets as the proper color.
+OPTIONS=hilite_pet
+OPTIONS=hilite_pile
+
+OPTIONS=!sparkle
+
+SYMBOLS=S_ghost:X
+SYMBOLS=S_lava:~
+SYMBOLS=S_water:~
+SYMBOLS=S_pool:~
+
+#---------- Menu Colors =========================================================
+## Colored menus. Regular expressions allowed.
+#
+OPTIONS=menucolors
+MENUCOLOR=" blessed "=green
+MENUCOLOR=" holy "=blue
+MENUCOLOR=" cursed "=red
+MENUCOLOR=" unholy "=red
+MENUCOLOR=" cursed .* (being worn)"=red&underline
+
+
+# Make Vegan GREEN & BOLD
+MENUCOLOR="(food |cram |K-|C-)ration|gunyoki"=green&bold
+MENUCOLOR="lembas wafer|melon|carrot|tin .* spinach"=green&bold
+MENUCOLOR=" oranges?( named.*)?$"=green&bold
+MENUCOLOR=" pears?( named.*)?$"=green&bold
+MENUCOLOR=" apple|banana|kelp|eucalyptus|garlic|wolfsbane"=green&bold
+MENUCOLOR=" muffin"=green&bold
+MENUCOLOR="(tin of )?(gelatinous cube|acid blob|quivering blob)( corpse)?"=green&bold
+MENUCOLOR="(tin of )?(blue|spotted|ochre) jelly( corpse)?"=green&bold
+MENUCOLOR="(tin of )?lichen|shrieker|violet fungus|(brown|yellow|green|red) mold( corpse)?"=green&bold
+
+# Shiny things
+MENUCOLOR=" lamp"=yellow
+MENUCOLOR=" candle"=yellow
+MENUCOLOR=" magic lamp|lamp .* magic"=yellow&bold
+MENUCOLOR=" gold piece"=yellow
+
+# Dangerous with Bag of Holding
+MENUCOLOR=" cursed.* bag .* holding"=orange&underline
+MENUCOLOR=" bag .* tricks"=orange&underline
+MENUCOLOR=" wand of [Cc]ancel.*"=orange&underline
+MENUCOLOR=" wand called [Cc]ancel.*"=orange&underline
+MENUCOLOR=" wand .* van"=orange&underline
+MENUCOLOR=" wand called .* vanish( .*)?$"=orange&underline
+
+# Really bad cursed things to have
+MENUCOLOR="[Ll]oadstone"=red&underline
+MENUCOLOR=" cursed.* luck(stone)?($| )"=red&bold
+MENUCOLOR=" cursed.* (Bell of Opening|silver bell|Candelabrum of Invocation|candelabrum|Book of the Dead|papyrus spellbook)"=red&bold
+MENUCOLOR=" cursed.* unicorn horn"=red&bold
+
+
+#---------- Status Hilites ======================================================
+OPTIONS=statushilites:10
+
+OPTIONS=hilite_status:alignment/lawful/lightgreen
+OPTIONS=hilite_status:experience-level/changed/green/always/cyan
+
+# HP
+OPTIONS=hitpointbar
+OPTIONS=hilite_status:hitpoints/down/red&bold
+OPTIONS=hilite_status:hitpoints/100%/green&normal
+OPTIONS=hilite_status:hitpoints/<100%/yellow&normal
+OPTIONS=hilite_status:hitpoints/<66%/orange&normal
+OPTIONS=hilite_status:hitpoints/<50%/orange&normal
+OPTIONS=hilite_status:hitpoints/<33%/red&bold
+OPTIONS=hilite_status:hitpoints/<15%/red&inverse
+
+## Pw
+OPTIONS=hilite_status:power/up/green&bold
+OPTIONS=hilite_status:power/down/red&bold
+OPTIONS=hilite_status:power/100%/green&underline
+OPTIONS=hilite_status:power/<100%/green&normal
+OPTIONS=hilite_status:power/<66%/yellow&normal
+OPTIONS=hilite_status:power/<50%/orange&normal
+OPTIONS=hilite_status:power/<33%/red&bold
+
+## Carry
+OPTIONS=hilite_status:cap/burdened/yellow/stressed/orange/strained/red&bold/overtaxed/red&inverse/overloaded/red&inverse&blink
+
+## Hunger
+OPTIONS=hilite_status:hunger/satiated/yellow/hungry/orange/weak/red&bold/fainting/red&inverse/fainted/red&inverse&blink
+
+## Mental
+OPTIONS=hilite_status:condition/hallu/yellow
+OPTIONS=hilite_status:condition/conf/orange
+OPTIONS=hilite_status:condition/stun/red&bold
+
+## Health
+OPTIONS=hilite_status:condition/termill/red&inverse
+OPTIONS=hilite_status:condition/foodpois/red&inverse
+OPTIONS=hilite_status:condition/slime/red&inverse
+
+# Str, Con, Dex, Int, Wis, Cha
+OPTIONS=hilite_status:characteristics/<5/red/>6/orange/>8/brown/>11/yellow/>13/green/>16/cyan/>18/lightblue
+
+# gold
+OPTIONS=hilite_status: gold/up/yellow/down/brown
+
+#---------- Messagetypes ========================================================
+# Monotonous, mundane messages
+MSGTYPE=norep "You see here a .*"
+MSGTYPE=norep "You see here an .*"
+MSGTYPE=hide "You drop .*"
+MSGTYPE=hide "You swap places with your .*"
+MSGTYPE=hide "You descend .*"
+MSGTYPE=hide "You (climb|fly) (up|down) .*"
+MSGTYPE=hide "Restoring save file..." #noobhack
+MSGTYPE=hide "With great effort you move the boulder."
+MSGTYPE=hide "Perhaps that's why you cannot move it."
+MSGTYPE=hide "You cannot drop something you are wearing."
+MSGTYPE=hide "You have a little trouble removing .*"
+MSGTYPE=hide "Your movements are now unencumbered."
+
+MSGTYPE=hide "You feel full of energy"
+MSGTYPE=hide "You are in full health"
+
+MSGTYPE=hide "Aloha .*"
+
+## delayed instadeaths. always prompt for -more-
+MSGTYPE=stop "You are slowing down."
+MSGTYPE=stop "You find it hard to breathe."
+MSGTYPE=stop "You are turning a little .*"
+
+
+# Stash and container spam
+# caution when typing fast -- the suppressed msg may catch the keystroke intended for the actual loot menu
+MSGTYPE=hide "You put .* into the .*"
+MSGTYPE=hide "You cannot stash something you are wearing."
+MSGTYPE=hide "You carefully open the .*"
+MSGTYPE=hide "You open the .*"
+
+# Shop spam
+MSGTYPE=hide "For you, .*"
+MSGTYPE=hide "You bought .*"
+MSGTYPE=hide "Thank you for shopping in .*"
+
+# Altar spam
+MSGTYPE=hide ".* land on the altar."
+MSGTYPE=hide ".* lands on the altar."
+MSGTYPE=hide "There is a black flash as .*"
+MSGTYPE=hide "There is an amber flash as .*"
+
+# Add sounds to the game
+# See http://xoomer.virgilio.it/pid/ for more informations
+# SOUNDDIR=/Library/NetHack/nethackdir/sounds
+
+# SOUND=MESG "This door is locked."                   "lock.wav"       100
+# SOUND=MESG "The door resists!"                      "door1.wav"      100
+# SOUND=MESG "The door opens."                        "door2.wav"      100
+# SOUND=MESG "You hear a door open."                  "door2.wav"      50
+# SOUND=MESG "The door closes."                       "door3.wav"      100
+# SOUND=MESG "*it crashes open*"                      "crack.wav"      100
+# SOUND=MESG "The door crashes open*"                 "crack.wav"      100
+# SOUND=MESG "*The door splinters!*"                  "crack.wav"      100
+# SOUND=MESG "*door * shatters*"                      "crack.wav"      100
+# SOUND=MESG "WHAMMM!!!"                              "whammm.wav"     100
+
+# SOUND=MESG "You carefully open the *"               "creak.wav"      50
+# SOUND=MESG "Hmmm, it seems to be locked."           "lock.wav"       75
+# SOUND=MESG "*slams open*"                           "slams.wav"      100
+# SOUND=MESG "*break open the lock*"                  "crack.wav"      100
+# SOUND=MESG "THUD!"                                  "thud.wav"       100
+
+# SOUND=MESG "Klunk!*"                                "metal.wav"      100
+
+# SOUND=MESG "*move the boulder*"                     "boulder.wav"    100
+# SOUND=MESG "*You finish eating*"                    "munch.wav"      100
+# SOUND=MESG "*lack of food*"                         "moan.wav"       100
+# SOUND=MESG "*needs food, badly!"                    "moan.wav"       75
+# SOUND=MESG "You are beginning to feel hungry."      "moan.wav"       50
+# SOUND=MESG "You are beginning to feel weak."        "moan.wav"       75
+# SOUND=MESG "*puts you to sleep*"                    "yawn.wav"       100
+# SOUND=MESG "*put to sleep by*"                      "yawn.wav"       100
+# SOUND=MESG "*Yak - dog food!*"                      "yak.wav"        100
+# SOUND=MESG "*vomit*"                                "vomit.wav"      100
+# SOUND=MESG "Blecch!*"                               "blecch.wav"     100
+# SOUND=MESG "*Maud*"                                 "maud.wav"       100
+
+# SOUND=MESG "*crumbles and turns to dust*"           "crumble.wav"    100
+# SOUND=MESG "You begin to memorize the runes*"       "book.wav"       100
+
+# SOUND=MESG "You swing your * through thin air."     "air.wav"        100
+# SOUND=MESG "You kick at empty space."               "air.wav"        100
+# SOUND=MESG "You attack thin air."                   "air.wav"        100
+# SOUND=MESG "Snap!"                                  "snap.wav"       100
+
+# SOUND=MESG "*You succeed in cutting away*"          "rocks.wav"      100
+# SOUND=MESG "*You make an opening in the*"           "rockl.wav"      100
+# SOUND=MESG "You start digging downward*"            "rockl.wav"      100
+# SOUND=MESG "*This wall is too hard*"                "vault.wav"      100
+# SOUND=MESG "The boulder fills a pit."               "fills.wav"      100
+
+# SOUND=MESG "*glows silver*"                         "harp.wav"       100
+# SOUND=MESG "*glows blue*"                           "harp.wav"       100
+# SOUND=MESG "*surrounded by a shimmering light*"     "shimmer.wav"    100
+# SOUND=MESG "*Magical energies course through *"     "shimmer.wav"    100
+# SOUND=MESG "*glows black*"                          "black.wav"      100
+# SOUND=MESG "*You feel like someone is helping*"     "helping.wav"    100
+# SOUND=MESG "*coalesces in your mind*"               "helping.wav"    100
+
+# SOUND=MESG "*door * shatters*"                      "crack.wav"      100
+# SOUND=MESG "*shatter*"                              "shatter.wav"    100
+# SOUND=MESG "*breaks into shards*"                   "shatter.wav"    100
+# SOUND=MESG "*applause*"                             "applause.wav"   100
+
+# SOUND=MESG "You bought *"                           "register.wav"   100
+# SOUND=MESG "* gold pieces."                         "coins.wav"      100
+# SOUND=MESG "You hear someone counting money."       "coinsfall.wav"  50
+# SOUND=MESG "Your purse feels lighter."              "coins.wav"      25
+# SOUND=MESG "*punished for your misbehavior*"        "chain.wav"      100
+
+# SOUND=MESG "*magic missile*hits*"                   "missile.wav"    100
+# SOUND=MESG "*lightning bolt*hits*"                  "lightning.wav"  100
+# SOUND=MESG "*magic missile*bounces*"                "missile.wav"    100
+# SOUND=MESG "*lightning bolt*bounces*"               "lightning.wav"  100
+# SOUND=MESG "*The * bounces!*"                       "bounces.wav"    100
+# SOUND=MESG "*blinded by the flash*"                 "camera.wav"     100
+
+# SOUND=MESG "*You hit the*"                          "hit1.wav"       100
+# SOUND=MESG "*You smite the*"                        "hit1.wav"       100
+# SOUND=MESG "*You kick the*"                         "hit1.wav"       100
+# SOUND=MESG "*You destroy the*"                      "hit2.wav"       100
+# SOUND=MESG "*You kill the*"                         "hit2.wav"       100
+# SOUND=MESG "*The * hits*"                           "scream1.wav"    100
+# SOUND=MESG "*The * bites*"                          "growl.wav"      100
+# SOUND=MESG "*bits the*"                             "hit1.wav"       100
+# SOUND=MESG "*bites the*"                            "growl.wav"      100
+# SOUND=MESG "*Ouch!*"                                "ouch.wav"       100
+# SOUND=MESG "*You get zapped*"                       "spark.wav"      100
+# SOUND=MESG "*You miss the*"                         "swing.wav"      100
+# SOUND=MESG "*The * misses*"                         "swing.wav"      100
+# SOUND=MESG "*You are splashed by*"                  "slop.wav"       100
+
+# SOUND=MESG "*You die..."                            "evil.wav"       100
+
+# SOUND=MESG "*gush of water hits*"                   "gush.wav"       100
+# SOUND=MESG "You hear the splashing of a naiad."     "naiad.wav"      100
+# SOUND=MESG "You hear bubbling water."               "bubbs.wav"      100
+# SOUND=MESG "You hear a strange wind."               "wind.wav"       100
+# SOUND=MESG "*You hear a slow drip*"                 "drip.wav"       100
+# SOUND=MESG "*a monster behind the boulder*"         "bison.wav"      100
+# SOUND=MESG "Water gushes forth*"                    "water.wav"      100
+# SOUND=MESG "You fall into water!*"                  "dive.wav"       100
+# SOUND=MESG "*almost hit by*"                        "almost.wav"     100
+# SOUND=MESG "*You are hit by a *dart*"               "dart.wav"       100
+# SOUND=MESG "*You are hit by an arrow*"              "arrow.wav"      100
+# SOUND=MESG "You feel self-knowledgeable..."         "magic1.wav"     100
+# SOUND=MESG "You * the presence of*"                 "magic1.wav"     100
+# SOUND=MESG "*nose tingles and you smell*"           "sniff.wav"      100
+# SOUND=MESG "*moving*faster*"                        "faster.wav"     100
+# SOUND=MESG "You speed up."                          "faster.wav"     100
+
+# SOUND=MESG "You hear*noises in the distance."       "skrap.wav"      50
+# SOUND=MESG "*howling of the CwnAnnwn..."            "howling.wav"    100
+# SOUND=MESG "*cool draught refreshes you*"           "draught.wav"    100
+
+# SOUND=MESG "You feel very attracted to*"            "crowd-groan.wav" 100
+
+# SOUND=MESG "*You make a lot of noise*"              "noise.wav"      100
+# SOUND=MESG "You hear a gurgling noise."             "gurgling.wav"   100
+# SOUND=MESG "*gushes up from the drain*"             "gurgling.wav"   100
+# SOUND=MESG "You hear * cash register."              "register.wav"   75
+# SOUND=MESG "You hear the footsteps*"                "footsteps.wav"  75
+# SOUND=MESG "You hear a crashing sound*"             "crack.wav"      50
+# SOUND=MESG "* suddenly disappears!"                 "beam.wav"       50
+# SOUND=MESG "*teleporter trap*"                      "beam.wav"       100
+# SOUND=MESG "*explosion*"                            "explosion.wav"  100
+# SOUND=MESG "*bear trap closes*"                     "beartrap.wav"   100
+# SOUND=MESG "*KABOOM!!*"                             "kaboom.wav"     100
+# SOUND=MESG "Yecch! You've been creamed*"            "cream.wav"      100
+# SOUND=MESG "*opening the tin*"                      "tin.wav"        100
+
+# SOUND=MESG "*more confident in your * skills*"      "circus.wav"     100
+# SOUND=MESG "You are now more skilled in *"          "circus.wav"     100
+
+# SOUND=MESG "*ghost touches you*"                    "ghost1.wav"     100
+# SOUND=MESG "*You destroy * ghost!*"                 "ghost2.wav"     100
+# SOUND=MESG "*You miss*ghost*"                       "swing.wav"      100
+# SOUND=MESG "*ghost misses*"                         "swing.wav"      100
+
+# SOUND=MESG "*Welcome to experience level*"          "firework.wav"   100
+# SOUND=MESG "*Welcome to*"                           "shopdoor.wav"   100
+# SOUND=MESG "*Welcome again to*"                     "shopdoor.wav"   100
+# SOUND=MESG "*Delphi*"                               "fanfare.wav"    100
+
+# SOUND=MESG "*monkey stole*"                         "monkey.wav"     100
+
+# # For more information on what you can set in your nethackrc file, refer to:
+# #    http://www.nethack.org/v343/Guidebook.html#_TOCentry_42
+# # or http://nethackwiki.com/wiki/Options
+# # Happy hacking!
