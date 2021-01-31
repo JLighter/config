@@ -1,3 +1,4 @@
+.config/dot/dotrc,.config/dot/dotrc
 .tmux.conf,.tmux.conf
 .zshrc,.zshrc
 .config/nvim,.config/nvim
