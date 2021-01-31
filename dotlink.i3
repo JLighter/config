@@ -1,0 +1,11 @@
+.tmux.conf,.tmux.conf
+.zshrc,.zshrc
+.config/nvim,.config/nvim
+.config/nvim/init.vim,.vimrc
+.config/urxvt,.config/urxvt
+.config/i3,.config/i3
+.config/rofi,.config/rofi
+.config/polybar,.config/polybar
+.nethackrc,.nethackrc
+.conkyrc,.conkyrc
+.aliases,.aliases
