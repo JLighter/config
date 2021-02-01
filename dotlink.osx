@@ -1,11 +1,9 @@
-.config/dot/dotrc,.config/dot/dotrc
-.tmux.conf,.tmux.conf
 .zshrc,.zshrc
+.zshrc.custom.osx,.zshrc.custom
+.tmux.conf,.tmux.conf
+.nethackrc,.nethackrc
+.aliases,.aliases
+.npmrc,.npmrc
 .config/nvim,.config/nvim
 .config/nvim/init.vim,.vimrc
 .config/termite,.config/termite
-.custom-zshrc.osx,.custom-zshrc
-.nethackrc,.nethackrc
-.conkyrc,.conkyrc
-.aliases,.aliases
-.npmrc,.npmrc

@@ -121,7 +121,7 @@ then
     tmux attach -t DEFAULT || tmux new -s DEFAULT
 fi
 
-source ~/.custom-zshrc
+source ~/.zshrc.custom
 
 . ~/.local/z/z.sh
 

@@ -1,11 +1,10 @@
-.config/dot/dotrc,.config/dot/dotrc
-.tmux.conf,.tmux.conf
 .zshrc,.zshrc
-.config/nvim,.config/nvim
-.config/nvim/init.vim,.vimrc
-.config/termite,.config/termite
-.custom-zshrc.gdm,.custom-zshrc
+.zshrc.custom.gdm,.zshrc.custom
+.tmux.conf,.tmux.conf
 .nethackrc,.nethackrc
 .conkyrc,.conkyrc
 .aliases,.aliases
 .npmrc,.npmrc
+.config/nvim,.config/nvim
+.config/nvim/init.vim,.vimrc
+.config/termite,.config/termite
