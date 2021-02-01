@@ -24,7 +24,9 @@ let g:lightline = {
       \   'colorscheme': 'wombat',
       \   'active': {
       \     'left': [ [ 'mode', 'paste' ],
-      \               [ 'gitbranch', 'method','readonly', 'filename', 'modified' ] ],
+      \               [ 'gitbranch', 'method','readonly', 'filename', 'modified' ],
+      \               [ 'venv' ]
+      \             ],
       \     'right': [ [ 'linter_errors', 'linter_ok' ],
       \                [ 'lineinfo' ],
       \                [ 'percent' ],
@@ -39,6 +41,7 @@ let g:lightline = {
       \       'linter_ok': 'right',
       \   },
       \   'component_function': {
+      \     'venv': 'virtualenv#statusline',
       \     'gitbranch': 'FugitiveHead',
       \     'method': 'NearestMethodOrFunction'
       \   }

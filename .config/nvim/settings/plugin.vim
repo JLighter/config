@@ -59,6 +59,7 @@ Plug 'eliba2/vim-node-inspect'
 " Python
 " Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
 Plug 'gotcha/vimpdb'
+Plug 'jmcantrell/vim-virtualenv'
 
 " HTML
 Plug 'mattn/emmet-vim'
