@@ -48,9 +48,11 @@ OPTIONS=sortloot:full
 #OPTIONS=show_obj_sym
 #
 #OPTIONS=!bones
-#OPTIONS=race:dwarf
-#OPTIONS=role:valkyrie
+OPTIONS=race:dwarf
+OPTIONS=role:valkyrie
 OPTIONS=pettype:dog
+OPTIONS=name:Lighter
+OPTIONS=dogname:Bobi
 
 OPTIONS=altmeta
 

@@ -1,0 +1,14 @@
+alias mkvirtualenv2="mkvirtualenv --python=$(which python)"
+export WORKON_HOME=~/.local/envs
+export PROJECT_HOME=~/Documents/Personal/Python
+export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
+export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
+source /Users/julienheroguelle/Library/Python/3.9/bin/virtualenvwrapper.sh
+
+# Which plugins would you like to load?
+# Standard plugins can be found in ~/.oh-my-zsh/plugins/*
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
+
+plugins=(git docker node tmux)

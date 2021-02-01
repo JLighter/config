@@ -1,0 +1,19 @@
+alias john=~/.local/bin/john/john
+alias mkvirtualenv3="mkvirtualenv --python=$(which python3)"
+export WORKON_HOME=~/.local/envs
+export PROJECT_HOME=~/Documents/Personal/Python
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+export VIRTUALENVWRAPPER_VIRTUALENV=~/.local/bin/virtualenv
+source ~/.local/bin/virtualenvwrapper.sh
+source ~/.local/autoenv/activate.sh
+
+if [[ -n $VIRTUAL_ENV && -e "${VIRTUAL_ENV}/bin/activate" ]]; then
+  source "${VIRTUAL_ENV}/bin/activate"
+fi
+
+# Which plugins would you like to load?
+# Standard plugins can be found in ~/.oh-my-zsh/plugins/*
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
+plugins=(git docker pyenv ng nmap node tmux python fzf)

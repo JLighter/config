@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/jlighter/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -60,22 +60,13 @@ COMPLETION_WAITING_DOTS="true"
 # see 'man strftime' for details.
 HIST_STAMPS="mm/dd/yyyy"
 
+neofetch
+
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
-
-# Which plugins would you like to load?
-# Standard plugins can be found in ~/.oh-my-zsh/plugins/*
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-plugins=(git docker pyenv ng nmap node tmux python fzf)
-
 source $ZSH/oh-my-zsh.sh
 
-source $HOME/.aliases
-
 # User configuration
-
 export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
@@ -99,15 +90,10 @@ source $HOME/.zsh/dot/dot.sh
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-alias zshconfig="nvim ~/.zshrc"
-alias ohmyzsh="nvim ~/.oh-my-zsh"
-alias vimconfig="nvim ~/.vimrc"
+source $HOME/.aliases
 
 # TERM var
 export TERM='screen-256color'
-
-# Fzf
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Tab/auto complete
 autoload -U compinit
@@ -126,18 +112,8 @@ bindkey -v '^?' backward-delete-char
 bindkey -v
 export KEYTIMEOUT=1
 
-export PATH=$PATH:/home/jlighter/.npm-global/bin
-export PATH=$PATH:/home/jlighter/.local/bin
-
-export WORKON_HOME=/home/jlighter/.local/envs
-export PROJECT_HOME=/home/jlighter/Documents/Personal/Python
-export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
-export VIRTUALENVWRAPPER_VIRTUALENV=/home/jlighter/.local/bin/virtualenv
-source /home/jlighter/.local/bin/virtualenvwrapper.sh
-source /home/jlighter/.local/autoenv/activate.sh
-
-alias john=/home/jlighter/.local/bin/john/john
-alias mkvirtualenv3="mkvirtualenv --python=$(which python3)"
+export PATH=$PATH:~/.npm-global/bin
+export PATH=$PATH:~/.local/bin
 
 # Launch tmux by default
 if [ -z "$TMUX" ]
@@ -145,11 +121,11 @@ then
     tmux attach -t DEFAULT || tmux new -s DEFAULT
 fi
 
-if [[ -n $VIRTUAL_ENV && -e "${VIRTUAL_ENV}/bin/activate" ]]; then
-  source "${VIRTUAL_ENV}/bin/activate"
-fi
+source ~/.custom-zshrc
 
 . ~/.local/z/z.sh
 
-neofetch
+# Fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
 

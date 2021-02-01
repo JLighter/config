@@ -7,6 +7,7 @@
 .config/i3,.config/i3
 .config/rofi,.config/rofi
 .config/polybar,.config/polybar
+.custom-zshrc.i3,.custom-zshrc
 .nethackrc,.nethackrc
 .conkyrc,.conkyrc
 .aliases,.aliases

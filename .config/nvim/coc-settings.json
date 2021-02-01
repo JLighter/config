@@ -1,7 +1,7 @@
 {
   "coc.preferences.useQuickfixForLocations": true,
   "coc.preferences.snippets.enable": true,
-  "coc.preferences.extensionUpdateCheck": "never",
+  "coc.preferences.extensionUpdateCheck": "daily",
   "suggest.maxCompleteItemCount": 15,
   "suggest.localityBonus": true,
   "suggest.fixInsertedWord": true,
@@ -16,22 +16,11 @@
   "suggest.echodocSupport": true,
   "diagnostic.enable": true,
   "diagnostic.displayByAle": false,
-  "signature.triggerSignatureWait": 100,
   "signature.enable": true,
-  "cSpell.userWords": [
-    "Cardline",
-    "immanens",
-    "metas",
-    "scapy",
-    "sirv"
-  ],
   "git.enableGutters": false,
   "git.realtimeGutters": false,
-  "eslint.enable": false,
-  "eslint.filetypes": [
-    "javascript",
-    "typescript"
-  ],
+  "eslint.quiet": true,
+  "tslint.enable": true,
   "tsserver.enableJavascript": true,
   "typescript.referencesCodeLens.enable": false,
   "typescript.preferences.quoteStyle": "single",

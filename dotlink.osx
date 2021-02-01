@@ -4,7 +4,7 @@
 .config/nvim,.config/nvim
 .config/nvim/init.vim,.vimrc
 .config/termite,.config/termite
-.custom-zshrc.gdm,.custom-zshrc
+.custom-zshrc.osx,.custom-zshrc
 .nethackrc,.nethackrc
 .conkyrc,.conkyrc
 .aliases,.aliases

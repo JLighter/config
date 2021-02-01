@@ -57,7 +57,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'eliba2/vim-node-inspect'
 
 " Python
-Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
+" Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
 Plug 'gotcha/vimpdb'
 
 " HTML
