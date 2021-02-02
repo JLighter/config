@@ -33,7 +33,7 @@ Run neovim and launch the `:PlugInstall` command
 
 Inside neovim run this command :
 
-  `:CocInstall coc-prettier coc-jedi coc-html coc-json coc-angular coc-git coc-tsserver coc-eslint coc-tslint coc-pyright`
+  `:CocInstall coc-sh coc-prettier coc-jedi coc-html coc-json coc-angular coc-git coc-tsserver coc-tslint-plugin coc-pyright`
 
 ## TMUX
 Install tmux with your package manager

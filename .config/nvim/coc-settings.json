@@ -20,11 +20,12 @@
   "git.enableGutters": false,
   "git.realtimeGutters": false,
   "eslint.quiet": true,
-  "tslint.enable": true,
   "tsserver.enableJavascript": true,
   "typescript.referencesCodeLens.enable": false,
   "typescript.preferences.quoteStyle": "single",
   "javascript.preferences.quoteStyle": "single",
+  "tslint.suppressWhileTypeErrorsPresent": true,
+  "tslint.autoFixOnSave": false,
   "prettier.singleQuote": true,
   "prettier.jsxSingleQuote": true,
   "html.filetypes": [
