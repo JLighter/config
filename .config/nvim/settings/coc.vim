@@ -60,4 +60,4 @@ nnoremap <silent> K :call <SID>show_documentation()<CR>
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " Set node executable
-let g:coc_node_path = '/usr/local/bin/node'
+let g:coc_node_path = system('which node')[:-2]

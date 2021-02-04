@@ -95,6 +95,8 @@ source $HOME/.aliases
 # TERM var
 export TERM='screen-256color'
 
+source $HOME/.env
+
 # Tab/auto complete
 autoload -U compinit
 zstyle ':completion:*' menu select
