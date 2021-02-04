@@ -7,6 +7,12 @@ export VIRTUALENVWRAPPER_VIRTUALENV=~/.local/bin/virtualenv
 source ~/.local/bin/virtualenvwrapper.sh
 source ~/.local/autoenv/activate.sh
 
+# Launch tmux by default
+if [ -z "$TMUX" ]
+then
+    tmux attach -t DEFAULT || tmux new -s DEFAULT
+fi
+
 # Which plugins would you like to load?
 # Standard plugins can be found in ~/.oh-my-zsh/plugins/*
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
