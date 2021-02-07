@@ -66,7 +66,7 @@ nmap <c-s-t> :vs<bar>:b#<CR>
 " \1 \2 \3 : go to buffer 1/2/3 etc
 nnoremap <Leader>bl :ls<CR>
 nnoremap <Leader>bb :bp<CR>
-nnoremap <Leader>bf :bn<CR>
+nnoremap <Leader>bn :bn<CR>
 nnoremap <Leader>bg :e#<CR>
 nnoremap <Leader>bd :bdelete<CR>
 nnoremap <Leader>& :1b<CR>
@@ -106,12 +106,5 @@ xmap ga <Plug>(EasyAlign)
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
 
-
 nnoremap <silent> <Leader>l ml:execute 'match Search /\%'.line('.').'l/'<CR>
 nnoremap <silent> <Leader>cl :match<CR>
-
-" Wipe Registers
-" let regs=split('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789/-"', '\zs')
-" for r in regs
-"   call setreg(r, [])
-" endfor

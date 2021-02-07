@@ -47,14 +47,6 @@ endif
 :  call LightlineReload()
 :endfunction
 
-:function! DarkWord()
-:  set background=dark
-:  colorscheme onehalfdark
-:  let g:lightline.colorscheme='onehalfdark'
-:  runtime autoload/lightline/colorscheme/onehalfdark.vim
-:  call LightlineReload()
-:endfunction
-
 :function! Dark()
 :  set background=dark
 :  colorscheme gruvbox
@@ -65,6 +57,5 @@ endif
 
 nmap <leader>li :call Light()<CR>:echo "Light mode !"<CR>
 nmap <leader>da :call Dark()<CR>:echo "Dark mode !"<CR>
-nmap <leader>daw :call DarkWord()<CR>:echo "Dark word mode !"<CR>
 
 call Dark()
