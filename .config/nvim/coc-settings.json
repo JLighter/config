@@ -19,8 +19,10 @@
   "signature.enable": true,
   "git.enableGutters": false,
   "git.realtimeGutters": false,
-  "eslint.quiet": true,
   "tsserver.enableJavascript": true,
+  "coc.preferences.formatOnSaveFiletypes": [
+    "dart"
+  ],
   "typescript.referencesCodeLens.enable": false,
   "typescript.preferences.quoteStyle": "single",
   "javascript.preferences.quoteStyle": "single",

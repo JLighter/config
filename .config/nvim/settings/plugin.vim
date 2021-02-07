@@ -64,5 +64,6 @@ Plug 'jmcantrell/vim-virtualenv'
 " HTML
 Plug 'mattn/emmet-vim'
 Plug 'alvan/vim-closetag'
+Plug 'AndrewRadev/tagalong.vim'
 call plug#end()
 

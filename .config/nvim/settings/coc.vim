@@ -35,6 +35,9 @@ command! -nargs=0 OR   :call CocAction('runCommand', 'editor.action.organizeImpo
 xmap <leader>f  <Plug>(coc-format-selected)
 nmap <leader>f  <Plug>(coc-format-selected)
 
+" Format all code at once
+nmap <leader>F :Format<CR>
+
 " Applying codeAction to the selected region.
 " Example: `<leader>aap` for current paragraph
 xmap <leader>a  <Plug>(coc-codeaction-selected)
@@ -44,6 +47,16 @@ nmap <leader>a  <Plug>(coc-codeaction-selected)
 nmap <leader>ac  <Plug>(coc-codeaction)
 " Apply AutoFix to problem on the current line.
 nmap <leader>af  <Plug>(coc-fix-current)
+
+" Flutter
+nmap <leader>fle :<C-u>CocCommand flutter.emulators<cr>
+nmap <leader>fld :<C-u>CocCommand flutter.devices<cr>
+nmap <leader>flr :<C-u>CocCommand flutter.run<cr>
+nmap <leader>fll :<C-u>CocCommand flutter.dev.openDevLog<cr>
+nmap <leader>flq :<C-u>CocCommand flutter.dev.quit<cr>
+nmap <leader>flpG :<C-u>CocCommand flutter.pub.get<cr>
+nmap <leader>flpg :<C-u>CocCommand flutter.pub.get<space>
+
 
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
