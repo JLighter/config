@@ -117,12 +117,6 @@ export KEYTIMEOUT=1
 export PATH=$PATH:~/.npm-global/bin
 export PATH=$PATH:~/.local/bin
 
-# Launch tmux by default
-if [ -z "$TMUX" ]
-then
-    tmux attach -t DEFAULT || tmux new -s DEFAULT
-fi
-
 source ~/.zshrc.custom
 
 . ~/.local/z/z.sh
