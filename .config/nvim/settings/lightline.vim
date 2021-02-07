@@ -24,13 +24,13 @@ let g:lightline = {
       \   'colorscheme': 'wombat',
       \   'active': {
       \     'left': [ [ 'mode', 'paste' ],
-      \               [ 'gitbranch', 'method','readonly', 'filename', 'modified' ],
-      \               [ 'venv' ]
+      \               [ 'method','readonly', 'filename', 'modified' ],
+      \               [ 'gitbranch' ]
       \             ],
-      \     'right': [ [ 'linter_errors', 'linter_ok' ],
+      \     'right': [ [ 'venv' ],
+      \                [ 'linter_errors', 'linter_ok' ],
       \                [ 'lineinfo' ],
-      \                [ 'percent' ],
-      \                [ 'fileformat', 'fileencoding', 'filetype' ] ]
+      \              ]
       \   },
       \   'component_expand': {
       \    'linter_errors': 'lightline#ale#errors',

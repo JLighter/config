@@ -8,6 +8,7 @@ source ~/.config/nvim/settings/vista.vim
 source ~/.config/nvim/settings/delimitemate.vim
 source ~/.config/nvim/settings/coc.vim
 source ~/.config/nvim/settings/shortcuts.vim
+source ~/.config/nvim/settings/tagbar.vim
 source ~/.config/nvim/settings/nodeinspect.vim
 source ~/.config/nvim/settings/gitgutter.vim
 source ~/.config/nvim/settings/vimtest.vim

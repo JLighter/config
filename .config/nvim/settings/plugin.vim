@@ -28,6 +28,7 @@ Plug 'sheerun/vim-polyglot'
 Plug 'janko/vim-test'
 Plug 'liuchengxu/vista.vim'
 Plug 'luochen1990/rainbow'
+Plug 'preservim/tagbar'
 
 " Autocompletion
 Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
