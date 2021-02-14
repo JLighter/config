@@ -17,6 +17,7 @@ Plug 'morhetz/gruvbox'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'sonph/onehalf', {'rtp': 'vim/'}
 Plug 'shinchu/lightline-gruvbox.vim'
+Plug 'mhinz/vim-startify'
 
 " Searching
 Plug 'junegunn/fzf', {'dir': '~/.fzf','do': './install --all'}

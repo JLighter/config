@@ -1,5 +1,6 @@
 source ~/.config/nvim/settings/general.vim
 source ~/.config/nvim/settings/plugin.vim
+source ~/.config/nvim/settings/startify.vim
 source ~/.config/nvim/settings/emmet.vim
 source ~/.config/nvim/settings/lightline.vim
 source ~/.config/nvim/settings/fern.vim
