@@ -1,4 +1,5 @@
 alias john=~/.local/bin/john/john
+alias mkvirtualenv="mkvirtualenv --python=$(which python2)"
 alias mkvirtualenv3="mkvirtualenv --python=$(which python3)"
 export WORKON_HOME=~/.local/envs
 export PROJECT_HOME=~/Documents/Personal/Python
@@ -7,11 +8,7 @@ export VIRTUALENVWRAPPER_VIRTUALENV=~/.local/bin/virtualenv
 source ~/.local/bin/virtualenvwrapper.sh
 source ~/.local/autoenv/activate.sh
 
-# Launch tmux by default
-if [ -z "$TMUX" ]
-then
-    tmux attach -t DEFAULT || tmux new -s DEFAULT
-fi
+export PATH=$PATH:/snap/bin
 
 # Which plugins would you like to load?
 # Standard plugins can be found in ~/.oh-my-zsh/plugins/*
