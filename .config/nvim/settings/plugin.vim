@@ -8,6 +8,8 @@ Plug 'junegunn/vim-easy-align'
 Plug 'Shougo/vimproc.vim'
 Plug 'powerman/vim-plugin-autosess'
 Plug 'KabbAmine/vCoolor.vim'
+Plug 'wincent/terminus'
+Plug 'easymotion/vim-easymotion'
 
 " Appearance
 Plug 'itchyny/lightline.vim'
@@ -29,11 +31,10 @@ Plug 'janko/vim-test'
 Plug 'liuchengxu/vista.vim'
 Plug 'luochen1990/rainbow'
 Plug 'preservim/tagbar'
+Plug 'puremourning/vimspector'
 
 " Autocompletion
 Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
-"" Coc Install (run these commands when installing coc for the first time
-"" vim -c 'CocInstall -sync coc-vetur coc-tsserver coc-javascript coc-actions coc-python coc-html coc-css coc-php coc-emmet coc-json coc-spell-checker coc-xml coc-yaml coc-markdown coc-cmake coc-calc coc-browser coc-angular coc-actions coc-git|q'
 
 " Navigation
 Plug 'christoomey/vim-tmux-navigator'
@@ -46,8 +47,6 @@ Plug 'lambdalisue/fern-renderer-nerdfont.vim'
 Plug 'lambdalisue/nerdfont.vim'
 Plug 'LumaKernel/fern-mapping-fzf.vim'
 Plug 'antoinemadec/FixCursorHold.nvim'
-Plug 'andreafrancia/trash-cli'
-Plug 'b4b4r07/gomi' 
 
 " Git
 Plug 'tpope/vim-fugitive'
@@ -55,7 +54,7 @@ Plug 'idanarye/vim-merginal'
 Plug 'airblade/vim-gitgutter'
 
 " Javascript
-Plug 'eliba2/vim-node-inspect'
+" Plug 'eliba2/vim-node-inspect'
 
 " Python
 Plug 'gotcha/vimpdb'
