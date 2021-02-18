@@ -90,11 +90,6 @@ nnoremap <C-t>j :tabl<CR>
 " Ctrl-Alt-k
 nnoremap <C-t>k :tabr<CR>
 
-" Folding 
-map <leader>za zM
-map <leader>zo zR
-map za zA
-
 " Nextval 
 nmap <silent> + <Plug>nextvalInc
 nmap <silent> = <Plug>nextvalDec

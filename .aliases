@@ -47,7 +47,6 @@ alias gpod='git push origin develop'
 # -----------
 # Composer and Symfony
 # -----------
-alias composer="php /usr/local/bin/composer.phar"
 alias syconsole="php bin/console"
 
 # ----------------------

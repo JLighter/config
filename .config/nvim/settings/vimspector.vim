@@ -9,4 +9,3 @@ nnoremap <silent> <leader>db      :call vimspector#ToggleBreakpoint()<CR>
 nnoremap <silent> <leader>ddab    :call vimspector#ClearBreakpoints()<CR>
 nnoremap <silent> <leader>dw      :call vimspector#AddWatch()<CR>
 nnoremap <silent> <leader>ddw     :call vimspector#DeleteWatch()<CR>
-

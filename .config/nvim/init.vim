@@ -17,6 +17,8 @@ source ~/.config/nvim/settings/vimtest.vim
 source ~/.config/nvim/settings/python.vim
 source ~/.config/nvim/settings/appearence.vim
 source ~/.config/nvim/settings/macros.vim
+source ~/.config/nvim/settings/fold.vim
+
 
 "" Sections too shorts to put in single file
 

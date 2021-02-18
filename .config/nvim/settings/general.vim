@@ -49,13 +49,6 @@ set nowritebackup
 set undofile
 set undodir=~/.vim/undodir
 
-" Fold code by syntax
-set foldmethod=syntax
-set foldcolumn=0 
-let python_fold=1 
-
-" Open all folds by default
-set foldlevelstart=99
 set spelllang=en,fr
 
 set ignorecase
