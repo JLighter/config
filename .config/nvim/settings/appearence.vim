@@ -49,6 +49,7 @@ endif
 
 :function! Dark()
 :  set background=dark
+:  let g:gruvbox_contrast_dark='hard'
 :  colorscheme gruvbox
 :  let g:lightline.colorscheme='gruvbox'
 :  runtime autoload/lightline/colorscheme/gruvbox.vim

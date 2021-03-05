@@ -8,6 +8,10 @@ export VIRTUALENVWRAPPER_VIRTUALENV=~/.local/bin/virtualenv
 source ~/.local/bin/virtualenvwrapper.sh
 source ~/.local/autoenv/activate.sh
 
+if command -v kubectl &>/dev/null; then
+  source <(kubectl completion zsh)
+fi
+
 export PATH=$PATH:/snap/bin
 
 # Which plugins would you like to load?
