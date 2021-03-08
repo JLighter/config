@@ -8,8 +8,13 @@ export VIRTUALENVWRAPPER_VIRTUALENV=~/.local/bin/virtualenv
 source ~/.local/bin/virtualenvwrapper.sh
 source ~/.local/autoenv/activate.sh
 
+# Kubectl and minikube autocompletion
 if command -v kubectl &>/dev/null; then
   source <(kubectl completion zsh)
+fi
+
+if command -v minikube &>/dev/null; then
+  eval "$(minikube completion zsh)"
 fi
 
 export PATH=$PATH:/snap/bin
