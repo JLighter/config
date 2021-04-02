@@ -1,5 +1,5 @@
 [options]
-font = MesloLGS NF 11
+font = MesloLGS NF 12
 
 allow_bold = true
 #audible_bell = false

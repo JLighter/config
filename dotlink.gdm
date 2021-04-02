@@ -9,3 +9,4 @@
 .config/nvim/init.vim,.vimrc
 .config/termite,.config/termite
 .p10k.zsh,.p10k.zsh
+.gitconfig,.gitconfig
