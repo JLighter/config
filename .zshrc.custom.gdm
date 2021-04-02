@@ -17,11 +17,15 @@ if command -v minikube &>/dev/null; then
   eval "$(minikube completion zsh)"
 fi
 
-export PATH=$PATH:/snap/bin
+if command -v helm &>/dev/null; then
+  eval "$(helm completion zsh)"
+fi
 
-# Which plugins would you like to load?
-# Standard plugins can be found in ~/.oh-my-zsh/plugins/*
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-plugins=(git docker pyenv ng nmap node tmux python fzf)
+# AWS completion
+if command -v aws &>/dev/null; then
+  export PATH=$PATH:/home/jlighter/.local/lib/aws/bin
+  autoload bashcompinit && bashcompinit
+  complete -C '/home/jlighter/.local/lib/aws/bin/aws_completer' aws
+fi
+
+export PATH=$PATH:/snap/bin

@@ -36,5 +36,8 @@
     "htmldjango",
     "django",
     "blade"
-  ]
+  ],
+  "yaml.schemas": {
+      "kubernetes": "/*.[service|pod|deploy].yaml"
+  }
 }
