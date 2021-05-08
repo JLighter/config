@@ -2,32 +2,42 @@
   "coc.preferences.useQuickfixForLocations": true,
   "coc.preferences.snippets.enable": true,
   "coc.preferences.extensionUpdateCheck": "daily",
-  "suggest.maxCompleteItemCount": 15,
+
+  "suggest.enablePreselect": true,
+  "suggest.noselect": false,
+  "suggest.enablePreview": true,
+  "suggest.floatEnable": true,
+  "suggest.maxCompleteItemCount": 50,
+  "suggest.detailField": "preview",
+  "suggest.autoTrigger": "always",
+  "suggest.triggerAfterInsertEnter": true,
   "suggest.localityBonus": true,
   "suggest.fixInsertedWord": true,
   "suggest.triggerCompletionWait": 100,
-  "suggest.autoTrigger": "always",
-  "suggest.disableMenu": true,
-  "suggest.snippetIndicator": "",
-  "suggest.floatEnable": true,
-  "suggest.enablePreselect": true,
-  "suggest.enablePreview": true,
-  "suggest.noselect": false,
-  "suggest.echodocSupport": true,
+  "suggest.disableMenu": false,
+  "suggest.snippetIndicator": "~",
+  "suggest.echodocSupport": true, 
+
   "diagnostic.enable": true,
   "diagnostic.displayByAle": false,
+  "diagnostic.virtualText": true,
+  "diagnostic.virtualTextPrefix": "ᐉ ",
+  "diagnostic.virtualTextCurrentLineOnly": false,
+
   "signature.enable": true,
+
   "git.enableGutters": false,
   "git.realtimeGutters": false,
+  "git.addGBlameToVirtualText": false,
+
+  "coc.preferences.formatOnSaveFiletypes": [],
+
   "tsserver.enableJavascript": true,
-  "coc.preferences.formatOnSaveFiletypes": [
-    "dart"
-  ],
   "typescript.referencesCodeLens.enable": false,
   "typescript.preferences.quoteStyle": "single",
-  "javascript.preferences.quoteStyle": "single",
   "tslint.suppressWhileTypeErrorsPresent": true,
   "tslint.autoFixOnSave": false,
+  "javascript.preferences.quoteStyle": "single",
   "prettier.singleQuote": true,
   "prettier.jsxSingleQuote": true,
   "html.filetypes": [
@@ -39,5 +49,6 @@
   ],
   "yaml.schemas": {
       "kubernetes": "/*.[service|pod|deploy].yaml"
-  }
+  },
+  "clangd.path": "/home/jlighter/.config/coc/extensions/coc-clangd-data/install/12.0.0/clangd_12.0.0/bin/clangd"
 }

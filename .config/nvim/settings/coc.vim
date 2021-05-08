@@ -15,6 +15,9 @@ inoremap <silent><expr> <c-space> coc#refresh()
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
+" Set the number of lines in suggestion popup
+set pumheight=8
+
 " GoTo code navigation.
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
@@ -48,6 +51,20 @@ nmap <leader>ac  <Plug>(coc-codeaction)
 " Apply AutoFix to problem on the current line.
 nmap <leader>af  <Plug>(coc-fix-current)
 
+" Snippet workflow
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? coc#_select_confirm() :
+      \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+let g:coc_snippet_next = '<tab>'
+
 " Flutter
 nmap <leader>fle :<C-u>CocCommand flutter.emulators<cr>
 nmap <leader>fld :<C-u>CocCommand flutter.devices<cr>
@@ -56,7 +73,6 @@ nmap <leader>fll :<C-u>CocCommand flutter.dev.openDevLog<cr>
 nmap <leader>flq :<C-u>CocCommand flutter.dev.quit<cr>
 nmap <leader>flpG :<C-u>CocCommand flutter.pub.get<cr>
 nmap <leader>flpg :<C-u>CocCommand flutter.pub.get<space>
-
 
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
