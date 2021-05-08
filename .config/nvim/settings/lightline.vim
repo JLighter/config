@@ -6,6 +6,11 @@ function! LightlineReload()
   call lightline#update()
 endfunction
 
+let g:lightline_gitdiff#indicator_added = '+'
+let g:lightline_gitdiff#indicator_deleted = '-'
+let g:lightline_gitdiff#indicator_modified = '!'
+let g:lightline_gitdiff#min_winwidth = '70'
+
 " Mode name
 let g:lightline = {
       \   'mode_map': {
@@ -30,6 +35,8 @@ let g:lightline = {
       \     'right': [ [ 'venv' ],
       \                [ 'linter_errors', 'linter_ok' ],
       \                [ 'lineinfo' ],
+      \                [ 'percent' ],
+      \                [ 'fileformat', 'fileencoding', 'filetype' ]
       \              ]
       \   },
       \   'component_expand': {
