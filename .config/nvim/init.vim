@@ -9,7 +9,6 @@ source ~/.config/nvim/settings/vista.vim
 source ~/.config/nvim/settings/delimitemate.vim
 source ~/.config/nvim/settings/coc.vim
 source ~/.config/nvim/settings/shortcuts.vim
-source ~/.config/nvim/settings/tagbar.vim
 source ~/.config/nvim/settings/vimspector.vim
 source ~/.config/nvim/settings/easymotion.vim
 source ~/.config/nvim/settings/gitgutter.vim
