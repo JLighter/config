@@ -34,6 +34,13 @@ function! s:init_fern() abort
   " Add any code to customize fern buffer
 endfunction
 
+" GlyphPalette integration
+augroup my-glyph-palette
+  autocmd! *
+  autocmd FileType fern call glyph_palette#apply()
+  autocmd FileType nerdtree,startify call glyph_palette#apply()
+augroup END
+
 augroup fern-custom
   autocmd! *
   autocmd FileType fern call s:init_fern()
