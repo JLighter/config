@@ -12,12 +12,14 @@ Plug 'wincent/terminus'
 Plug 'easymotion/vim-easymotion'
 
 " Appearance
-Plug 'itchyny/lightline.vim'
 Plug 'morhetz/gruvbox'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'sonph/onehalf', {'rtp': 'vim/'}
+" Plug 'mhinz/vim-startify'
+
+" Status line
+Plug 'itchyny/lightline.vim'
 Plug 'shinchu/lightline-gruvbox.vim'
-Plug 'mhinz/vim-startify'
 
 " Searching
 Plug 'junegunn/fzf', {'dir': '~/.fzf','do': './install --all'}
@@ -31,7 +33,6 @@ Plug 'sheerun/vim-polyglot'
 Plug 'janko/vim-test'
 Plug 'liuchengxu/vista.vim'
 Plug 'luochen1990/rainbow'
-Plug 'preservim/tagbar'
 Plug 'puremourning/vimspector'
 
 " Autocompletion
@@ -46,6 +47,7 @@ Plug 'lambdalisue/fern-hijack.vim'
 Plug 'lambdalisue/fern-git-status.vim'
 Plug 'lambdalisue/fern-renderer-nerdfont.vim'
 Plug 'lambdalisue/nerdfont.vim'
+Plug 'lambdalisue/glyph-palette.vim'
 Plug 'LumaKernel/fern-mapping-fzf.vim'
 Plug 'antoinemadec/FixCursorHold.nvim'
 
