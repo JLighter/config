@@ -27,7 +27,7 @@ let g:startify_skiplist = [
             \  escape(fnamemodify(resolve($VIMRUNTIME), ':p'), '\') .'doc/.*\.txt$'
             \  ]
 
-autocmd BufDelete * if empty(filter(tabpagebuflist(), '!buflisted(v:val)')) | Startify | endif
+" autocmd BufDelete * if empty(filter(tabpagebuflist(), '!buflisted(v:val)')) | Startify | endif
 
 let g:startify_lists = [
             \ { 'header': ['   Current dir'],       'type': 'dir' },
