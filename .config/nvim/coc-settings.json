@@ -50,7 +50,7 @@
   "yaml.schemas": {
       /* "https://raw.githubusercontent.com/instrumenta/kubernetes-json-schema/master/v1.17.0-standalone-strict/all.json": ["/*.yaml"] */
   },
-  "clangd.path": "/home/jlighter/.config/coc/extensions/coc-clangd-data/install/12.0.0/clangd_12.0.0/bin/clangd",
+  "clangd.path": "$HOME/.config/coc/extensions/coc-clangd-data/install/12.0.0/clangd_12.0.0/bin/clangd"
   "languageserver": {
 		"terraform": {
 			"command": "terraform-ls",
