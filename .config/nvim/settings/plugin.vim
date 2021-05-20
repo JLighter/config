@@ -10,20 +10,22 @@ Plug 'powerman/vim-plugin-autosess'
 Plug 'KabbAmine/vCoolor.vim'
 Plug 'wincent/terminus'
 Plug 'easymotion/vim-easymotion'
+Plug 'mhinz/vim-startify'
 
 " Appearance
 Plug 'morhetz/gruvbox'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'sonph/onehalf', {'rtp': 'vim/'}
-" Plug 'mhinz/vim-startify'
+Plug 'folke/lsp-colors.nvim'
 
 " Status line
 Plug 'itchyny/lightline.vim'
 Plug 'shinchu/lightline-gruvbox.vim'
 
 " Searching
-Plug 'junegunn/fzf', {'dir': '~/.fzf','do': './install --all'}
-Plug 'junegunn/fzf.vim'
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
 
 " All language
 Plug 'Raimondi/delimitMate'
@@ -48,7 +50,6 @@ Plug 'lambdalisue/fern-git-status.vim'
 Plug 'lambdalisue/fern-renderer-nerdfont.vim'
 Plug 'lambdalisue/nerdfont.vim'
 Plug 'lambdalisue/glyph-palette.vim'
-Plug 'LumaKernel/fern-mapping-fzf.vim'
 Plug 'antoinemadec/FixCursorHold.nvim'
 
 " Git

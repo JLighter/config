@@ -6,7 +6,6 @@
 .aliases,.aliases
 .npmrc,.npmrc
 .config/nvim,.config/nvim
-.config/nvim/init.vim,.vimrc
 .config/urxvt,.config/urxvt
 .config/i3,.config/i3
 .config/rofi,.config/rofi

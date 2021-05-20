@@ -73,4 +73,9 @@ alias rm-node-modules-recursive="find . -name 'node_modules' -type d -prune -exe
 # ----------------------
 alias zshconfig="nvim ~/.zshrc"
 alias ohmyzsh="nvim ~/.oh-my-zsh"
-alias vimconfig="nvim ~/.vimrc"
+alias vimconfig="nvim ~/.config/nvim/init.vim"
+
+# ----------------------
+# Port and networking
+# ----------------------
+alias showports="lsof -i -P -n | grep LISTEN"

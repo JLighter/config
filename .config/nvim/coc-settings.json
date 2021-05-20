@@ -15,12 +15,11 @@
   "suggest.fixInsertedWord": true,
   "suggest.triggerCompletionWait": 100,
   "suggest.disableMenu": false,
-  "suggest.snippetIndicator": "~",
   "suggest.echodocSupport": true, 
 
   "diagnostic.enable": true,
   "diagnostic.displayByAle": false,
-  "diagnostic.virtualText": true,
+  "diagnostic.virtualText": false,
   "diagnostic.virtualTextPrefix": "ᐉ ",
   "diagnostic.virtualTextCurrentLineOnly": false,
 

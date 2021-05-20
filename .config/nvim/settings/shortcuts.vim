@@ -50,11 +50,6 @@ noremap <Right> <Nop>
 nnoremap <C-p> :GFiles<CR>
 nmap <leader><leader> :Rg<CR>
 
-" Buffers 
-" Jump to the existing window if possible
-let g:fzf_buffers_jump = 1
-let g:fzf_preview_window = 'right:40%'
-
 " Re-open last closed buffer 
 nmap <c-s-t> :vs<bar>:b#<CR>
 
