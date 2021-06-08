@@ -118,8 +118,11 @@ export ARCHFLAGS="-arch x86_64"
 # Dot configuration
 export DOT_REPO="https://github.com/jlighter/dotfiles.git"
 export DOT_DIR="$HOME/.dotfiles"
-fpath=($HOME/.zsh/dot $fpath)  # <- for completion
 source $HOME/.zsh/dot/dot.sh
+fpath=($HOME/.zsh/dot $fpath)  # <- for completion
+
+# Eksctl completion
+fpath=($HOME/.zsh/eksctl $fpath)  # <- for completion
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -163,3 +166,10 @@ source ~/.zshrc.custom
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# Generated for envman. Do not edit.
+[ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
+
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /usr/bin/terraform terraform

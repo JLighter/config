@@ -79,3 +79,17 @@ alias vimconfig="nvim ~/.config/nvim/init.vim"
 # Port and networking
 # ----------------------
 alias showports="lsof -i -P -n | grep LISTEN"
+
+# ----------------------
+# Kubectl
+# ----------------------
+alias k="kubectl"
+alias kx="kubectl config get-contexts"
+alias kxs="kubectl config use-context"
+
+# ----------------------
+# Terraform
+# ----------------------
+alias tf="terraform"
+
+
