@@ -50,9 +50,11 @@ endif
 :function! Dark()
 :  set background=dark
 :  let g:gruvbox_contrast_dark='hard'
-:  colorscheme gruvbox
-:  let g:lightline.colorscheme='gruvbox'
-:  runtime autoload/lightline/colorscheme/gruvbox.vim
+:  colorscheme palenight
+:  hi! Normal ctermbg=NONE guibg=NONE
+:  hi! Normal ctermbg=NONE guibg=NONE
+:  let g:lightline.colorscheme='palenight'
+:  runtime autoload/lightline/colorscheme/palenight.vim
 :  call LightlineReload()
 :endfunction
 

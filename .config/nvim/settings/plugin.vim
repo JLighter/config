@@ -16,6 +16,7 @@ Plug 'mhinz/vim-startify'
 Plug 'morhetz/gruvbox'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'sonph/onehalf', {'rtp': 'vim/'}
+Plug 'drewtempelmeyer/palenight.vim'
 Plug 'folke/lsp-colors.nvim'
 
 " Status line

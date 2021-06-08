@@ -22,7 +22,7 @@ source ~/.config/nvim/settings/telescope.vim
 "" Sections too shorts to put in single file
 
 " Rainbow brackets
-let g:rainbow_active = 1
+let g:rainbow_active = 0
 
 " Editor config
 let g:EditorConfig_exclude_patterns = ['fugitive://.\*', 'scp://.\*']
