@@ -98,3 +98,7 @@ nmap ga <Plug>(EasyAlign)
 
 nnoremap <silent> <Leader>l ml:execute 'match Search /\%'.line('.').'l/'<CR>
 nnoremap <silent> <Leader>cl :match<CR>
+
+" Open file even if it does not exists
+noremap gf :e <cfile><cr>
+
