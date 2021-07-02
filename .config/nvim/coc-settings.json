@@ -39,6 +39,9 @@
   "javascript.preferences.quoteStyle": "single",
   "prettier.singleQuote": true,
   "prettier.jsxSingleQuote": true,
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact"
+  },
   "html.filetypes": [
     "html",
     "handlebars",

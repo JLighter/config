@@ -175,5 +175,5 @@ source ~/.zshrc.custom
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/bin/terraform terraform
 
-DISABLE_AUTO_TITLE="true"
+# DISABLE_AUTO_TITLE="true"
 precmd () { print -Pn "\e]0;zsh\a" }

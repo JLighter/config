@@ -81,3 +81,7 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " Set node executable
 let g:coc_node_path = system('which node')[:-2]
+
+" Scss filetypes
+autocmd FileType scss setl iskeyword+=@-@
+
