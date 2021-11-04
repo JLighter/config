@@ -19,6 +19,7 @@ source ~/.config/nvim/settings/macros.vim
 source ~/.config/nvim/settings/fold.vim
 source ~/.config/nvim/settings/telescope.vim
 source ~/.config/nvim/settings/tmux.vim
+source ~/.config/nvim/settings/copilot.vim
 
 "" Sections too shorts to put in single file
 

@@ -37,6 +37,8 @@ Plug 'janko/vim-test'
 Plug 'liuchengxu/vista.vim'
 Plug 'luochen1990/rainbow'
 Plug 'puremourning/vimspector'
+Plug 'tpope/vim-dotenv'
+Plug 'github/copilot.vim'
 
 " Autocompletion
 Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
@@ -55,6 +57,12 @@ Plug 'antoinemadec/FixCursorHold.nvim'
 
 " Git
 Plug 'tpope/vim-fugitive'
+" We do not use netrw so it is impossible to use these plugins
+" Plug 'tpope/vim-rhubarb'
+" Plug 'shumphrey/fugitive-gitlab.vim'
+" Plug 'cedarbaum/fugitive-azure-devops.vim'
+" Plug 'tommcdo/vim-fubitive'
+
 Plug 'idanarye/vim-merginal'
 Plug 'airblade/vim-gitgutter'
 
@@ -63,7 +71,6 @@ Plug 'airblade/vim-gitgutter'
 
 " Python
 Plug 'gotcha/vimpdb'
-Plug 'jmcantrell/vim-virtualenv'
 
 " HTML
 Plug 'mattn/emmet-vim'
