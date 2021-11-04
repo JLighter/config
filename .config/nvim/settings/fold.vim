@@ -10,4 +10,4 @@ autocmd FileType html,yaml,yml
 
 " Folding for python
 let python_fold=1 
-au BufNewFile,BufRead *.py set foldmethod=indent foldignore=#
+au BufNewFile,BufRead *.py setlocal foldmethod=indent foldignore=#

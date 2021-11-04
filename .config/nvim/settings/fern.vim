@@ -10,6 +10,8 @@ nmap _ :Fern . -reveal=% -toggle -drawer<CR>
 let g:fern#renderer = "nerdfont"
 let g:fern#disable_default_mappings = 1
 
+let g:fern#default_exclude = '^\%(\.git\)$'
+
 function! s:init_fern() abort
   echo "This function is called ON a fern buffer WHEN initialized"
 
