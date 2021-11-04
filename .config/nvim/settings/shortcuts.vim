@@ -15,31 +15,6 @@ nmap S :%s//g<Left><Left>
 nmap <Right> <C-W>><C-W>>
 nmap <Left> <C-W><<C-W><
 
-" Fugitive
-function! ToggleGStatus()
-    if buflisted(bufname('.git/index'))
-        bd .git/index
-    else
-        Gstatus
-    endif
-endfunction
-command! ToggleGStatus :call ToggleGStatus()
-
-nnoremap <silent> <leader>gs :ToggleGStatus<CR>
-nnoremap <silent> <leader>gl :Gllog<CR>
-nnoremap <silent> <leader>gd :Gdiff<CR>
-nnoremap <silent> <leader>go :Merginal<CR>
-nnoremap <silent> <leader>gc :Gcommit<CR>
-nnoremap <silent> <leader>gb :Gblame<CR>
-nnoremap <silent> <leader>ge :Gedit<CR>
-nnoremap <silent> <leader>gE :Gedit<space>
-nnoremap <silent> <leader>gr :Gread<CR>
-nnoremap <silent> <leader>gR :Gread<space>
-nnoremap <silent> <leader>gw :Gwrite<CR>
-nnoremap <silent> <leader>gW :Gwrite!<CR>
-nnoremap <silent> <leader>gq :Gwq<CR>
-nnoremap <silent> <leader>gQ :Gwq!<CR>
-
 " Remove arrows
 noremap <Up> <Nop>
 noremap <Down> <Nop>
@@ -98,7 +73,3 @@ nmap ga <Plug>(EasyAlign)
 
 nnoremap <silent> <Leader>l ml:execute 'match Search /\%'.line('.').'l/'<CR>
 nnoremap <silent> <Leader>cl :match<CR>
-
-" Open file even if it does not exists
-noremap gf :e <cfile><cr>
-
