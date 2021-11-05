@@ -62,3 +62,10 @@ nmap <leader>li :call Light()<CR>:echo "Light mode !"<CR>
 nmap <leader>da :call Dark()<CR>:echo "Dark mode !"<CR>
 
 call Dark()
+
+if exists('$TMUX')
+  set noshowmode
+  set noruler
+  set laststatus=0
+  set noshowcmd
+endif
