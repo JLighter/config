@@ -40,22 +40,11 @@ if exists('+termguicolors')
 endif
 
 :function! Light()
-:  set background=light
-:  colorscheme PaperColor
-:  let g:lightline.colorscheme='one'
-:  runtime autoload/lightline/colorscheme/one.vim
-:  call LightlineReload()
+:  colorscheme github_light
 :endfunction
 
 :function! Dark()
-:  set background=dark
-:  let g:gruvbox_contrast_dark='hard'
-:  colorscheme palenight
-:  hi! Normal ctermbg=NONE guibg=NONE
-:  hi! Normal ctermbg=NONE guibg=NONE
-:  let g:lightline.colorscheme='palenight'
-:  runtime autoload/lightline/colorscheme/palenight.vim
-:  call LightlineReload()
+:  colorscheme github_dark
 :endfunction
 
 nmap <leader>li :call Light()<CR>:echo "Light mode !"<CR>

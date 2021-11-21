@@ -40,10 +40,3 @@ function SSaveAutoName()
     execute 'SSave ' . name 
 endfunction
 command! SSaveAutoName :call SSaveAutoName()
-
-map <leader>ss :SSaveAutoName<CR>
-map <leader>sx :SSaveAutoName<CR> :SClose<CR>
-map <leader>sq :SClose<CR>
-
-" Exit all and show startify
-nnoremap <Leader>X :bufdo bwipeout<CR>
