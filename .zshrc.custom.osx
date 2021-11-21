@@ -1,11 +1,30 @@
-alias mkvirtualenv2="mkvirtualenv --python=$(which python)"
-export WORKON_HOME=~/.local/envs
-export PROJECT_HOME=~/Documents/Personal/Python
-export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
-export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
-source /Users/julienheroguelle/Library/Python/3.9/bin/virtualenvwrapper.sh
+export GOPATH=$HOME/.local/go
 
-export PATH=$PATH:/Users/julienheroguelle/.emacs.d/bin
+# Kubectl and minikube autocompletion
+if command -v kubectl &>/dev/null; then
+  source <(kubectl completion zsh)
+fi
+if command -v minikube &>/dev/null; then
+  eval "$(minikube completion zsh)"
+fi
+
+# Helm completion
+if command -v helm &>/dev/null; then
+  eval "$(helm completion zsh)"
+fi
+
+# Terraform completion
+if command -v terraform &>/dev/null; then
+  autoload -U +X bashcompinit && bashcompinit
+  complete -o nospace -C $(which terraform) terraform
+fi
+
+
+# AWS completion
+if command -v aws &>/dev/null; then
+  autoload bashcompinit && bashcompinit
+  complete -C $(which aws_completer) aws
+fi
 
 # Which plugins would you like to load?
 # Standard plugins can be found in ~/.oh-my-zsh/plugins/*

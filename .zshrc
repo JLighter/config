@@ -136,8 +136,6 @@ source $HOME/.aliases
 # TERM var
 export TERM='screen-256color'
 
-source $HOME/.env
-
 # Tab/auto complete
 autoload -U compinit
 zstyle ':completion:*' menu select
@@ -171,9 +169,21 @@ source ~/.zshrc.custom
 # Generated for envman. Do not edit.
 [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
 
-
-autoload -U +X bashcompinit && bashcompinit
-complete -o nospace -C /usr/bin/terraform terraform
-
 # DISABLE_AUTO_TITLE="true"
 precmd () { print -Pn "\e]0;zsh\a" }
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/julien/.miniforge3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/julien/.miniforge3/etc/profile.d/conda.sh" ]; then
+        . "/Users/julien/.miniforge3/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/julien/.miniforge3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
