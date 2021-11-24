@@ -4,12 +4,8 @@ set cmdheight=1
 " Don't pass messages to |ins-completion-menu|.
 set shortmess+=Sca
 
-augroup toggle_relative_number
-	autocmd InsertEnter * :setlocal norelativenumber
-	autocmd InsertLeave * :setlocal relativenumber
-
 set nowrap
-set number relativenumber
+set number
 set noshowmode
 
 set synmaxcol=512

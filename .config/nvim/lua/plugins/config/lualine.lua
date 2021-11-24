@@ -1,3 +1,4 @@
+if not os.getenv("TMUX") then
 require'lualine'.setup {
     options = {
         icons_enabled = true,
@@ -38,3 +39,4 @@ require'lualine'.setup {
         "fugitive"
     }
 }
+end

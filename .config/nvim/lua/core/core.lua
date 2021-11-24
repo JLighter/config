@@ -22,7 +22,6 @@ opt.autoindent = true
 opt.smartindent = true
 
 opt.number = true
-opt.relativenumber = true
 opt.showmatch = true
 opt.expandtab = true
 opt.ignorecase = true
@@ -42,7 +41,6 @@ g.matchup_matchparen_stopline = 400
 g.matchup_delim_stopline = 1500
 g.loaded_matchit = 1
 
-g.runtimepath = "~/.vim_runtime"
 g.signcolumn = yes
 g.shiftwidth = 2
 g.mouse = n
@@ -75,18 +73,18 @@ g.showmode = true
 g.showcmd = true
 
 -- Swap file
-g.directory = "~/.vim/swp/"
+vim.cmd('set directory=~/.vim/swp/')
 
 -- No backup
 g.nobackup = true
 g.nowritebackup = true
 
 -- Undo file
-g.undofile = true
-g.undodir = "~/.vim/undodir"
+vim.cmd('set undofile')
+vim.cmd('set undodir=~/.vim/undodir')
 
 g.spelllang = "en,fr"
 
 g.matchup_matchparen_offscreen = {method='popup'}
 g.loaded_matchit = 1
-cmd("set shortmess+=c")
+vim.cmd("set shortmess+=c")

@@ -55,6 +55,8 @@ return require("packer").startup(function(use)
    use {'sonph/onehalf', rtp='vim'}
    use {'nvim-treesitter/nvim-treesitter'}
    use {'projekt0n/github-nvim-theme'}
+   use {'rcarriga/nvim-notify'}
+   use {'rafamadriz/neon'}
 -- } 
 
 -- { Status line
@@ -106,6 +108,7 @@ return require("packer").startup(function(use)
 
 -- { Navigation
    use {'christoomey/vim-tmux-navigator'}
+   use {'matbme/JABS.nvim'}
 -- }
 
 -- { Utils

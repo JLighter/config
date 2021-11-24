@@ -102,34 +102,16 @@ local on_attach = function(client, bufnr)
   -- See `:help vim.lsp.*` for documentation on any of the below functions
   buf_set_keymap('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
   buf_set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
-  buf_set_keymap('n', '<leader>k', '<cmd>Lspsaga preview_definition()<CR>', opts)
   buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
-  buf_set_keymap('n', 'K', '<cmd>Lspsaga hover_doc<CR>', opts)
   buf_set_keymap('n', '<leader>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opts)
   buf_set_keymap('n', '<leader>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', opts)
   buf_set_keymap('n', '<leader>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)
   buf_set_keymap('n', '<leader>d', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
-  buf_set_keymap('n', '<leader>rn', '<cmd>Lspsaga rename<CR>', opts)
-  buf_set_keymap('n', '<leader>af', '<cmd>Lspsaga code_action<CR>', opts)
-  buf_set_keymap('x', '<leader>af', '<cmd>Lspsaga range_code_action<CR>', opts)
   buf_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
-  buf_set_keymap('n', 'D', '<cmd>Lspsaga show_cursor_diagnostics<CR>', opts)
   buf_set_keymap('n', '[d', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', opts)
   buf_set_keymap('n', ']d', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
   buf_set_keymap('n', '<leader>q', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
   buf_set_keymap('n', '<leader>F', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
-end
-
--- Use a loop to conveniently call 'setup' on multiple servers and
--- map buffer local keybindings when the language server attaches
-local servers = { 'pyright', 'tsserver' }
-for _, lsp in ipairs(servers) do
-  nvim_lsp[lsp].setup {
-    on_attach = on_attach,
-    flags = {
-      debounce_text_changes = 150,
-    }
-  }
 end
 
 -- Code actions
@@ -169,5 +151,42 @@ do
       vim.lsp.util.set_qflist(qflist)
   end
 end
+
+-- { Language server attachment and configuration
+nvim_lsp["yamlls"].setup {                                                                                                                                                                           
+    on_attach = on_attach,                                                                                                                                                                                  
+    settings = {                                                                                                                                                                                            
+        yaml = {                                                                                                                                                                                            
+            trace = {                                                                                                                                                                                       
+                server = "verbose"                                                                                                                                                                          
+            },                                                                                                                                                                                              
+            schemaStore = {
+                enable = true,
+                url = "https://www.schemastore.org/api/json/catalog.json"
+            },
+            schemas = {
+                ["https://raw.githubusercontent.com/yannh/kubernetes-json-schema/master/v1.15.0-standalone/all.json"] = {'/*.yaml'},
+                ["https://raw.githubusercontent.com/docker/cli/master/cli/compose/schema/data/config_schema_v3.9.json"] = {'/docker-compose.yml'}
+            },
+            schemaDownload = {
+                enabled = true
+            },
+            validate = true
+        }                                                                                                                                                                                                   
+    },                                                                                                                                                                                                      
+}    
+
+-- Use a loop to conveniently call 'setup' on multiple servers and
+-- map buffer local keybindings when the language server attaches
+local servers = { 'pyright', 'tsserver' }
+for _, lsp in ipairs(servers) do
+  nvim_lsp[lsp].setup {
+    on_attach = on_attach,
+    flags = {
+      debounce_text_changes = 150,
+    }
+  }
+end
+-- }
 
 -- vim.cmd("autocmd CursorHold * :lua vim.lsp.diagnostic.show_position_diagnostics()")
