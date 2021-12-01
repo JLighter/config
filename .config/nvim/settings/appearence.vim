@@ -48,9 +48,11 @@ nmap <leader>da :call Dark()<CR>:echo "Dark mode !"<CR>
 
 call Dark()
 
-if exists('$TMUX')
-  set noshowmode
-  set noruler
-  set laststatus=0
-  set noshowcmd
-endif
+set cursorline
+
+" if exists('$TMUX')
+   set noshowmode
+   set noruler
+"   set laststatus=0
+   set noshowcmd
+" endif

@@ -57,7 +57,7 @@ end
 time([[Luarocks path setup]], false)
 time([[try_loadstring definition]], true)
 local function try_loadstring(s, component, name)
-  local success, result = pcall(loadstring(s))
+  local success, result = pcall(loadstring(s), name, _G.packer_plugins[name])
   if not success then
     vim.schedule(function()
       vim.api.nvim_notify('packer.nvim: Error running ' .. component .. ' for ' .. name .. ': ' .. result, vim.log.levels.ERROR, {})
@@ -69,15 +69,15 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  ["JABS.nvim"] = {
+    loaded = true,
+    path = "/Users/julien/.local/share/nvim/site/pack/packer/start/JABS.nvim",
+    url = "https://github.com/matbme/JABS.nvim"
+  },
   LuaSnip = {
     loaded = true,
     path = "/Users/julien/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
-  },
-  ["alpha-nvim"] = {
-    loaded = true,
-    path = "/Users/julien/.local/share/nvim/site/pack/packer/start/alpha-nvim",
-    url = "https://github.com/goolord/alpha-nvim"
   },
   ["cmp-buffer"] = {
     loaded = true,
@@ -164,6 +164,11 @@ _G.packer_plugins = {
     path = "/Users/julien/.local/share/nvim/site/pack/packer/start/luatab.nvim",
     url = "https://github.com/alvarosevilla95/luatab.nvim"
   },
+  neon = {
+    loaded = true,
+    path = "/Users/julien/.local/share/nvim/site/pack/packer/start/neon",
+    url = "https://github.com/rafamadriz/neon"
+  },
   ["nerdfont.vim"] = {
     loaded = true,
     path = "/Users/julien/.local/share/nvim/site/pack/packer/start/nerdfont.vim",
@@ -196,6 +201,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/julien/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
+  },
+  ["nvim-notify"] = {
+    loaded = true,
+    path = "/Users/julien/.local/share/nvim/site/pack/packer/start/nvim-notify",
+    url = "https://github.com/rcarriga/nvim-notify"
   },
   ["nvim-tree.lua"] = {
     loaded = true,
@@ -291,6 +301,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/julien/.local/share/nvim/site/pack/packer/start/vim-repeat",
     url = "https://github.com/tpope/vim-repeat"
+  },
+  ["vim-startify"] = {
+    loaded = true,
+    path = "/Users/julien/.local/share/nvim/site/pack/packer/start/vim-startify",
+    url = "https://github.com/mhinz/vim-startify"
   },
   ["vim-surround"] = {
     loaded = true,

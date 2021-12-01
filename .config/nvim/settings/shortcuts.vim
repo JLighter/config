@@ -1,5 +1,5 @@
 " Same as tmux shortcuts
-nmap <leader>- :sb<CR>
+nmap <leader>_ :sb<CR>
 nmap <leader>/ :vertical sb<CR>
 nmap <leader>t :tab sb<CR>
 set splitbelow
