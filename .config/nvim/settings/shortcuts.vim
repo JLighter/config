@@ -1,6 +1,6 @@
 " Same as tmux shortcuts
-nmap <leader>_ :sb<CR>
-nmap <leader>/ :vertical sb<CR>
+nmap <leader>s :sb<CR>
+nmap <leader>v :vertical sb<CR>
 nmap <leader>t :tab sb<CR>
 set splitbelow
 set splitright

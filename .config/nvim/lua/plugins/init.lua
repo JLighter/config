@@ -36,6 +36,8 @@ return require("packer").startup(function(use)
    use {'weilbith/nvim-code-action-menu', cmd = 'CodeActionMenu'}
    use {"ray-x/lsp_signature.nvim"}
    use {"tami5/lspsaga.nvim"}
+   use {'RishabhRD/popfix'}
+   use {"RishabhRD/nvim-lsputils"}
 -- }
 
 -- { CMP
@@ -49,14 +51,13 @@ return require("packer").startup(function(use)
 
 -- { Tab
    use { 'alvarosevilla95/luatab.nvim', requires='kyazdani42/nvim-web-devicons' }
+   use {'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons'}
 -- }
 
 -- { Appearance
-   use {'sonph/onehalf', rtp='vim'}
    use {'nvim-treesitter/nvim-treesitter'}
-   use {'projekt0n/github-nvim-theme'}
-   use {'rcarriga/nvim-notify'}
-   use {'rafamadriz/neon'}
+   use {'joshdick/onedark.vim'}
+   use {'NLKNguyen/papercolor-theme'}
 -- } 
 
 -- { Status line

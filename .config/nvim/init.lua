@@ -6,8 +6,6 @@ require('plugins/initConfig')
 
 require('mapping/init')
 
-vim.cmd('source ~/.config/nvim/settings/appearence.vim')
-
 vim.cmd('source ~/.config/nvim/settings/startify.vim')
 
 vim.cmd('source ~/.config/nvim/settings/closetag.vim')
@@ -23,3 +21,5 @@ vim.cmd('source ~/.config/nvim/settings/fold.vim')
 vim.cmd('source ~/.config/nvim/settings/telescope.vim')
 vim.cmd('source ~/.config/nvim/settings/tmux.vim')
 
+require('core/appearence')
+vim.cmd('source ~/.config/nvim/settings/appearence.vim')

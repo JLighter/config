@@ -1,24 +1,17 @@
 " Appearence
 syntax on
+syntax sync minlines=100
+
+set synmaxcol=512
+
 set cmdheight=1
 " Don't pass messages to |ins-completion-menu|.
 set shortmess+=Sca
-
+set rnu
 set nowrap
 set number
-set noshowmode
 
-set synmaxcol=512
-syntax sync minlines=100
-
-let g:indent_guides_enable_on_vim_startup = 1
-
-set guioptions-=e
 set laststatus=2
-
-if !has('gui_running')
-  set t_Co=256
-endif
 
 " Enable true colors
 if (has("nvim"))
@@ -34,25 +27,3 @@ if exists('+termguicolors')
   let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
   set termguicolors
 endif
-
-:function! Light()
-:  colorscheme github_light
-:endfunction
-
-:function! Dark()
-:  colorscheme github_dark
-:endfunction
-
-nmap <leader>li :call Light()<CR>:echo "Light mode !"<CR>
-nmap <leader>da :call Dark()<CR>:echo "Dark mode !"<CR>
-
-call Dark()
-
-set cursorline
-
-" if exists('$TMUX')
-   set noshowmode
-   set noruler
-"   set laststatus=0
-   set noshowcmd
-" endif

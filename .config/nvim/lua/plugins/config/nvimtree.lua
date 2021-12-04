@@ -4,8 +4,8 @@ local tree_cb = require'nvim-tree.config'.nvim_tree_callback
 local list = {
   { key = "l",                            cb = tree_cb("edit") },
   { key = "<CR>",                         cb = tree_cb("cd") },
-  { key = "/",                            cb = tree_cb("vsplit") },
-  { key = "_",                            cb = tree_cb("split") },
+  { key = "v",                            cb = tree_cb("vsplit") },
+  { key = "s",                            cb = tree_cb("split") },
   { key = "t",                            cb = tree_cb("tabnew") },
   { key = "<",                            cb = tree_cb("prev_sibling") },
   { key = ">",                            cb = tree_cb("next_sibling") },
@@ -30,7 +30,7 @@ local list = {
   { key = "[c",                           cb = tree_cb("prev_git_item") },
   { key = "]c",                           cb = tree_cb("next_git_item") },
   { key = "<BS>",                         cb = tree_cb("dir_up") },
-  { key = "s",                            cb = tree_cb("system_open") },
+  { key = "X",                            cb = tree_cb("system_open") },
   { key = "q",                            cb = tree_cb("close") },
   { key = "g?",                           cb = tree_cb("toggle_help") },
 }
@@ -45,6 +45,7 @@ g.nvim_tree_icons = {
     default = "",
     symlink = "",
     git = {
+        ignore = 1,
         unstaged = "",
         staged = "S",
         unmerged = "",
@@ -62,16 +63,15 @@ g.nvim_tree_icons = {
         empty_open = "",
         symlink = "",
         symlink_open = ""
-    }
+    },
 }
 
 g.nvim_tree_highlight_opened_files = 1
 g.nvim_tree_root_folder_modifier = table.concat {":t:gs?$?/..", string.rep(" ", 1000), "?:gs?^??"}
-g.nvim_tree_gitignore = 1 -- 0 by default
 g.nvim_tree_quit_on_open = 1 -- 0 by default, closes the tree when you open a file
 g.nvim_tree_indent_markers = 0 -- 0 by default, this option shows indent markers when folders are open
 g.nvim_tree_git_hl = 1 -- 0 by default, will enable file highlight for git attributes (can be used without the icons).
-g.nvim_tree_add_trailing = 1 -- 0 by default, append a trailing slash to folder names
+g.nvim_tree_add_trailing = 1 -- 0 by default, append a traiing slash to folder names
 g.nvim_tree_group_empty = 1 -- 0 by default, compact folders that only contain a single folder into one node in the file tree
 g.nvim_tree_disable_window_picker = 1 -- 0 by default, will disable the window picker.
 g.nvim_tree_icon_padding = ' ' -- one space by default, used for rendering the space between the icon and the filename. Use with caution, it could break rendering if you set an empty string depending on your font.
