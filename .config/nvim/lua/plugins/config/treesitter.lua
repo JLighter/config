@@ -6,19 +6,23 @@ if not present then
 end
 
 ts_config.setup {
-  use_languagetree = true,
-  ensure_installed ="all",
-   highlight = {
-      enable = true,
-   matchup = {
-     enable = true,              -- mandatory, false will disable the whole extension
-     disable = { "c", "ruby" },  -- optional, list of language that will be disabled
-     },
-   },
-  context_commentstring = {
-    enable = true,
-    -- This plugin provided an autocommand option
-    enable_autocmd = true,
-  }
+    ensure_installed = "maintained",
+    highlight = {
+        enable = true,
+        matchup = {
+            enable = true,              -- mandatory, false will disable the whole extension
+        },
+    },
+    indent = {
+        enable = true
+    },
+    context_commentstring = {
+        enable = true,
+        -- This plugin provided an autocommand option
+        enable_autocmd = true,
+    }
 }
 
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+vim.cmd("au BufRead * normal zR")

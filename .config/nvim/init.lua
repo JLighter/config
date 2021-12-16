@@ -20,7 +20,8 @@ vim.cmd('source ~/.config/nvim/settings/shortcuts.vim')
 vim.cmd('source ~/.config/nvim/settings/easymotion.vim')
 vim.cmd('source ~/.config/nvim/settings/vimtest.vim')
 vim.cmd('source ~/.config/nvim/settings/macros.vim')
-vim.cmd('source ~/.config/nvim/settings/fold.vim')
 vim.cmd('source ~/.config/nvim/settings/telescope.vim')
 vim.cmd('source ~/.config/nvim/settings/tmux.vim')
+vim.cmd('source ~/.config/nvim/settings/copilot.vim')
+
 
