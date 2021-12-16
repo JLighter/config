@@ -16,3 +16,5 @@
 	trustExitCode = true
 [cola]
 	spellcheck = false
+[url "ssh://git@github.com/jlighter"]
+	insteadOf = https://github.com/jlighter

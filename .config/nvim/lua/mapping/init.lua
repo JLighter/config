@@ -36,14 +36,3 @@ map('n', '<leader>ss', ':SSaveAutoName<CR>', default_opts)
 map('n', '<leader>sx', ':SSaveAutoName<CR> :SClose<CR>', default_opts)
 map('n', '<leader>sq', ':bufdo bwipeout<CR>', default_opts)
 -- }
-
--- { Language server 
-map('n', '<leader>rn', ':lua vim.lsp.buf.rename()<CR>', default_opts)
-map('n', '<leader>ac', ':lua vim.lsp.buf.code_action()<CR>', default_opts)
-map('v', '<leader>ac', ':lua vim.lsp.buf.range_code_action()<CR>', default_opts)
-map('v', '<leader>F', ':lua vim.lsp.buf.range_formatting()<CR>', default_opts)
-map('n', '<leader>F', ':lua vim.lsp.buf.formatting()<CR>', default_opts)
-map('n', '<leader>k', ':lua vim.lsp.buf.hover()<CR>', default_opts)
-map('n', 'K', ':lua vim.lsp.buf.hover()<CR>', default_opts)
-map('n', 'D', ':lua vim.lsp.diagnostic.show_position_diagnostics()<CR>', default_opts)
--- }

@@ -29,15 +29,11 @@ return require("packer").startup(function(use)
 -- { LSP
    use {"folke/lsp-colors.nvim"}
    use {"onsails/lspkind-nvim"}
-   use {"neovim/nvim-lspconfig"}
-   use {"L3MON4D3/LuaSnip"}
-   use {"williamboman/nvim-lsp-installer"}
    use {'github/copilot.vim'}
-   use {'weilbith/nvim-code-action-menu', cmd = 'CodeActionMenu'}
-   use {"ray-x/lsp_signature.nvim"}
    use {"tami5/lspsaga.nvim"}
-   use {'RishabhRD/popfix'}
-   use {"RishabhRD/nvim-lsputils"}
+   use {"williamboman/nvim-lsp-installer"}
+   use {'neovim/nvim-lspconfig'}
+   use {'L3MON4D3/LuaSnip'}
 -- }
 
 -- { CMP
@@ -50,13 +46,14 @@ return require("packer").startup(function(use)
 -- }
 
 -- { Tab
-   use { 'alvarosevilla95/luatab.nvim', requires='kyazdani42/nvim-web-devicons' }
+   use {'alvarosevilla95/luatab.nvim', requires='kyazdani42/nvim-web-devicons'}
    use {'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons'}
 -- }
 
 -- { Appearance
    use {'nvim-treesitter/nvim-treesitter'}
-   use {'joshdick/onedark.vim'}
+   use {'norcalli/nvim-colorizer.lua'}
+   use {'navarasu/onedark.nvim'}
    use {'NLKNguyen/papercolor-theme'}
 -- } 
 
@@ -86,7 +83,6 @@ return require("packer").startup(function(use)
 -- }
 
 -- { Writing
-   use {'Raimondi/delimitMate'}
    use {'tpope/vim-surround'}
    use {'editorconfig/editorconfig-vim'}
 

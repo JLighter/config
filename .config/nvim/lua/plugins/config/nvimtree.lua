@@ -99,7 +99,7 @@ require'nvim-tree'.setup {
     ignore_ft_on_setup = {"dashboard"},
     auto_close = true,
     open_on_tab = false,
-    hijack_cursor = true,
+    hijack_cursor = false,
     update_cwd = false,
     update_focused_file = {
         enable = true,

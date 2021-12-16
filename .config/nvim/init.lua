@@ -1,6 +1,9 @@
 require('core/core')
 require('core/providers')
 
+require('core/appearence')
+vim.cmd('source ~/.config/nvim/settings/appearence.vim')
+
 require('plugins/init')
 require('plugins/initConfig')
 
@@ -21,5 +24,3 @@ vim.cmd('source ~/.config/nvim/settings/fold.vim')
 vim.cmd('source ~/.config/nvim/settings/telescope.vim')
 vim.cmd('source ~/.config/nvim/settings/tmux.vim')
 
-require('core/appearence')
-vim.cmd('source ~/.config/nvim/settings/appearence.vim')

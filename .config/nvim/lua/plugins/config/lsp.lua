@@ -14,26 +14,35 @@ capabilities.textDocument.completion.completionItem.resolveSupport = {
     'additionalTextEdits',
   },
 }
--- LSP Utils
+capabilities.textDocument.codeAction = {
+  dynamicRegistration = true,
+  codeActionLiteralSupport = {
+      codeActionKind = {
+          valueSet = (function()
+              local res = vim.tbl_values(vim.lsp.protocol.CodeActionKind)
+              table.sort(res)
+              return res
+          end)()
+      }
+  }
+}
 
-vim.lsp.handlers['textDocument/codeAction'] = require'lsputil.codeAction'.code_action_handler
-vim.lsp.handlers['textDocument/references'] = require'lsputil.locations'.references_handler
-vim.lsp.handlers['textDocument/definition'] = require'lsputil.locations'.definition_handler
-vim.lsp.handlers['textDocument/declaration'] = require'lsputil.locations'.declaration_handler
-vim.lsp.handlers['textDocument/typeDefinition'] = require'lsputil.locations'.typeDefinition_handler
-vim.lsp.handlers['textDocument/implementation'] = require'lsputil.locations'.implementation_handler
-vim.lsp.handlers['textDocument/documentSymbol'] = require'lsputil.symbols'.document_handler
-vim.lsp.handlers['workspace/symbol'] = require'lsputil.symbols'.workspace_handler
+
+
+handler_opts = {focusable = false}
+
+vim.lsp.handlers['textDocument/codeAction']         = vim.lsp.with(vim.lsp.buf.code_action, handler_opts)
+vim.lsp.handlers['textDocument/references']         = vim.lsp.with(vim.lsp.buf.references, handler_opts)
+vim.lsp.handlers['textDocument/definition']         = vim.lsp.with(vim.lsp.buf.definition, handler_opts)
+vim.lsp.handlers['textDocument/declaration']        = vim.lsp.with(vim.lsp.buf.declaration, handler_opts)
+vim.lsp.handlers['textDocument/typeDefinition']     = vim.lsp.with(vim.lsp.buf.type_definition, handler_opts)
+vim.lsp.handlers['textDocument/implementation']     = vim.lsp.with(vim.lsp.buf.implementation, handler_opts)
+vim.lsp.handlers['textDocument/documentSymbol']     = vim.lsp.with(vim.lsp.buf.document_symbol, handler_opts)
 vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
     underline = true,
-    virtual_text = false,
-    update_in_insert = true,
+    update_in_insert = false,
+    virtual_text = false
 })
-
-vim.fn.sign_define("LspDiagnosticsSignError", {texthl = "LspDiagnosticsSignError", text = "", numhl = "LspDiagnosticsSignError"})
-vim.fn.sign_define("LspDiagnosticsSignWarning", {texthl = "LspDiagnosticsSignWarning", text = "", numhl = "LspDiagnosticsSignWarning"})
-vim.fn.sign_define("LspDiagnosticsSignInformation", {texthl = "LspDiagnosticsSignInformation", text = "", numhl = "LspDiagnosticsSignInformation"})
-vim.fn.sign_define("LspDiagnosticsSignHint", {texthl = "LspDiagnosticsSignHint", text = "", numhl = "LspDiagnosticsSignHint"})
 
 -- LspKind
 require('lspkind').init({
@@ -68,26 +77,6 @@ require('lspkind').init({
     },
 })
 
--- Lsp Colors
-require("lsp-colors").setup({
-  Error = "#db4b4b",
-  Warning = "#e0af68",
-  Information = "#0db9d7",
-  Hint = "#10B981"
-})
-
--- local lsp_installer_servers = require'nvim-lsp-installer.servers'
-
-local lsp_installer = require("nvim-lsp-installer")
-
-lsp_installer.on_server_ready(function(server)
-    local opts = {}
-    server:setup(opts)
-    vim.cmd [[ do User LspAttachBuffers ]]
-end)
-
-local nvim_lsp = require('lspconfig')
-
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
 local on_attach = function(client, bufnr)
@@ -97,48 +86,37 @@ local on_attach = function(client, bufnr)
 
   -- Enable completion triggered by <c-x><c-o>
   buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
-  require "lsp_signature".on_attach({
-    bind = true,
-    hint_enable = false,
-    handler_opts = {
-      border = "single"   -- double, rounded, single, shadow, none
-    }
-  }) -- Enable signature triggered
-
 
   -- Mappings.
-  local opts = { noremap=true, silent=true }
+  local opts = { noremap=false, silent=true }
 
   -- See `:help vim.lsp.*` for documentation on any of the below functions
-  buf_set_keymap('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
+  buf_set_keymap('n', 'rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
+  buf_set_keymap('v', '<leader>F', '<cmd>lua vim.lsp.buf.range_formatting()<CR>', opts)
+  buf_set_keymap('n', '<leader>F', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
+  buf_set_keymap('n', '<leader>ac', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
+  buf_set_keymap('v', '<leader>ac', '<cmd>lua vim.lsp.buf.range_code_action()<CR>', opts)
+  buf_set_keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
+  buf_set_keymap('n', 'gD', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
   buf_set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
   buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
+  buf_set_keymap('n', 'D', '<cmd>lua vim.lsp.diagnostic.show_position_diagnostics()<CR>', opts)
   buf_set_keymap('n', '<leader>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opts)
   buf_set_keymap('n', '<leader>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', opts)
   buf_set_keymap('n', '<leader>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)
-  buf_set_keymap('n', '<leader>d', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
   buf_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
-  buf_set_keymap('n', '[d', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', opts)
+  buf_set_keymap('n', '[d', '<cmd>lua vim.lsp.diagnostic.goto_previous()<CR>', opts)
   buf_set_keymap('n', ']d', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
   buf_set_keymap('n', '<leader>q', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
-  buf_set_keymap('n', '<leader>F', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
 end
 
--- Code actions
-capabilities.textDocument.codeAction = {
-  dynamicRegistration = true,
-  codeActionLiteralSupport = {
-      codeActionKind = {
-          valueSet = (function()
-              local res = vim.tbl_values(vim.lsp.protocol.CodeActionKind)
-              table.sort(res)
-              return res
-          end)()
-      }
-  }
+require 'lspsaga'.init_lsp_saga {
+    use_saga_diagnostic_sign = true,
+    error_sign = '',
+    warn_sign = '',
+    hint_sign = '',
+    infor_sign = '',
 }
-
-capabilities.textDocument.completion.completionItem.snippetSupport = true;
 
 -- Send diagnostics to quickfix list
 do
@@ -163,41 +141,47 @@ do
 end
 
 -- { Language server attachment and configuration
-nvim_lsp["yamlls"].setup {                                                                                                                                                                           
-    on_attach = on_attach,                                                                                                                                                                                  
-    settings = {                                                                                                                                                                                            
-        yaml = {                                                                                                                                                                                            
-            trace = {                                                                                                                                                                                       
-                server = "verbose"                                                                                                                                                                          
-            },                                                                                                                                                                                              
-            schemaStore = {
-                enable = true,
-                url = "https://www.schemastore.org/api/json/catalog.json"
-            },
-            schemas = {
-                ["https://raw.githubusercontent.com/yannh/kubernetes-json-schema/master/v1.15.0-standalone/all.json"] = {'/*.yaml'},
-                ["https://raw.githubusercontent.com/docker/cli/master/cli/compose/schema/data/config_schema_v3.9.json"] = {'/docker-compose.yml'}
-            },
-            schemaDownload = {
-                enabled = true
-            },
-            validate = true
-        }                                                                                                                                                                                                   
-    },                                                                                                                                                                                                      
-}    
+local lsp_installer_servers = require'nvim-lsp-installer.servers'
 
--- Use a loop to conveniently call 'setup' on multiple servers and
--- map buffer local keybindings when the language server attaches
-local servers = { 'pyright', 'tsserver' }
-for _, lsp in ipairs(servers) do
-  nvim_lsp[lsp].setup {
-    on_attach = on_attach,
-    flags = {
-      debounce_text_changes = 150,
-    }
-  }
+local server_available, requested_server = lsp_installer_servers.get_server("yamlls")
+if server_available then
+    requested_server:on_ready(function ()
+        local opts = {
+            on_attach = on_attach,
+            settings = {
+                yaml = {
+                    trace = {
+                        server = "verbose"
+                    },
+                    schemaStore = {
+                        enable = true,
+                        url = "https://www.schemastore.org/api/json/catalog.json"
+                    },
+                    schemas = {
+                        ["https://raw.githubusercontent.com/yannh/kubernetes-json-schema/master/v1.15.0-standalone/all.json"] = {'/*.yaml'},
+                        ["https://raw.githubusercontent.com/docker/cli/master/cli/compose/schema/data/config_schema_v3.9.json"] = {'/docker-compose.yml'}
+                    },
+                    schemaDownload = {
+                        enabled = true
+                    },
+                    validate = true
+                }
+            },
+        }
+        requested_server:setup(opts)
+    end)
+    if not requested_server:is_installed() then
+        -- Queue the server to be installed
+        requested_server:install()
+    end
 end
--- }
 
--- vim.cmd("autocmd CursorHold * :lua vim.lsp.diagnostic.show_position_diagnostics()")
+local lsp_installer = require("nvim-lsp-installer")
 
+lsp_installer.on_server_ready(function(server)
+    local opts = {
+        on_attach = on_attach,
+    }
+    server:setup(opts)
+    vim.cmd [[ do User LspAttachBuffers ]]
+end)
