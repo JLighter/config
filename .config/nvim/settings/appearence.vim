@@ -6,7 +6,6 @@ set synmaxcol=512
 
 set cmdheight=1
 " Don't pass messages to |ins-completion-menu|.
-set shortmess+=Sca
 set rnu
 set nowrap
 set number

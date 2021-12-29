@@ -8,13 +8,11 @@ g.compatible = false
 opt.mouse = 'a'
 opt.mouse = 'nicr'
 opt.clipboard = 'unnamedplus'
-opt.completeopt = "menuone,noselect"
 
 opt.history = 100
 opt.cmdheight = 1
 opt.synmaxcol = 240
-opt.shiftwidth = 4
-opt.tabstop = 4
+opt.tabstop = 2
 opt.pumheight = 10
 opt.timeoutlen = 500
 
@@ -87,4 +85,3 @@ g.spelllang = "en,fr"
 
 g.matchup_matchparen_offscreen = {method='popup'}
 g.loaded_matchit = 1
-vim.cmd("set shortmess+=c")

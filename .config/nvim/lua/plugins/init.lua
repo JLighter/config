@@ -27,12 +27,15 @@ return require("packer").startup(function(use)
 -- }
 
 -- { LSP
-   use {"folke/lsp-colors.nvim"}
-   use {"onsails/lspkind-nvim"}
    use {'github/copilot.vim'}
-   use {"tami5/lspsaga.nvim"}
+
    use {"williamboman/nvim-lsp-installer"}
    use {'neovim/nvim-lspconfig'}
+
+   use {"folke/lsp-colors.nvim"}
+   use {"onsails/lspkind-nvim"}
+   use {"tami5/lspsaga.nvim"}
+
    use {'L3MON4D3/LuaSnip'}
 -- }
 
@@ -42,6 +45,7 @@ return require("packer").startup(function(use)
    use {"hrsh7th/cmp-nvim-lsp"}
    use {"hrsh7th/cmp-buffer"}
    use {"hrsh7th/cmp-path"}
+   use {'hrsh7th/cmp-cmdline'}
    use {"saadparwaiz1/cmp_luasnip"}
 -- }
 
@@ -54,6 +58,8 @@ return require("packer").startup(function(use)
    use {'nvim-treesitter/nvim-treesitter'}
    use {'norcalli/nvim-colorizer.lua'}
    use {'navarasu/onedark.nvim'}
+   use {'rktjmp/lush.nvim'}
+   use {'JLighter/aura.nvim'}
    use {'NLKNguyen/papercolor-theme'}
 -- } 
 
@@ -66,7 +72,7 @@ return require("packer").startup(function(use)
 --}
 
 -- { File manager
-   use { "kyazdani42/nvim-tree.lua" }
+   -- use { "kyazdani42/nvim-tree.lua" }
 -- }
 
 -- { Icons
@@ -101,15 +107,16 @@ return require("packer").startup(function(use)
    use {'nvim-lua/popup.nvim'}
    use {'nvim-lua/plenary.nvim'}
    use {'nvim-telescope/telescope.nvim'}
+   use {'nvim-telescope/telescope-fzy-native.nvim'}
 -- }
 
 -- { Navigation
    use {'christoomey/vim-tmux-navigator'}
-   use {'matbme/JABS.nvim'}
 -- }
 
 -- { Utils
    use {'powerman/vim-plugin-autosess'}
+   use {'tpope/vim-unimpaired'}
    use {'wincent/terminus'}
    use {'tpope/vim-dotenv'}
    use {'liuchengxu/vista.vim'}

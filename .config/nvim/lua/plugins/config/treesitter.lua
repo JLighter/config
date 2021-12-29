@@ -6,7 +6,7 @@ if not present then
 end
 
 ts_config.setup {
-    ensure_installed = "maintained",
+    ensure_installed = "all",
     highlight = {
         enable = true,
         matchup = {

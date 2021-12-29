@@ -79,6 +79,11 @@ _G.packer_plugins = {
     path = "/Users/julien/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
+  ["aura.nvim"] = {
+    loaded = true,
+    path = "/Users/julien/.local/share/nvim/site/pack/packer/start/aura.nvim",
+    url = "https://github.com/JLighter/aura.nvim"
+  },
   ["bufferline.nvim"] = {
     loaded = true,
     path = "/Users/julien/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
@@ -88,6 +93,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/julien/.local/share/nvim/site/pack/packer/start/cmp-buffer",
     url = "https://github.com/hrsh7th/cmp-buffer"
+  },
+  ["cmp-cmdline"] = {
+    loaded = true,
+    path = "/Users/julien/.local/share/nvim/site/pack/packer/start/cmp-cmdline",
+    url = "https://github.com/hrsh7th/cmp-cmdline"
   },
   ["cmp-nvim-lsp"] = {
     loaded = true,
@@ -114,20 +124,10 @@ _G.packer_plugins = {
     path = "/Users/julien/.local/share/nvim/site/pack/packer/start/copilot.vim",
     url = "https://github.com/github/copilot.vim"
   },
-  delimitMate = {
-    loaded = true,
-    path = "/Users/julien/.local/share/nvim/site/pack/packer/start/delimitMate",
-    url = "https://github.com/Raimondi/delimitMate"
-  },
   ["editorconfig-vim"] = {
     loaded = true,
     path = "/Users/julien/.local/share/nvim/site/pack/packer/start/editorconfig-vim",
     url = "https://github.com/editorconfig/editorconfig-vim"
-  },
-  ["github-nvim-theme"] = {
-    loaded = true,
-    path = "/Users/julien/.local/share/nvim/site/pack/packer/start/github-nvim-theme",
-    url = "https://github.com/projekt0n/github-nvim-theme"
   },
   ["gitsigns.nvim"] = {
     loaded = true,
@@ -143,11 +143,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/julien/.local/share/nvim/site/pack/packer/start/lsp-colors.nvim",
     url = "https://github.com/folke/lsp-colors.nvim"
-  },
-  ["lsp_signature.nvim"] = {
-    loaded = true,
-    path = "/Users/julien/.local/share/nvim/site/pack/packer/start/lsp_signature.nvim",
-    url = "https://github.com/ray-x/lsp_signature.nvim"
   },
   ["lspkind-nvim"] = {
     loaded = true,
@@ -169,10 +164,10 @@ _G.packer_plugins = {
     path = "/Users/julien/.local/share/nvim/site/pack/packer/start/luatab.nvim",
     url = "https://github.com/alvarosevilla95/luatab.nvim"
   },
-  neon = {
+  ["lush.nvim"] = {
     loaded = true,
-    path = "/Users/julien/.local/share/nvim/site/pack/packer/start/neon",
-    url = "https://github.com/rafamadriz/neon"
+    path = "/Users/julien/.local/share/nvim/site/pack/packer/start/lush.nvim",
+    url = "https://github.com/rktjmp/lush.nvim"
   },
   ["nerdfont.vim"] = {
     loaded = true,
@@ -189,13 +184,10 @@ _G.packer_plugins = {
     path = "/Users/julien/.local/share/nvim/site/pack/packer/start/nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
   },
-  ["nvim-code-action-menu"] = {
-    commands = { "CodeActionMenu" },
-    loaded = false,
-    needs_bufread = true,
-    only_cond = false,
-    path = "/Users/julien/.local/share/nvim/site/pack/packer/opt/nvim-code-action-menu",
-    url = "https://github.com/weilbith/nvim-code-action-menu"
+  ["nvim-colorizer.lua"] = {
+    loaded = true,
+    path = "/Users/julien/.local/share/nvim/site/pack/packer/start/nvim-colorizer.lua",
+    url = "https://github.com/norcalli/nvim-colorizer.lua"
   },
   ["nvim-lsp-installer"] = {
     loaded = true,
@@ -207,16 +199,6 @@ _G.packer_plugins = {
     path = "/Users/julien/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
   },
-  ["nvim-notify"] = {
-    loaded = true,
-    path = "/Users/julien/.local/share/nvim/site/pack/packer/start/nvim-notify",
-    url = "https://github.com/rcarriga/nvim-notify"
-  },
-  ["nvim-tree.lua"] = {
-    loaded = true,
-    path = "/Users/julien/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
-    url = "https://github.com/kyazdani42/nvim-tree.lua"
-  },
   ["nvim-treesitter"] = {
     loaded = true,
     path = "/Users/julien/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
@@ -227,15 +209,20 @@ _G.packer_plugins = {
     path = "/Users/julien/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
     url = "https://github.com/kyazdani42/nvim-web-devicons"
   },
-  onehalf = {
+  ["onedark.nvim"] = {
     loaded = true,
-    path = "/Users/julien/.local/share/nvim/site/pack/packer/start/onehalf/vim",
-    url = "https://github.com/sonph/onehalf"
+    path = "/Users/julien/.local/share/nvim/site/pack/packer/start/onedark.nvim",
+    url = "https://github.com/navarasu/onedark.nvim"
   },
   ["packer.nvim"] = {
     loaded = true,
     path = "/Users/julien/.local/share/nvim/site/pack/packer/start/packer.nvim",
     url = "https://github.com/wbthomason/packer.nvim"
+  },
+  ["papercolor-theme"] = {
+    loaded = true,
+    path = "/Users/julien/.local/share/nvim/site/pack/packer/start/papercolor-theme",
+    url = "https://github.com/NLKNguyen/papercolor-theme"
   },
   ["plenary.nvim"] = {
     loaded = true,
@@ -322,6 +309,11 @@ _G.packer_plugins = {
     path = "/Users/julien/.local/share/nvim/site/pack/packer/start/vim-tmux-navigator",
     url = "https://github.com/christoomey/vim-tmux-navigator"
   },
+  ["vim-unimpaired"] = {
+    loaded = true,
+    path = "/Users/julien/.local/share/nvim/site/pack/packer/start/vim-unimpaired",
+    url = "https://github.com/tpope/vim-unimpaired"
+  },
   ["vista.vim"] = {
     loaded = true,
     path = "/Users/julien/.local/share/nvim/site/pack/packer/start/vista.vim",
@@ -330,16 +322,6 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Runtimepath customization
-time([[Runtimepath customization]], true)
-vim.o.runtimepath = vim.o.runtimepath .. ",/Users/julien/.local/share/nvim/site/pack/packer/start/onehalf/vim"
-time([[Runtimepath customization]], false)
-
--- Command lazy-loads
-time([[Defining lazy-load commands]], true)
-pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file CodeActionMenu lua require("packer.load")({'nvim-code-action-menu'}, { cmd = "CodeActionMenu", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
-time([[Defining lazy-load commands]], false)
-
 if should_profile then save_profiles() end
 
 end)
