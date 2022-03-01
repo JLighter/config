@@ -8,7 +8,7 @@ end
 
 function DarkMode() 
     vim.o.background = 'dark'
-    vim.cmd("colorscheme onedark")
+    vim.cmd("colorscheme aura")
     vim.notify("Dark mode enabled !")
 end
 

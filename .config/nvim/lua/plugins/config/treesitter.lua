@@ -6,7 +6,7 @@ if not present then
 end
 
 ts_config.setup {
-    ensure_installed = "all",
+    ensure_installed = "maintained",
     highlight = {
         enable = true,
         matchup = {
@@ -25,4 +25,3 @@ ts_config.setup {
 
 vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
-vim.cmd("au BufRead * normal zR")

@@ -1,6 +1,6 @@
 [user]
 	email = heroguelle.julien@gmail.com
-	name = Julien Heroguelle
+	name = JLighter
 [alias]
 	quickshare = daemon --verbose --export-all --base-path=.git --reuseaddr --strict-paths .git/
 [http]
@@ -18,3 +18,8 @@
 	spellcheck = false
 [url "ssh://git@github.com/jlighter"]
 	insteadOf = https://github.com/jlighter
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f

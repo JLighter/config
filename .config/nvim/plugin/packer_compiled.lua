@@ -69,11 +69,6 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
-  ["JABS.nvim"] = {
-    loaded = true,
-    path = "/Users/julien/.local/share/nvim/site/pack/packer/start/JABS.nvim",
-    url = "https://github.com/matbme/JABS.nvim"
-  },
   LuaSnip = {
     loaded = true,
     path = "/Users/julien/.local/share/nvim/site/pack/packer/start/LuaSnip",
@@ -174,11 +169,6 @@ _G.packer_plugins = {
     path = "/Users/julien/.local/share/nvim/site/pack/packer/start/nerdfont.vim",
     url = "https://github.com/lambdalisue/nerdfont.vim"
   },
-  nextval = {
-    loaded = true,
-    path = "/Users/julien/.local/share/nvim/site/pack/packer/start/nextval",
-    url = "https://github.com/vim-scripts/nextval"
-  },
   ["nvim-cmp"] = {
     loaded = true,
     path = "/Users/julien/.local/share/nvim/site/pack/packer/start/nvim-cmp",
@@ -198,6 +188,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/julien/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
+  },
+  ["nvim-tree.lua"] = {
+    loaded = true,
+    path = "/Users/julien/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
+    url = "https://github.com/kyazdani42/nvim-tree.lua"
   },
   ["nvim-treesitter"] = {
     loaded = true,
@@ -224,6 +219,11 @@ _G.packer_plugins = {
     path = "/Users/julien/.local/share/nvim/site/pack/packer/start/papercolor-theme",
     url = "https://github.com/NLKNguyen/papercolor-theme"
   },
+  playground = {
+    loaded = true,
+    path = "/Users/julien/.local/share/nvim/site/pack/packer/start/playground",
+    url = "https://github.com/nvim-treesitter/playground"
+  },
   ["plenary.nvim"] = {
     loaded = true,
     path = "/Users/julien/.local/share/nvim/site/pack/packer/start/plenary.nvim",
@@ -238,6 +238,16 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/julien/.local/share/nvim/site/pack/packer/start/registers.nvim",
     url = "https://github.com/tversteeg/registers.nvim"
+  },
+  ["rooter.nvim"] = {
+    loaded = true,
+    path = "/Users/julien/.local/share/nvim/site/pack/packer/start/rooter.nvim",
+    url = "https://github.com/ygm2/rooter.nvim"
+  },
+  ["telescope-fzy-native.nvim"] = {
+    loaded = true,
+    path = "/Users/julien/.local/share/nvim/site/pack/packer/start/telescope-fzy-native.nvim",
+    url = "https://github.com/nvim-telescope/telescope-fzy-native.nvim"
   },
   ["telescope.nvim"] = {
     loaded = true,
@@ -314,6 +324,11 @@ _G.packer_plugins = {
     path = "/Users/julien/.local/share/nvim/site/pack/packer/start/vim-unimpaired",
     url = "https://github.com/tpope/vim-unimpaired"
   },
+  ["vim-vinegar"] = {
+    loaded = true,
+    path = "/Users/julien/.local/share/nvim/site/pack/packer/start/vim-vinegar",
+    url = "https://github.com/tpope/vim-vinegar"
+  },
   ["vista.vim"] = {
     loaded = true,
     path = "/Users/julien/.local/share/nvim/site/pack/packer/start/vista.vim",
@@ -327,5 +342,6 @@ if should_profile then save_profiles() end
 end)
 
 if not no_errors then
+  error_msg = error_msg:gsub('"', '\\"')
   vim.api.nvim_command('echohl ErrorMsg | echom "Error in packer_compiled: '..error_msg..'" | echom "Please check your config for correctness" | echohl None')
 end

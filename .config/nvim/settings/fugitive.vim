@@ -15,3 +15,4 @@ nnoremap <silent> <leader>gb :Git blame<CR>
 nnoremap <silent> <leader>grl :Git reflog<CR>
 nnoremap <silent> <leader>gr :Gread<CR>
 nnoremap <silent> <leader>gw :Gwrite<CR>
+nnoremap <silent> <leader>gd :Gdiffsplit<CR>

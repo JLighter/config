@@ -35,10 +35,6 @@ nnoremap <C-t>j :tabl<CR>
 " Ctrl-Alt-k
 nnoremap <C-t>k :tabr<CR>
 
-" Nextval 
-nmap <silent> + <Plug>nextvalInc
-nmap <silent> = <Plug>nextvalDec
-
 " Easy align
 " Start interactive EasyAlign in visual mode (e.g. vipga)
 xmap ga <Plug>(EasyAlign)

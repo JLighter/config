@@ -37,7 +37,6 @@ return require("packer").startup(function(use)
    use {"tami5/lspsaga.nvim"}
 
    use {'L3MON4D3/LuaSnip'}
--- }
 
 -- { CMP
    use {"hrsh7th/nvim-cmp"}
@@ -56,6 +55,7 @@ return require("packer").startup(function(use)
 
 -- { Appearance
    use {'nvim-treesitter/nvim-treesitter'}
+   use {'nvim-treesitter/playground'}
    use {'norcalli/nvim-colorizer.lua'}
    use {'navarasu/onedark.nvim'}
    use {'rktjmp/lush.nvim'}
@@ -72,7 +72,8 @@ return require("packer").startup(function(use)
 --}
 
 -- { File manager
-   -- use { "kyazdani42/nvim-tree.lua" }
+   use { "kyazdani42/nvim-tree.lua" }
+   use {"ygm2/rooter.nvim"}
 -- }
 
 -- { Icons
@@ -92,7 +93,6 @@ return require("packer").startup(function(use)
    use {'tpope/vim-surround'}
    use {'editorconfig/editorconfig-vim'}
 
-   use {'vim-scripts/nextval'}
    use {'tpope/vim-repeat'}
    use {'tpope/vim-commentary'}
    use {'junegunn/vim-easy-align'}
@@ -112,6 +112,7 @@ return require("packer").startup(function(use)
 
 -- { Navigation
    use {'christoomey/vim-tmux-navigator'}
+   use {'tpope/vim-vinegar'}
 -- }
 
 -- { Utils

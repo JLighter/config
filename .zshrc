@@ -70,8 +70,12 @@ plugins=(
   git
   git-extras
   git-flow
+  github
+  gh
+  gitignore
   history
   kubectl
+  helm
   npm
   docker
   pyenv
@@ -154,7 +158,6 @@ bindkey -v
 export KEYTIMEOUT=1
 
 export PATH=$PATH:~/.npm-global/bin
-export PATH=$PATH:~/.local/bin
 
 source ~/.zshrc.custom
 

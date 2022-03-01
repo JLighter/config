@@ -9,7 +9,6 @@ local default_opts = {noremap = false, silent = true}
 map('n', '<leader>bx', ':bdelete %<CR>',        default_opts)
 -- map('n', '<leader>bxl', ':BufferLineCloseRight<CR>',        default_opts)
 -- map('n', '<leader>bxh', ':BufferLineCloseLeft<CR>',        default_opts)
-map('n', '<leader>bl', ':JABSOpen<CR>',            default_opts)
 
 -- map('n', '<leader>b1', ':BufferLineGoToBuffer 1<CR>',        default_opts)
 -- map('n', '<leader>b2', ':BufferLineGoToBuffer 2<CR>',        default_opts)
@@ -22,14 +21,10 @@ map('n', '<leader>bl', ':JABSOpen<CR>',            default_opts)
 -- map('n', '<leader>b9', ':BufferLineGoToBuffer 9<CR>',        default_opts)
 -- map('n', '<leader>b0', ':BufferLineGoToBuffer 10<CR>',        default_opts)
 
-map('n', '<C-p>', ':Telescopt find_files<CR>',        default_opts)
-map('n', '<leader><leader>', ':Telescopt live_grep<CR>',        default_opts)
-map('n', '<C-b>', ':Telescopt buffers<CR>',        default_opts)
+map('n', '<C-p>', ':Telescope find_files<CR>',        default_opts)
+map('n', '<leader><leader>', ':Telescope live_grep<CR>',        default_opts)
+map('n', '<C-b>', ':Telescope buffers<CR>',        default_opts)
 
--- }
-
--- { Explorer
-map('n', '-',           ':Explore<CR>', default_opts)
 -- }
 
 -- { Vista tag-viewer
@@ -52,14 +47,18 @@ map('n', 'K',           '<cmd>lua vim.lsp.buf.hover()<CR>', default_opts)
 map('n', 'gD',          '<cmd>lua vim.lsp.buf.type_definition()<CR>', default_opts)
 map('n', 'gd',          '<cmd>lua vim.lsp.buf.definition()<CR>', default_opts)
 map('n', 'gi',          '<cmd>lua vim.lsp.buf.implementation()<CR>', default_opts)
-map('n', 'D',           '<cmd>lua vim.lsp.diagnostic.show_position_diagnostics()<CR>', default_opts)
+map('n', 'D',           '<cmd>lua vim.diagnostic.get()<CR>', default_opts)
 map('n', '<leader>wa',  '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', default_opts)
 map('n', '<leader>wr',  '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', default_opts)
 map('n', '<leader>wl',  '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', default_opts)
 map('n', 'gr',          '<cmd>lua vim.lsp.buf.references()<CR>', default_opts)
-map('n', '[d',          '<cmd>lua vim.lsp.diagnostic.goto_previous()<CR>', default_opts)
-map('n', ']d',          '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', default_opts)
-map('n', '<leader>q',   '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', default_opts)
+map('n', '[d',          '<cmd>lua vim.diagnostic.goto_prev()<CR>', default_opts)
+map('n', ']d',          '<cmd>lua vim.diagnostic.goto_next()<CR>', default_opts)
+map('n', '<leader>q',   '<cmd>lua vim.diagnostic.setloclist()<CR>', default_opts)
+-- }
+
+-- { Explorer
+map('n', '-',   '<cmd>NvimTreeOpen<CR>', default_opts)
 -- }
 
 -- { Top5 mappings
@@ -78,15 +77,11 @@ map('i', '(',          '(<c-g>u', {noremap = true})
 map('i', '{',          '{<c-g>u', {noremap = true})
 map('i', '=',          '=<c-g>u', {noremap = true})
 
--- Jumplist mutations
-map("n", "j", [[v:count ? (v:count > 5 ? "m'" . v:count : '') . 'j' : 'gj']], { expr = true, noremap = true })
-map("n", "k", [[v:count ? (v:count > 5 ? "m'" . v:count : '') . 'k' : 'gk']], { expr = true, noremap = true })
-
 -- Moving text
 map("v", "<C-j>", [[:m '>+1<CR>gv=gv]], {noremap=true})
 map("v", "<C-k>", [[:m '<-2<CR>gv=gv]], {noremap=true})
 map("i", "<C-k>", '<esc>:m .-2<CR>==a', {noremap=true, silent=true})
 map("i", "<C-j>", '<esc>:m .+1<CR>==a', {noremap=true, silent=true})
-map("n", "<C-j>", [[:m .+1<CR>==]], {noremap=true})
-map("n", "<C-k>", [[:m .-2<CR>==]], {noremap=true})
+map("n", "<leader>j", [[:m .+1<CR>==]], {noremap=true})
+map("n", "<leader>k", [[:m .-2<CR>==]], {noremap=true})
 -- }

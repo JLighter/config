@@ -45,6 +45,27 @@ lsp_installer.on_server_ready(function(server)
         on_attach = on_attach
     }
 
+    if server.name == "yamlls" then
+      opts.settings = {
+        redhat = { telemetry = { enabled = false } },
+        yaml = {
+          schemaStore = {
+            url = "https://www.schemastore.org/api/json/catalog.json",
+            enable = true,
+          },
+          schemas = {
+            ["https://json.schemastore.org/chart.json"] = "Chart.yaml"
+          },
+        },
+      } 
+      opts.on_attach = function(client, bufnr)
+        on_attach(client, bufnr)
+        if vim.bo[bufnr].buftype ~= "" or vim.bo[bufnr].filetype == "helm" then
+          vim.diagnostic.disable()
+        end
+      end
+    end
+
     if server.name == "sumneko_lua" then
         opts.settings = {
             Lua = {

@@ -12,16 +12,16 @@ opt.clipboard = 'unnamedplus'
 opt.history = 100
 opt.cmdheight = 1
 opt.synmaxcol = 240
-opt.tabstop = 2
-opt.pumheight = 10
 opt.timeoutlen = 500
 
+opt.tabstop = 2
+opt.shiftwidth = 2
+opt.expandtab = true
+opt.cindent = true
 opt.autoindent = true
-opt.smartindent = true
 
 opt.number = true
 opt.showmatch = true
-opt.expandtab = true
 opt.ignorecase = true
 opt.smartcase = true
 opt.swapfile = false
@@ -40,7 +40,6 @@ g.matchup_delim_stopline = 1500
 g.loaded_matchit = 1
 
 g.signcolumn = yes
-g.shiftwidth = 2
 g.mouse = n
 g.backspace = indent,eol,start
 -- TextEdit might fail if hidden is not set.
@@ -48,11 +47,6 @@ g.hidden = true
 g.autoread = true
 g.ttyfast = true
 g.laststatus = 0
-
--- show existing tab with 2 spaces width
--- when indenting with '>', use 2 spaces width
--- On pressing tab, insert 2 spaces
-g.expandtab = true
 
 -- Keep cursor on middle of the screen
 g.scrolloff = 3
@@ -80,6 +74,12 @@ g.nowritebackup = true
 -- Undo file
 vim.cmd('set undofile')
 vim.cmd('set undodir=~/.vim/undodir')
+
+-- Make jumplist behave like an history
+vim.cmd('set jumpoptions+=stack')
+
+-- 
+vim.cmd('set hidden')
 
 g.spelllang = "en,fr"
 

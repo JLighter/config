@@ -4,47 +4,6 @@
 alias l='ls'
 alias ll='ls -l'
 alias la='ls -la'
-# ----------------------
-# Git Aliases
-# ----------------------
-alias ga='git add'
-alias gaa='git add .'
-alias gaaa='git add --all'
-alias gau='git add --update'
-alias gb='git branch'
-alias gbd='git branch --delete'
-alias gc='git commit'
-alias gcm='git commit --message'
-alias gcf='git commit --fixup'
-alias gco='git checkout'
-alias gcob='git checkout -b'
-alias gcom='git checkout master'
-alias gcos='git checkout staging'
-alias gcod='git checkout develop'
-alias gco--='git checkout --'
-alias gd='git diff'
-alias gda='git diff HEAD'
-alias gi='git init'
-alias gl='git log --oneline --decorate'
-alias glg='git log --graph --oneline --decorate'
-alias gla='git log --graph --oneline --decorate --all'
-alias gm='git merge --no-ff'
-alias gma='git merge --abort'
-alias gmc='git merge --continue'
-alias gp='git pull'
-alias gpd='git pull origin develop'
-alias gpr='git pull --rebase'
-alias gr='git rebase'
-alias gs='git status'
-alias gss='git status --short'
-alias gst='git stash'
-alias gsta='git stash apply'
-alias gstd='git stash drop'
-alias gstl='git stash list'
-alias gstp='git stash pop'
-alias gsts='git stash save'
-alias gpod='git push origin develop'
-
 # -----------
 # Composer and Symfony
 # -----------
@@ -92,4 +51,15 @@ alias kxs="kubectl config use-context"
 # ----------------------
 alias tf="terraform"
 
+# ----------------------
+# PHP Compatibility checker
+# ----------------------
+alias phpcc='docker run --rm -it --init -v "$PWD:$PWD" -w "$PWD" jlighter/phpcs:latest -p -n --extensions="inc,php,php3,php4,php5,php7,php8,phtml"'
+alias phpstan='docker run --rm -v $(pwd):/app -v $(pwd)/../../phpstan.neon:/tmp/phpstan.neon ghcr.io/phpstan/phpstan analyse -c /tmp/phpstan.neon /app'
 
+# ----------------------
+# vim
+# ----------------------
+alias vim='nvim'
+alias v='nvim'
+alias vi='nvim'
