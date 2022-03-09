@@ -67,6 +67,7 @@ COMPLETION_WAITING_DOTS="true"
 # For the last plugins, they need to be installed manually
 # See the link next : https://github.com/ohmyzsh/ohmyzsh/issues/7688#issuecomment-477340254
 plugins=(
+  macos
   git
   git-extras
   git-flow
@@ -189,4 +190,3 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
-
