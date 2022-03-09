@@ -1,13 +1,3 @@
-alias john=~/.local/bin/john/john
-alias mkvirtualenv="mkvirtualenv --python=$(which python2)"
-alias mkvirtualenv3="mkvirtualenv --python=$(which python3)"
-export WORKON_HOME=~/.local/envs
-export PROJECT_HOME=~/Documents/Personal/Python
-export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
-export VIRTUALENVWRAPPER_VIRTUALENV=~/.local/bin/virtualenv
-source ~/.local/bin/virtualenvwrapper.sh
-source ~/.local/autoenv/activate.sh
-
 # Kubectl and minikube autocompletion
 if command -v kubectl &>/dev/null; then
   source <(kubectl completion zsh)
@@ -28,4 +18,6 @@ if command -v aws &>/dev/null; then
   complete -C '/home/jlighter/.local/lib/aws/bin/aws_completer' aws
 fi
 
-export PATH=$PATH:/snap/bin
+alias john=~/.local/bin/john/john
+
+export PATH=$PATH:~/.npm-globals/bin
