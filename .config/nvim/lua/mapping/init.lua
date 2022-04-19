@@ -58,7 +58,7 @@ map('n', '<leader>q',   '<cmd>lua vim.diagnostic.setloclist()<CR>', default_opts
 -- }
 
 -- { Explorer
-map('n', '-',   '<cmd>NvimTreeOpen<CR>', default_opts)
+-- map('n', '-',   '<cmd>NvimTreeOpen<CR>', default_opts)
 -- }
 
 -- { Top5 mappings
@@ -78,8 +78,8 @@ map('i', '{',          '{<c-g>u', {noremap = true})
 map('i', '=',          '=<c-g>u', {noremap = true})
 
 -- Moving text
-map("v", "<C-j>", [[:m '>+1<CR>gv=gv]], {noremap=true})
-map("v", "<C-k>", [[:m '<-2<CR>gv=gv]], {noremap=true})
+-- map("v", "<C-j>", [[:m '>+1<CR>gv=gv]], {noremap=true}) -- Conflict with nvim-cmp up and down on completion
+-- map("v", "<C-k>", [[:m '<-2<CR>gv=gv]], {noremap=true})
 map("i", "<C-k>", '<esc>:m .-2<CR>==a', {noremap=true, silent=true})
 map("i", "<C-j>", '<esc>:m .+1<CR>==a', {noremap=true, silent=true})
 map("n", "<leader>j", [[:m .+1<CR>==]], {noremap=true})

@@ -2,8 +2,8 @@ export GOPATH=$HOME/Documents/Personal/Go
 export GOBIN=$HOME/.local/go/bin
 
 # Use infogerence aliases
-if [ -f "$HOME/.server_aliases" ]; then
-    source $HOME/.server_aliases
+if [ -f "$HOME/.ssh_aliases" ]; then
+    source $HOME/.ssh_aliases
 fi
 
 # Kubectl and minikube autocompletion
@@ -42,6 +42,10 @@ fi
 # KNative
 if command -v kn &>/dev/null; then
   source <(kn completion zsh)
+fi
+
+if [[ -d ~/.local/bin ]] then
+  export PATH=$PATH:~/.local/bin
 fi
 
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"

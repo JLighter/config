@@ -189,11 +189,6 @@ _G.packer_plugins = {
     path = "/Users/julien/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
   },
-  ["nvim-tree.lua"] = {
-    loaded = true,
-    path = "/Users/julien/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
-    url = "https://github.com/kyazdani42/nvim-tree.lua"
-  },
   ["nvim-treesitter"] = {
     loaded = true,
     path = "/Users/julien/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
@@ -238,11 +233,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/julien/.local/share/nvim/site/pack/packer/start/registers.nvim",
     url = "https://github.com/tversteeg/registers.nvim"
-  },
-  ["rooter.nvim"] = {
-    loaded = true,
-    path = "/Users/julien/.local/share/nvim/site/pack/packer/start/rooter.nvim",
-    url = "https://github.com/ygm2/rooter.nvim"
   },
   ["telescope-fzy-native.nvim"] = {
     loaded = true,

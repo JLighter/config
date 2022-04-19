@@ -70,7 +70,7 @@ lsp_installer.on_server_ready(function(server)
         opts.settings = {
             Lua = {
               diagnostics = {
-                globals = { 'vim', 'use' }
+                globals = { 'vim' }
               },
               workspace = {
                 -- Make the server aware of Neovim runtime files

@@ -139,7 +139,7 @@ fpath=($HOME/.zsh/eksctl $fpath)  # <- for completion
 source $HOME/.aliases
 
 # TERM var
-export TERM='screen-256color'
+export TERM='screen-256color-bce'
 
 # Tab/auto complete
 autoload -U compinit
