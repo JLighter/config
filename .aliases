@@ -1,9 +1,14 @@
 # ----------------------
-# Current aliases
+# Common aliases
 # ----------------------
 alias l='ls'
 alias ll='ls -l'
 alias la='ls -la'
+
+# Quit console like in vim
+alias :q='exit'
+alias q='exit'
+
 # -----------
 # Composer and Symfony
 # -----------
@@ -63,3 +68,8 @@ alias phpstan='docker run --rm -v $(pwd):/app -v $(pwd)/../../phpstan.neon:/tmp/
 alias vim='nvim'
 alias v='nvim'
 alias vi='nvim'
+
+# ----------------------
+# Ranger
+# ----------------------
+alias r='ranger'

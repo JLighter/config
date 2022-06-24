@@ -58,7 +58,7 @@ map('n', '<leader>q',   '<cmd>lua vim.diagnostic.setloclist()<CR>', default_opts
 -- }
 
 -- { Explorer
--- map('n', '-',   '<cmd>NvimTreeOpen<CR>', default_opts)
+map('n', '-',   '<cmd>NvimTreeOpen<CR>', default_opts)
 -- }
 
 -- { Top5 mappings

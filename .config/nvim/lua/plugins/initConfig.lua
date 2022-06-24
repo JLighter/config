@@ -9,7 +9,6 @@ require('plugins/config/lsp-cmp')
 require('plugins/config/lualine')
 require('plugins/config/luatab')
 require('plugins/config/registers')
-require('plugins/config/vista')
 -- require('plugins/config/bufferline')
 require('plugins/config/git')
 

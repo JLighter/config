@@ -15,7 +15,7 @@ local list = {
   { key = "K",                            cb = tree_cb("first_sibling") },
   { key = "J",                            cb = tree_cb("last_sibling") },
   { key = "I",                            cb = tree_cb("toggle_ignored") },
-  { key = "H",                           cb = tree_cb("toggle_dotfiles") },
+  { key = "H",                            cb = tree_cb("toggle_dotfiles") },
   { key = "R",                            cb = tree_cb("refresh") },
   { key = "a",                            cb = tree_cb("create") },
   { key = "d",                            cb = tree_cb("remove") },
@@ -35,108 +35,62 @@ local list = {
   { key = "g?",                           cb = tree_cb("toggle_help") },
 }
 
-g.nvim_tree_show_icons = {
-    git = 1,
-    folder_arrows = 1,
-    folders = 1,
-    files = 1
-}
-g.nvim_tree_icons = {
-    default = "",
-    symlink = "",
-    git = {
-        ignore = 1,
-        unstaged = "",
-        staged = "S",
-        unmerged = "",
-        renamed = "➜",
-        deleted = "",
-        untracked = "U",
-        ignored = "◌"
-    },
-    folder = {
-        arrow_open = "",
-        arrow_closed = "",
-        default = "",
-        open = "",
-        empty = "",
-        empty_open = "",
-        symlink = "",
-        symlink_open = ""
-    },
-}
-
-g.nvim_tree_highlight_opened_files = 1
-g.nvim_tree_root_folder_modifier = table.concat {":t:gs?$?/..", string.rep(" ", 1000), "?:gs?^??"}
-g.nvim_tree_git_hl = 1 -- 0 by default, will enable file highlight for git attributes (can be used without the icons).
-g.nvim_tree_add_trailing = 0 -- 0 by default, append a traiing slash to folder names
-g.nvim_tree_group_empty = 0 -- 0 by default, compact folders that only contain a single folder into one node in the file tree
-g.nvim_tree_icon_padding = ' ' -- one space by default, used for rendering the space between the icon and the filename. Use with caution, it could break rendering if you set an empty string depending on your font.
-g.nvim_tree_symlink_arrow = ' >> ' -- defaults to ' ➛ '. used as a separator between symlinks' source and target.
-g.nvim_tree_respect_buf_cwd = 0 -- 0 by default, will change cwd of nvim-tree to that of new buffer's when opening nvim-tree.
-g.nvim_tree_create_in_closed_folder = 1 -- 1 by default, When creating files, sets the path of a file when cursor is on a closed folder to the parent folder when 0, and inside the folder when 1.
 g.nvim_tree_refresh_wait = 1000 -- 1000 by default, control how often the tree can be refreshed, 1000 means the tree can be refresh once per 1000ms.
 
-g.nvim_tree_special_files = {
-    ['README.md'] = 1,
-    ['Makefile'] = 1,
-    ['MAKEFILE'] = 1
-} -- List of filenames that gets highlighted with NvimTreeSpecialFile
-
 require'nvim-tree'.setup {
-    disable_netrw       = true,
-    hijack_netrw        = true,
-    open_on_setup       = true,
-    ignore_ft_on_setup  = {},
-    auto_close          = false,
-    open_on_tab         = true,
-    hijack_cursor       = true,
-    update_cwd          = true,
-    diagnostics = {
-        enable = true,
-        icons = {
-            hint = "",
-            info = "",
-            warning = "",
-            error = ""
-        }
-    },
-    update_focused_file = {
-      enable = true,
-      update_cwd = false
-    },
     view = {
-      hide_root_folder = true,
-        mappings = {
-            custom_only = true,
-            list = list
-        }
+      preserve_window_proportions = true,
+      mappings = {
+          custom_only = true,
+          list = list
+      }
     },
     renderer = {
+      special_files = {
+        ['README.md'] = 1,
+        ['Makefile'] = 1,
+        ['MAKEFILE'] = 1
+      }, -- List of filenames that gets highlighted with NvimTreeSpecialFile
+      root_folder_modifier = table.concat {":t:gs?$?/..", string.rep(" ", 1000), "?:gs?^??"},
       indent_markers = {
-        enable = false,
-        icons = {
-          corner = "└ ",
-          edge = "│ ",
-          none = "  ",
-        },
+        enable = false
       },
       icons = {
         webdev_colors = true,
+        git_placement = 'after',
+        show = {
+          git = true,
+          folder_arrow = true,
+          folder = true,
+          file = true
+        },
+        glyphs = {
+          default = "",
+          symlink = "",
+          git = {
+            unstaged = "",
+            staged = "S",
+            unmerged = "",
+            renamed = "➜",
+            deleted = "",
+            untracked = "U",
+            ignored = "◌"
+          },
+          folder = {
+            arrow_open = "",
+            arrow_closed = "",
+            default = "",
+            open = "",
+            empty = "",
+            empty_open = "",
+            symlink = "",
+            symlink_open = ""
+          }
+        }
       },
     },
-    hijack_directories = {
-      enable = true,
-      auto_open = true,
-    },
-    update_focused_file = {
-      enable = true,
-      update_cwd = true,
-      ignore_list = {},
-    },
-    ignore_ft_on_setup = {},
     system_open = {
-      cmd = nil,
+      cmd = "open",
       args = {},
     },
     diagnostics = {
@@ -156,25 +110,18 @@ require'nvim-tree'.setup {
     },
     git = {
       enable = true,
-      ignore = true,
+      ignore = false,
       timeout = 400,
     },
     actions = {
-      use_system_clipboard = true,
       change_dir = {
         enable = true,
         global = false,
       },
       open_file = {
         quit_on_open = true,
-        resize_window = true,
         window_picker = {
-          enable = true,
-          chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890",
-          exclude = {
-            filetype = { "notify", "packer", "qf", "diff", "fugitive", "fugitiveblame" },
-            buftype = { "nofile", "terminal", "help" },
-          },
+          enable = false,
         },
       },
     },

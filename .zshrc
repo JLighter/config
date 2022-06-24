@@ -139,7 +139,7 @@ fpath=($HOME/.zsh/eksctl $fpath)  # <- for completion
 source $HOME/.aliases
 
 # TERM var
-export TERM='screen-256color-bce'
+export TERM='screen-256color'
 
 # Tab/auto complete
 autoload -U compinit
@@ -158,9 +158,19 @@ bindkey -v '^?' backward-delete-char
 bindkey -v
 export KEYTIMEOUT=1
 
-export PATH=$PATH:~/.npm-global/bin
+export PATH=$PATH:~/.npm-globals/bin
 
 source ~/.zshrc.custom
+
+# Prevent nested ranger instances
+RANGER_PATH=$(which ranger)
+ranger() {
+    if [ -z "$RANGER_LEVEL" ]; then
+        zsh $RANGER_PATH "$@"
+    else
+        exit
+    fi
+}
 
 . ~/.local/z/z.sh
 

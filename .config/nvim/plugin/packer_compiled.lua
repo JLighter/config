@@ -79,10 +79,10 @@ _G.packer_plugins = {
     path = "/Users/julien/.local/share/nvim/site/pack/packer/start/aura.nvim",
     url = "https://github.com/JLighter/aura.nvim"
   },
-  ["bufferline.nvim"] = {
+  bufferline = {
     loaded = true,
-    path = "/Users/julien/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
-    url = "https://github.com/akinsho/bufferline.nvim"
+    path = "/Users/julien/.local/share/nvim/site/pack/packer/start/bufferline",
+    url = "https://github.com/akinsho/bufferline"
   },
   ["cmp-buffer"] = {
     loaded = true,
@@ -118,6 +118,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/julien/.local/share/nvim/site/pack/packer/start/copilot.vim",
     url = "https://github.com/github/copilot.vim"
+  },
+  ["draft.vim"] = {
+    loaded = true,
+    path = "/Users/julien/.local/share/nvim/site/pack/packer/start/draft.vim",
+    url = "https://github.com/jakeroggenbuck/draft.vim"
   },
   ["editorconfig-vim"] = {
     loaded = true,
@@ -169,6 +174,11 @@ _G.packer_plugins = {
     path = "/Users/julien/.local/share/nvim/site/pack/packer/start/nerdfont.vim",
     url = "https://github.com/lambdalisue/nerdfont.vim"
   },
+  ["nightfox.nvim"] = {
+    loaded = true,
+    path = "/Users/julien/.local/share/nvim/site/pack/packer/start/nightfox.nvim",
+    url = "https://github.com/EdenEast/nightfox.nvim"
+  },
   ["nvim-cmp"] = {
     loaded = true,
     path = "/Users/julien/.local/share/nvim/site/pack/packer/start/nvim-cmp",
@@ -188,6 +198,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/julien/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
+  },
+  ["nvim-tree.lua"] = {
+    loaded = true,
+    path = "/Users/julien/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
+    url = "https://github.com/kyazdani42/nvim-tree.lua"
   },
   ["nvim-treesitter"] = {
     loaded = true,
@@ -233,6 +248,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/julien/.local/share/nvim/site/pack/packer/start/registers.nvim",
     url = "https://github.com/tversteeg/registers.nvim"
+  },
+  ["rooter.nvim"] = {
+    loaded = true,
+    path = "/Users/julien/.local/share/nvim/site/pack/packer/start/rooter.nvim",
+    url = "https://github.com/ygm2/rooter.nvim"
   },
   ["telescope-fzy-native.nvim"] = {
     loaded = true,
@@ -318,11 +338,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/julien/.local/share/nvim/site/pack/packer/start/vim-vinegar",
     url = "https://github.com/tpope/vim-vinegar"
-  },
-  ["vista.vim"] = {
-    loaded = true,
-    path = "/Users/julien/.local/share/nvim/site/pack/packer/start/vista.vim",
-    url = "https://github.com/liuchengxu/vista.vim"
   }
 }
 

@@ -50,7 +50,7 @@ return require("packer").startup(function(use)
 
 -- { Tab
    use {'alvarosevilla95/luatab.nvim', requires='kyazdani42/nvim-web-devicons'}
-   use {'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons'}
+   use {'akinsho/bufferline', requires = 'kyazdani42/nvim-web-devicons'}
 -- }
 
 -- { Appearance
@@ -61,6 +61,8 @@ return require("packer").startup(function(use)
    use {'rktjmp/lush.nvim'}
    use {'JLighter/aura.nvim'}
    use {'NLKNguyen/papercolor-theme'}
+   use {'EdenEast/nightfox.nvim'} 
+
 -- } 
 
 -- { Status line
@@ -120,6 +122,5 @@ return require("packer").startup(function(use)
    use {'tpope/vim-unimpaired'}
    use {'wincent/terminus'}
    use {'tpope/vim-dotenv'}
-   use {'liuchengxu/vista.vim'}
 -- }
 end)
