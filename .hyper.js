@@ -175,7 +175,7 @@ module.exports = {
   //   `hyperpower`
   //   `@company/project`
   //   `project#1.0.1`
-  plugins: ["hyper-aura-theme", "hyperminimal", "hyperfullscreen", "hyperfull"],
+  plugins: ["hyper-gruvbox", "hyperminimal", "hyperfullscreen", "hyperfull"],
 
   // in development, you can create a directory under
   // `~/.hyper_plugins/local/` and include it here

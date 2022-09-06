@@ -2,6 +2,7 @@ local opt = vim.opt
 local g = vim.g
 local cmd = vim.cmd
 
+
 g.encoding = "UTF-8"
 g.compatible = false
 
@@ -85,3 +86,4 @@ g.spelllang = "en,fr"
 
 g.matchup_matchparen_offscreen = {method='popup'}
 g.loaded_matchit = 1
+

@@ -1,6 +1,8 @@
 export GOPATH=$HOME/Documents/Personal/Go
 export GOBIN=$HOME/.local/go/bin
 
+export BAT_THEME="gruvbox-dark"
+
 # Use infogerence aliases
 if [ -f "$HOME/.ssh_aliases" ]; then
     source $HOME/.ssh_aliases

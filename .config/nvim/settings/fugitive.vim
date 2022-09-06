@@ -1,18 +1,18 @@
 " Fugitive
-function! ToggleGStatus()
-    if buflisted(bufname('.git/index'))
-        bd .git/index
-    else
-        Git
-    endif
-endfunction
-command! ToggleGStatus :call ToggleGStatus()
-
-nnoremap <silent> <leader>gs :ToggleGStatus<CR>
+nnoremap <silent> <leader>gs :Git<CR>
 nnoremap <silent> <leader>gl :Gllog<CR>
-nnoremap <silent> <leader>go :MerginalToggle<CR>
 nnoremap <silent> <leader>gb :Git blame<CR>
-nnoremap <silent> <leader>grl :Git reflog<CR>
-nnoremap <silent> <leader>gr :Gread<CR>
-nnoremap <silent> <leader>gw :Gwrite<CR>
+nnoremap <silent> <leader>gr :Git reflog<CR>
+nnoremap <silent> <leader>gm :G mergetool<CR>
 nnoremap <silent> <leader>gd :Gdiffsplit<CR>
+nnoremap <silent> <leader>gc :Git commit<CR>
+nnoremap <silent> <leader>go :Git branch<CR>
+nnoremap <silent> <leader>gpl :Git pull 
+nnoremap <silent> <leader>gps :Git push 
+nnoremap <silent> <leader>gpf :Git fetch 
+nnoremap <silent> <leader>gpfa :Git fetch --all<CR>
+nnoremap <silent> <leader>gB :Git browse<CR>
+
+" Clean fugitive buffers after using them
+autocmd BufReadPost fugitive://* set bufhidden=delete
+

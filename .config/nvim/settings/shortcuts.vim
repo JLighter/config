@@ -21,10 +21,6 @@ noremap <Down> <Nop>
 noremap <Left> <Nop>
 noremap <Right> <Nop>
 
-" Fuzzyfuz config
-nnoremap <C-p> :GFiles<CR>
-nmap <leader><leader> :Rg<CR>
-
 " Mapping to switch between tabs
 " Ctrl-Alt-l
 nnoremap <C-t>l :tabn<CR>
@@ -41,6 +37,3 @@ xmap ga <Plug>(EasyAlign)
 
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
-
-nnoremap <silent> <Leader>l ml:execute 'match Search /\%'.line('.').'l/'<CR>
-nnoremap <silent> <Leader>cl :match<CR>

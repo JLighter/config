@@ -9,10 +9,10 @@ require('gitsigns').setup {
     keymaps = {
       -- Default keymap options
       noremap = true,
-  
+
       ['n <leader>hN'] = { expr = true, "&diff ? ']c' : '<cmd>lua require\"gitsigns.actions\".next_hunk()<CR>'"},
       ['n <leader>hP'] = { expr = true, "&diff ? '[c' : '<cmd>lua require\"gitsigns.actions\".prev_hunk()<CR>'"},
-  
+
       ['n <leader>hs'] = '<cmd>lua require"gitsigns".stage_hunk()<CR>',
       ['v <leader>hs'] = '<cmd>lua require"gitsigns".stage_hunk({vim.fn.line("."), vim.fn.line("v")})<CR>',
       ['n <leader>hsu'] = '<cmd>lua require"gitsigns".undo_stage_hunk()<CR>',
@@ -22,10 +22,10 @@ require('gitsigns').setup {
       ['n <leader>hp'] = '<cmd>lua require"gitsigns".preview_hunk()<CR>',
       ['n <leader>hS'] = '<cmd>lua require"gitsigns".stage_buffer()<CR>',
       ['n <leader>hr'] = '<cmd>lua require"gitsigns".reset_buffer_index()<CR>',
-  
+
       -- Text objects
       ['o ih'] = ':<C-U>lua require"gitsigns.actions".select_hunk()<CR>',
       ['x ih'] = ':<C-U>lua require"gitsigns.actions".select_hunk()<CR>'
     },
   }
-  
+

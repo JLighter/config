@@ -6,20 +6,49 @@ if not present then
 end
 
 ts_config.setup {
-    highlight = {
-        enable = true,
-        matchup = {
-            enable = true,              -- mandatory, false will disable the whole extension
-        },
+  highlight = {
+    enable = true,
+    use_languagetree = true,
+    matchup = {
+      enable = true, -- mandatory, false will disable the whole extension
     },
-    indent = {
-        enable = true
-    },
-    context_commentstring = {
-        enable = true,
-        -- This plugin provided an autocommand option
-        enable_autocmd = true,
-    }
+  },
+  indent = {
+    enable = true
+  },
+  ensure_installed = {
+    "lua",
+    "vim",
+    "javascript",
+    "typescript",
+    "c",
+    "go",
+    "rust",
+    "markdown",
+    "html",
+    "css",
+    "scss",
+    "php",
+    "java",
+    "bash",
+    "json",
+    "make",
+    "toml",
+    "yaml",
+    "graphql",
+    "comment",
+    "kotlin",
+    "help",
+    "ruby",
+    "perl",
+    "fish",
+    "hcl"
+  },
+  context_commentstring = {
+    enable = true,
+    -- This plugin provided an autocommand option
+    enable_autocmd = true,
+  }
 }
 
 vim.opt.foldmethod = "expr"

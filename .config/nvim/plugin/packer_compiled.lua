@@ -74,16 +74,6 @@ _G.packer_plugins = {
     path = "/Users/julien/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
-  ["aura.nvim"] = {
-    loaded = true,
-    path = "/Users/julien/.local/share/nvim/site/pack/packer/start/aura.nvim",
-    url = "https://github.com/JLighter/aura.nvim"
-  },
-  bufferline = {
-    loaded = true,
-    path = "/Users/julien/.local/share/nvim/site/pack/packer/start/bufferline",
-    url = "https://github.com/akinsho/bufferline"
-  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/Users/julien/.local/share/nvim/site/pack/packer/start/cmp-buffer",
@@ -93,6 +83,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/julien/.local/share/nvim/site/pack/packer/start/cmp-cmdline",
     url = "https://github.com/hrsh7th/cmp-cmdline"
+  },
+  ["cmp-git"] = {
+    loaded = true,
+    path = "/Users/julien/.local/share/nvim/site/pack/packer/start/cmp-git",
+    url = "https://github.com/petertriho/cmp-git"
   },
   ["cmp-nvim-lsp"] = {
     loaded = true,
@@ -119,11 +114,6 @@ _G.packer_plugins = {
     path = "/Users/julien/.local/share/nvim/site/pack/packer/start/copilot.vim",
     url = "https://github.com/github/copilot.vim"
   },
-  ["draft.vim"] = {
-    loaded = true,
-    path = "/Users/julien/.local/share/nvim/site/pack/packer/start/draft.vim",
-    url = "https://github.com/jakeroggenbuck/draft.vim"
-  },
   ["editorconfig-vim"] = {
     loaded = true,
     path = "/Users/julien/.local/share/nvim/site/pack/packer/start/editorconfig-vim",
@@ -133,6 +123,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/julien/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
     url = "https://github.com/lewis6991/gitsigns.nvim"
+  },
+  gruvbox = {
+    loaded = true,
+    path = "/Users/julien/.local/share/nvim/site/pack/packer/start/gruvbox",
+    url = "https://github.com/morhetz/gruvbox"
   },
   ["lightline-gruvbox.vim"] = {
     loaded = true,
@@ -168,6 +163,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/julien/.local/share/nvim/site/pack/packer/start/lush.nvim",
     url = "https://github.com/rktjmp/lush.nvim"
+  },
+  ["mind.nvim"] = {
+    loaded = true,
+    path = "/Users/julien/.local/share/nvim/site/pack/packer/start/mind.nvim",
+    url = "https://github.com/phaazon/mind.nvim"
   },
   ["nerdfont.vim"] = {
     loaded = true,
@@ -208,6 +208,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/julien/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
+  },
+  ["nvim-treesitter-context"] = {
+    loaded = true,
+    path = "/Users/julien/.local/share/nvim/site/pack/packer/start/nvim-treesitter-context",
+    url = "https://github.com/nvim-treesitter/nvim-treesitter-context"
   },
   ["nvim-web-devicons"] = {
     loaded = true,
@@ -254,11 +259,6 @@ _G.packer_plugins = {
     path = "/Users/julien/.local/share/nvim/site/pack/packer/start/rooter.nvim",
     url = "https://github.com/ygm2/rooter.nvim"
   },
-  ["telescope-fzy-native.nvim"] = {
-    loaded = true,
-    path = "/Users/julien/.local/share/nvim/site/pack/packer/start/telescope-fzy-native.nvim",
-    url = "https://github.com/nvim-telescope/telescope-fzy-native.nvim"
-  },
   ["telescope.nvim"] = {
     loaded = true,
     path = "/Users/julien/.local/share/nvim/site/pack/packer/start/telescope.nvim",
@@ -268,6 +268,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/julien/.local/share/nvim/site/pack/packer/start/terminus",
     url = "https://github.com/wincent/terminus"
+  },
+  ["vim-abolish"] = {
+    loaded = true,
+    path = "/Users/julien/.local/share/nvim/site/pack/packer/start/vim-abolish",
+    url = "https://github.com/tpope/vim-abolish"
   },
   ["vim-commentary"] = {
     loaded = true,
@@ -289,11 +294,6 @@ _G.packer_plugins = {
     path = "/Users/julien/.local/share/nvim/site/pack/packer/start/vim-easy-align",
     url = "https://github.com/junegunn/vim-easy-align"
   },
-  ["vim-easymotion"] = {
-    loaded = true,
-    path = "/Users/julien/.local/share/nvim/site/pack/packer/start/vim-easymotion",
-    url = "https://github.com/easymotion/vim-easymotion"
-  },
   ["vim-fugitive"] = {
     loaded = true,
     path = "/Users/julien/.local/share/nvim/site/pack/packer/start/vim-fugitive",
@@ -313,6 +313,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/julien/.local/share/nvim/site/pack/packer/start/vim-repeat",
     url = "https://github.com/tpope/vim-repeat"
+  },
+  ["vim-rhubarb"] = {
+    loaded = true,
+    path = "/Users/julien/.local/share/nvim/site/pack/packer/start/vim-rhubarb",
+    url = "https://github.com/tpope/vim-rhubarb"
   },
   ["vim-startify"] = {
     loaded = true,

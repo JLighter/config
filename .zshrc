@@ -73,6 +73,7 @@ plugins=(
   git-flow
   github
   gh
+  git-open
   gitignore
   history
   kubectl

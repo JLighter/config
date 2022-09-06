@@ -5,9 +5,14 @@ alias l='ls'
 alias ll='ls -l'
 alias la='ls -la'
 
+# -----------
+# Composer and Symfony
+# -----------
+alias gim='vim . +Git +only'
 # Quit console like in vim
 alias :q='exit'
 alias q='exit'
+
 
 # -----------
 # Composer and Symfony
@@ -73,3 +78,8 @@ alias vi='nvim'
 # Ranger
 # ----------------------
 alias r='ranger'
+
+# ----------------------
+# Bat
+# ----------------------
+alias cat='bat --color=always'
