@@ -9,3 +9,4 @@
 .p10k.zsh,.p10k.zsh
 .gitconfig,.gitconfig
 .hyper.js,.hyper.js
+.config/tmuxinator,.config/tmuxinator

@@ -10,3 +10,4 @@
 .config/i3,.config/i3
 .config/rofi,.config/rofi
 .config/polybar,.config/polybar
+.config/tmuxinator,.config/tmuxinator
