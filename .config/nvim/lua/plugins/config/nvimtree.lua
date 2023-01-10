@@ -44,9 +44,9 @@ require'nvim-tree'.setup {
       change_dir = {
         enable = true,
         global = false,
-        restrict_above_cwd = true
       },
       open_file = {
+        quit_on_open = true,
         window_picker = {
           enable = false,
         },

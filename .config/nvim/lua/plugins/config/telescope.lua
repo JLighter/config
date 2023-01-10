@@ -51,6 +51,9 @@ require('telescope').setup {
       override_generic_sorter = true,
       override_file_sorter = true,
     },
+    ["ui-select"] = {
+      require("telescope.themes").get_dropdown {}
+    },
     repo = {
       list = {
         search_dirs = {
@@ -69,3 +72,4 @@ require('telescope').setup {
     }
   },
 }
+require("telescope").load_extension("ui-select")

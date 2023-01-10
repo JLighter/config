@@ -30,7 +30,7 @@ capabilities.textDocument.codeAction = {
   }
 }
 
-capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 local on_attach = function(client, bufnr)
   local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
@@ -88,16 +88,16 @@ lsp_installer.on_server_ready(function(server)
     }
   end
   if server.name == "yamlls" then
+    opts.capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
     opts.settings = {
       redhat = { telemetry = { enabled = false } },
       yaml = {
+        format = { enable = true },
+        completion = true,
+        hover = true,
         schemaStore = {
           url = "https://www.schemastore.org/api/json/catalog.json",
           enable = true,
-        },
-        schemas = {
-          ["https://json.schemastore.org/chart.json"] = "Chart.yaml",
-          kubernetes = "*.yaml"
         },
       },
     }

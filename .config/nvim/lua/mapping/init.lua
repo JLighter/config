@@ -14,10 +14,10 @@ map('n', '<leader>sq',  ':bufdo bwipeout<CR>', default_opts)
 
 -- { Completion and lsp
 map('n', '<leader>rn',  '<cmd>lua vim.lsp.buf.rename()<CR>', default_opts)
-map('v', '<leader>F',   '<cmd>lua vim.lsp.buf.range_formatting()<CR>', default_opts)
-map('n', '<leader>F',   '<cmd>lua vim.lsp.buf.formatting()<CR>', default_opts)
+map('v', '<leader>F',   '<cmd>lua vim.lsp.formatexpr()<CR>', default_opts)
+map('n', '<leader>F',   '<cmd>lua vim.lsp.buf.format()<CR>', default_opts)
 map('n', '<leader>ac',  '<cmd>lua vim.lsp.buf.code_action()<CR>', default_opts)
-map('v', '<leader>ac',  '<cmd>lua vim.lsp.buf.range_code_action()<CR>', default_opts)
+map('v', '<leader>ac',  '<cmd>lua vim.lsp.buf.code_action()<CR>', default_opts)
 map('n', 'K',           '<cmd>lua vim.lsp.buf.hover()<CR>', default_opts)
 map('n', 'D',           '<cmd>lua vim.diagnostic.open_float()<CR>', default_opts)
 map('n', 'gD',          '<cmd>lua vim.lsp.buf.type_definition()<CR>', default_opts)

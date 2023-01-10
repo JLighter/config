@@ -1,6 +1,9 @@
 export GOPATH=$HOME/Documents/Personal/Go
 export GOBIN=$HOME/.local/go/bin
 
+# Enable XQuartZ from ssh Mac
+export DISPLAY=:0
+
 export BAT_THEME="gruvbox-dark"
 
 # Use infogerence aliases
@@ -46,6 +49,10 @@ if command -v kn &>/dev/null; then
   source <(kn completion zsh)
 fi
 
+if command -v az &>/dev/null; then
+  source /opt/homebrew/etc/bash_completion.d/az
+fi
+
 if [[ -d ~/.local/bin ]] then
   export PATH=$PATH:~/.local/bin
 fi
@@ -60,3 +67,6 @@ export PATH="$PATH:$HOME/.local/go/bin"
 # Add wisely, as too many plugins slow down shell startup.
 
 plugins=(conda git docker docker-compose node tmux)
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/julien/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/julien/Downloads/google-cloud-sdk/path.zsh.inc'; fi

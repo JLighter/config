@@ -1,11 +1,63 @@
-vim.g.registers_return_symbol = "⏎" --'⏎' by default
-vim.g.registers_tab_symbol = "." --'·' by default
-vim.g.registers_space_symbol = " " --' ' by default
-vim.g.registers_delay = 0 --0 by default, milliseconds to wait before opening the popup window
-vim.g.registers_register_key_sleep = 0 --0 by default, seconds to wait before closing the window when a register key is pressed
-vim.g.registers_show_empty_registers = 0 --1 by default, an additional line with the registers without content
-vim.g.registers_trim_whitespace = 1 --1 by default, don't show whitespace at the begin and end of the registers
-vim.g.registers_hide_only_whitespace = 1 --0 by default, don't show registers filled exclusively with whitespace
-vim.g.registers_window_border = "single" --'none' by default, can be 'none', 'single','double', 'rounded', 'solid', or 'shadow' (requires Neovim 0.5.0+)
-vim.g.registers_window_min_height = 3 --3 by default, minimum height of the window when there is the cursor at the bottom
-vim.g.registers_window_max_width = 100 --100 by default, maximum width of the window
+local registers = require("registers")
+
+registers.setup({
+  symbols = {
+    -- Show a special character for line breaks
+    newline = "⏎",
+    -- Show space characters without changes
+    space = " ",
+    -- Show a special character for tabs
+    tab = "·",
+    -- The character to show when a register will be applied in a char-wise fashion
+    register_type_charwise = "ᶜ",
+    -- The character to show when a register will be applied in a line-wise fashion
+    register_type_linewise = "ˡ",
+    -- The character to show when a register will be applied in a block-wise fashion
+    register_type_blockwise = "ᵇ",
+  },
+  -- Expose the :Registers user command
+  register_user_command = true,
+  -- Always transfer all selected registers to the system clipboard
+  system_clipboard = true,
+  -- Don't show whitespace at the begin and end of the register's content
+  trim_whitespace = true,
+  -- Don't show registers which are exclusively filled with whitespace
+  hide_only_whitespace = true,
+  -- Show a character next to the register name indicating how the register will be applied
+  show_register_types = true,
+  show_empty = false,
+  window = {
+    border = "single",
+    min_height = 3,
+    max_width = 100,
+    highlight_cursorline = false,
+  },
+  bind_keys = {
+    -- Show the window when pressing " in normal mode, applying the selected register as part of a motion, which is the default behavior of Neovim
+    normal = registers.show_window({ mode = "motion", delay = 0.5 }),
+    -- Show the window when pressing " in visual mode, applying the selected register as part of a motion, which is the default behavior of Neovim
+    visual = registers.show_window({ mode = "motion", delay = 0.5 }),
+    -- Show the window when pressing <C-R> in insert mode, inserting the selected register, which is the default behavior of Neovim
+    insert = registers.show_window({ mode = "insert" }),
+
+    -- When pressing the key of a register, apply it with a very small delay, which will also highlight the selected register
+    registers = registers.apply_register({ delay = 0.1 }),
+    -- Immediately apply the selected register line when pressing the return key
+    return_key = registers.apply_register(),
+    -- Close the registers window when pressing the Esc key
+    escape = registers.close_window(),
+
+    -- Move the cursor in the registers window down when pressing <C-N>
+    ctrl_n = registers.move_cursor_down(),
+    -- Move the cursor in the registers window up when pressing <C-P>
+    ctrl_p = registers.move_cursor_up(),
+    -- Move the cursor in the registers window down when pressing <C-J>
+    ctrl_j = registers.move_cursor_down(),
+    -- Move the cursor in the registers window up when pressing <C-K>
+    ctrl_k = registers.move_cursor_up(),
+    -- Clear the register of the highlighted line when pressing <DEL>
+    delete = registers.clear_highlighted_register(),
+    -- Clear the register of the highlighted line when pressing <BS>
+    backspace = registers.clear_highlighted_register(),
+  },
+})

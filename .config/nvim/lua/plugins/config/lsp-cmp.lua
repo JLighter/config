@@ -1,13 +1,5 @@
 local present, cmp = pcall(require, "cmp")
 
-require 'lspsaga'.init_lsp_saga {
-  use_saga_diagnostic_sign = true,
-  error_sign = '',
-  warn_sign = '',
-  hint_sign = '',
-  infor_sign = '',
-}
-
 local function border(hl_name)
   return {
     { "┌", hl_name },
@@ -43,11 +35,11 @@ local mapping = {
 cmp.setup {
   snippet = {
     expand = function(args)
-      require('luasnip').lsp_expand(args.body)
+      require'luasnip'.lsp_expand(args.body)
     end,
   },
   formatting = {
-    format = require('lspkind').cmp_format(),
+    format = require'lspkind'.cmp_format(),
   },
   window = {
     completion = {

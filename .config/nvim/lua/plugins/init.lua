@@ -33,7 +33,10 @@ return require("packer").startup(function(use)
 
   use { "folke/lsp-colors.nvim" }
   use { "onsails/lspkind-nvim" }
-  use { "tami5/lspsaga.nvim" }
+  use { "glepnir/lspsaga.nvim" }
+
+  -- { Snippets
+  -- }
 
   -- { CMP
   use { "hrsh7th/nvim-cmp", requires = { "saadparwaiz1/cmp_luasnip", "L3MON4D3/LuaSnip" } }
@@ -53,12 +56,13 @@ return require("packer").startup(function(use)
   -- { Appearance
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
   use { 'nvim-treesitter/nvim-treesitter-context' }
-  use { 'nvim-treesitter/playground' }
+  -- use { 'nvim-treesitter/playground' }
+  use 'marko-cerovac/material.nvim'
   use { 'navarasu/onedark.nvim' }
   use { 'rktjmp/lush.nvim' }
   use { 'NLKNguyen/papercolor-theme' }
   use { 'EdenEast/nightfox.nvim' }
-  use { 'morhetz/gruvbox' }
+  use { 'ellisonleao/gruvbox.nvim' }
   -- }
 
   -- { Status line
@@ -79,7 +83,6 @@ return require("packer").startup(function(use)
   use { "ryanoasis/vim-devicons" }
   use { 'lambdalisue/nerdfont.vim' }
   -- }
-
 
   -- { Git
   use { 'tpope/vim-fugitive' }
@@ -105,6 +108,7 @@ return require("packer").startup(function(use)
   use { 'nvim-lua/popup.nvim' }
   use { 'nvim-lua/plenary.nvim' }
   use { 'nvim-telescope/telescope.nvim' }
+  use { 'nvim-telescope/telescope-ui-select.nvim' }
   -- }
 
   -- { Navigation
@@ -113,7 +117,7 @@ return require("packer").startup(function(use)
   -- }
 
   -- { Organizer
-  use { 'phaazon/mind.nvim' }
+  -- use { 'phaazon/mind.nvim' }
   -- }
 
   -- { Utils
