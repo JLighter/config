@@ -163,20 +163,24 @@ export PATH=$PATH:~/.npm-globals/bin
 
 source ~/.zshrc.custom
 
-# Prevent nested ranger instances
-RANGER_PATH=$(which ranger)
-ranger() {
-    if [ -z "$RANGER_LEVEL" ]; then
-        zsh $RANGER_PATH "$@"
-    else
-        exit
-    fi
-}
-
-. ~/.local/z/z.sh
+if command -v ranger &>/dev/null; then
+  RANGER_PATH=$(which ranger)
+  ranger() {
+      if [ -z "$RANGER_LEVEL" ]; then
+          zsh $RANGER_PATH "$@"
+      else
+          exit
+      fi
+  }
+fi
 
 # Fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+if [ -f ~/.local/z/z.zsh ]; then
+  . ~/.local/z/z.sh
+fi
+# Prevent nested ranger instances
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
