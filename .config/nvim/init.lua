@@ -1,22 +1,21 @@
-require('core/core')
-require('core/providers')
+require "core"
 
-require('plugins/init')
-require('plugins/initConfig')
+local custom_init_path = vim.api.nvim_get_runtime_file("lua/custom/init.lua", false)[1]
 
-require('core/appearence')
-require('mapping/init')
+if custom_init_path then
+  dofile(custom_init_path)
+end
 
-vim.cmd('source ~/.config/nvim/settings/appearence.vim')
+require("core.utils").load_mappings()
 
-vim.cmd('source ~/.config/nvim/settings/startify.vim')
+local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
 
-vim.cmd('source ~/.config/nvim/settings/delimitemate.vim')
+-- bootstrap lazy.nvim!
+if not vim.loop.fs_stat(lazypath) then
+  require("core.bootstrap").gen_chadrc_template()
+  require("core.bootstrap").lazy(lazypath)
+end
 
-vim.cmd('source ~/.config/nvim/settings/fugitive.vim')
-
-vim.cmd('source ~/.config/nvim/settings/shortcuts.vim')
-
-vim.cmd('source ~/.config/nvim/settings/tmux.vim')
-
-vim.cmd('source ~/.config/nvim/settings/copilot.vim')
+dofile(vim.g.base46_cache .. "defaults")
+vim.opt.rtp:prepend(lazypath)
+require "plugins"
