@@ -37,7 +37,7 @@ neogit.setup {
     kind = "split",
   },
   -- Change the default way of opening popups
-  popup = { 
+  popup = {
     kind = "split",
   },
   -- customize displayed signs
@@ -65,25 +65,32 @@ neogit.setup {
   -- Setting any section to `false` will make the section not render at all
   sections = {
     untracked = {
-      folded = false
+      folded = false,
+      hidden = false
     },
     unstaged = {
-      folded = false
+      folded = false,
+      hidden = false
     },
     staged = {
-      folded = false
+      folded = false,
+      hidden = false
     },
     stashes = {
-      folded = true
+      folded = true,
+      hidden = false
     },
     unpulled = {
-      folded = true
+      folded = true,
+      hidden = false
     },
     unmerged = {
-      folded = false
+      folded = true,
+      hidden = false
     },
     recent = {
-      folded = true
+      folded = true,
+      hidden = false
     },
   },
   -- override/add mappings
