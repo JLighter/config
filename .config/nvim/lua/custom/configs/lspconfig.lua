@@ -16,7 +16,9 @@ local servers = {
   "ansiblels",
   "dockerls",
   "docker_compose_language_service",
-  "helm_ls"
+  "helm_ls",
+  "yamlls",
+  "dotls"
 }
 
 for _, lsp in ipairs(servers) do
@@ -25,6 +27,3 @@ for _, lsp in ipairs(servers) do
     capabilities = capabilities,
   }
 end
-
--- 
--- lspconfig.pyright.setup { blabla}
