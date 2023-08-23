@@ -12,7 +12,7 @@
 
 local options = {
   adapters = {
-    require("neotest-plenary"),
+    -- require("neotest-plenary"),
     require("neotest-vim-test")({ allow_file_types = {} }),
     require("neotest-python")({
       dap = { justMyCode = false },
