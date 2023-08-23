@@ -11,6 +11,8 @@ M.disabled = {
     -- git
     ["<leader>cm"] = "",
     ["<leader>gt"] = "",
+    ["<leader>ff"] = "",
+    ["<leader>fw"] = "",
   }
 }
 
@@ -61,6 +63,15 @@ M.neotest = {
   }
 }
 
+M.telescope = {
+  plugin = true,
+
+  n = {
+    -- find
+    ["<C-p>"] = { "<cmd> Telescope find_files <CR>", "Find files" },
+    ["<leader><leader>"] = { "<cmd> Telescope live_grep <CR>", "Live grep" },
+  },
+}
 -- more keybinds!
 
 return M
