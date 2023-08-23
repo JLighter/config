@@ -7,4 +7,7 @@ autocmd("VimResized", { pattern = "*", command = "tabdo wincmd =" })
 -- Set nowrap
 autocmd("BufEnter", { pattern = "*", command = "set nowrap" })
 
+-- Highlight non-breaking whitespace
+autocmd("VimEnter,BufWinEnter", { pattern = "*", command= "syn match ErrorMsg ' '" })
+
 opt.relativenumber = true
