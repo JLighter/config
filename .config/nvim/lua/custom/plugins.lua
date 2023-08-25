@@ -111,10 +111,15 @@ local plugins = {
     end,
   },
 
+  { "tpope/vim-sensible", event = "BufEnter" },
   {
-    "tpope/vim-sensible",
+    'echasnovski/mini.nvim',
     event = "BufEnter",
-  }
+    version = false,
+    config = function()
+      require('mini.align').setup()
+    end,
+  },
 }
 
 return plugins
