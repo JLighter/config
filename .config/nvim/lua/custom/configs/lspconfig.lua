@@ -15,7 +15,6 @@ local servers = {
   "terraformls",
   "ansiblels",
   "dockerls",
-  "docker_compose_language_service",
   "helm_ls",
   "yamlls",
   "dotls"
