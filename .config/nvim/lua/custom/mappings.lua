@@ -13,6 +13,7 @@ M.disabled = {
     ["<leader>gt"] = "",
     ["<leader>ff"] = "",
     ["<leader>fw"] = "",
+    ["<leader>gb"] = "",
   }
 }
 
@@ -26,7 +27,15 @@ M.general = {
 M.neogit = {
   n = {
     ["<leader>gs"] = { ":Neogit <CR>", "Status", opts = { nowait = true } },
-    ["<leader>gl"] = { ":Neogit log <CR>", "Logs", opts = { nowait = true } },
+    ["<leader>gb"] = { function() package.loaded.gitsigns.blame_line() end, "Blame", opts = { nowait = true } },
+    ["<leader>ghr"] = { function() package.loaded.gitsigns.reset_hunk() end, "Reset", opts = { nowait = true } },
+    ["<leader>ghp"] = { function() package.loaded.gitsigns.preview_hunk() end, "Preview", opts = { nowait = true } },
+    ["<leader>ghs"] = { function() package.loaded.gitsigns.stage_hunk() end, "Stage", opts = { nowait = true } },
+    ["<leader>ghu"] = { function() package.loaded.gitsigns.undo_stage_hunk() end, "Undo stage", opts = { nowait = true } },
+    ["<leader>ghU"] = { function() package.loaded.gitsigns.reset_buffer() end, "Reset buffer", opts = { nowait = true } },
+    ["<leader>ghv"] = { function() package.loaded.gitsigns.select_hunk() end, "Select hunk", opts = { nowait = true } },
+    ["<leader>ghn"] = { function() package.loaded.gitsigns.next_hunk() end, "Go to next hunk", opts = { nowait = true } },
+    ["<leader>ghN"] = { function() package.loaded.gitsigns.previous_hunk() end, "Go to previous hunk", opts = { nowait = true } },
   },
 }
 
