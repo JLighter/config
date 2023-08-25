@@ -36,6 +36,7 @@ M.neogit = {
     ["<leader>ghv"] = { function() package.loaded.gitsigns.select_hunk() end, "Select hunk", opts = { nowait = true } },
     ["<leader>ghn"] = { function() package.loaded.gitsigns.next_hunk() end, "Go to next hunk", opts = { nowait = true } },
     ["<leader>ghN"] = { function() package.loaded.gitsigns.previous_hunk() end, "Go to previous hunk", opts = { nowait = true } },
+    ["<leader>gd"] = { ":DiffviewOpen <CR>", "Diff", opts = { nowait = true } },
   },
 }
 

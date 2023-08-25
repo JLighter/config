@@ -91,6 +91,10 @@ local plugins = {
   },
 
   {
+    'sindrets/diffview.nvim',
+    cmd = { "DiffviewOpen", "DiffviewFileHistory", "DiffViewLog" },
+  },
+  {
     "nvim-neotest/neotest",
     cmd = { "Neotest" },
     dependencies = {
