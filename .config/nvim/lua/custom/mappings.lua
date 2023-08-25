@@ -25,8 +25,8 @@ M.general = {
 
 M.neogit = {
   n = {
-    ["<leader>gs"] = { ":Neogit <CR>", "Open neogit status", opts = { nowait = true } },
-    ["<leader>gl"] = { ":Neogit log <CR>", "Open neogit log", opts = { nowait = true } },
+    ["<leader>gs"] = { ":Neogit <CR>", "Status", opts = { nowait = true } },
+    ["<leader>gl"] = { ":Neogit log <CR>", "Logs", opts = { nowait = true } },
   },
 }
 
@@ -50,16 +50,16 @@ M.tmux = {
 
 M.neotest = {
   n = {
-    ["<leader>tF"] = { ":w|lua require('neotest').run.run({vim.fn.expand('%'), strategy = 'dap'})<cr>", "Debug File" },
-    ["<leader>tL"] = { ":w|lua require('neotest').run.run_last({strategy = 'dap'})<CR>", "Debug Last" },
-    ["<leader>ta"] = { ":w|lua require('neotest').run.attach()<CR>", "Attach" },
-    ["<leader>tf"] = { ":w|lua require('neotest').run.run(vim.fn.expand('%'))<CR>", "File" },
-    ["<leader>tl"] = { ":w|lua require('neotest').run.run_last()<CR>", "Last" },
-    ["<leader>tn"] = { ":w|lua require('neotest').run.run()<CR>", "Nearest" },
-    ["<leader>tN"] = { ":w|lua require('neotest').run.run({strategy = 'dap, opts = })<CR>", "Debug Nearest" },
-    ["<leader>to"] = { ":w|lua require('neotest').output.open({ enter = true })<CR>", "Output" },
-    ["<leader>ts"] = { ":w|lua require('neotest').run.stop()<CR>", "Stop" },
-    ["<leader>tS"] = { ":w|lua require('neotest').summary.toggle()<CR>", "Summary" },
+    ["<leader>tdf"] = { ":w|lua require('neotest').run.run({vim.fn.expand('%'), strategy = 'dap'})<cr>", "File" },
+    ["<leader>tdl"] = { ":w|lua require('neotest').run.run_last({strategy = 'dap'})<CR>",                "Last" },
+    ["<leader>tdn"] = { ":w|lua require('neotest').run.run({strategy = 'dap, opts = })<CR>",             "Nearest" },
+    ["<leader>ta"] = { ":w|lua require('neotest').run.attach()<CR>",                                     "Attach" },
+    ["<leader>tf"] = { ":w|lua require('neotest').run.run(vim.fn.expand('%'))<CR>",                      "File" },
+    ["<leader>tl"] = { ":w|lua require('neotest').run.run_last()<CR>",                                   "Last" },
+    ["<leader>tn"] = { ":w|lua require('neotest').run.run()<CR>",                                        "Nearest" },
+    ["<leader>to"] = { ":w|lua require('neotest').output.open({ enter = true })<CR>",                    "Output" },
+    ["<leader>ts"] = { ":w|lua require('neotest').run.stop()<CR>",                                       "Stop" },
+    ["<leader>tS"] = { ":w|lua require('neotest').summary.toggle()<CR>",                                 "Summary" },
   }
 }
 
