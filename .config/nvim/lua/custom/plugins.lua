@@ -117,7 +117,10 @@ local plugins = {
     "m4xshen/hardtime.nvim",
     event = "BufEnter",
     dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
-    opts = {}
+    opts = require('custom.configs.hardtime'),
+    config = function(_, opts)
+      require('hardtime').setup(opts)
+    end,
   },
   { "mbbill/undotree", event = "BufEnter" },
   { "tpope/vim-sensible", event = "BufEnter" },
