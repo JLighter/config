@@ -12,6 +12,7 @@ M.disabled = {
     ["<leader>cm"] = "",
     ["<leader>gt"] = "",
     ["<leader>ff"] = "",
+    ["<leader>fm"] = "",
     ["<leader>fw"] = "",
     ["<leader>gb"] = "",
   }
@@ -19,14 +20,14 @@ M.disabled = {
 
 M.general = {
   n = {
-    ["<leader>/"] = { ":vsplit <CR>", "Split buffer vertically", opts = { nowait = true } },
-    ["<leader>-"] = { ":split <CR>", "Split buffer horizontally", opts = { nowait = true } },
+    ["<leader>/"] = { ":vsplit <CR>", "Split buffer vertically", opts = { nowait = true, silent = true } },
+    ["<leader>-"] = { ":split <CR>", "Split buffer horizontally", opts = { nowait = true, silent = true} },
   },
 }
 
 M.neogit = {
   n = {
-    ["<leader>gs"] = { ":Neogit <CR>", "Status", opts = { nowait = true } },
+    ["<leader>gs"] = { ":Neogit <CR>", "Status", opts = { nowait = true, silent = true } },
     ["<leader>gb"] = { function() package.loaded.gitsigns.blame_line() end, "Blame", opts = { nowait = true } },
     ["<leader>ghr"] = { function() package.loaded.gitsigns.reset_hunk() end, "Reset", opts = { nowait = true } },
     ["<leader>ghp"] = { function() package.loaded.gitsigns.preview_hunk() end, "Preview", opts = { nowait = true } },
@@ -36,7 +37,7 @@ M.neogit = {
     ["<leader>ghv"] = { function() package.loaded.gitsigns.select_hunk() end, "Select hunk", opts = { nowait = true } },
     ["<leader>ghn"] = { function() package.loaded.gitsigns.next_hunk() end, "Go to next hunk", opts = { nowait = true } },
     ["<leader>ghN"] = { function() package.loaded.gitsigns.previous_hunk() end, "Go to previous hunk", opts = { nowait = true } },
-    ["<leader>gd"] = { ":DiffviewOpen <CR>", "Diff", opts = { nowait = true } },
+    ["<leader>gd"] = { ":DiffviewOpen <CR>", "Diff", opts = { nowait = true, silent = true } },
   },
 }
 
@@ -45,7 +46,7 @@ M.nvimtree = {
 
   n = {
     -- toggle
-    ["-"] = { ":NvimTreeToggle <CR>", "Toggle nvimtree" },
+    ["-"] = { ":NvimTreeToggle <CR>", "Toggle nvimtree", opts = { silent = true } },
   },
 }
 
@@ -83,5 +84,11 @@ M.telescope = {
   },
 }
 -- more keybinds!
+
+M.formatter = {
+  n = {
+    ["<leader>fm"] = { ":Format<CR>", "Format", opts = { silent = true } },
+  }
+}
 
 return M

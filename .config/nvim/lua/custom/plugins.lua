@@ -9,25 +9,24 @@ local plugins = {
     "neovim/nvim-lspconfig",
     dependencies = {
       -- format & linting
-      {
-        "jose-elias-alvarez/null-ls.nvim",
-        config = function()
-          require "custom.configs.null-ls"
-        end,
-      },
+      { "williamboman/mason.nvim", config = true },
+      "williamboman/mason-lspconfig.nvim",
+      'folke/neodev.nvim',
     },
-    config = function()
-      require "plugins.configs.lspconfig"
+    config = function ()
       require "custom.configs.lspconfig"
-    end, -- Override to setup mason-lspconfig
+    end
+  },
+
+  {
+    "mhartington/formatter.nvim",
+    cmd = { "Format", "FormatWrite", "FormatLock", "FormatLockWrite" },
+    config = function ()
+      require "custom.configs.formatter"
+    end
   },
 
   -- overrided plugin configs
-  {
-    "williamboman/mason.nvim",
-    opts = overrides.mason
-  },
-
   {
     "nvim-treesitter/nvim-treesitter",
     opts = overrides.treesitter,
@@ -114,7 +113,12 @@ local plugins = {
       require('neotest').setup(opts)
     end,
   },
-
+  {
+    "m4xshen/hardtime.nvim",
+    event = "BufEnter",
+    dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
+    opts = {}
+  },
   { "tpope/vim-sensible", event = "BufEnter" },
   {
     'echasnovski/mini.nvim',
@@ -135,8 +139,8 @@ local plugins = {
       local wk = require("which-key")
       wk.setup(opts)
 
-      local options = require("custom.configs.whichkey")
-      wk.register(options.groups)
+      -- local options = require("custom.configs.whichkey")
+      -- wk.register(options.groups)
     end,
   }
 }
