@@ -18,10 +18,10 @@ M.ui = {
   },
 
   statusline = {
-    theme = "vscode_colored", -- default/vscode/vscode_colored/minimal
+    theme = "default", -- default/vscode/vscode_colored/minimal
     -- default/round/block/arrow separators work only for default statusline theme
     -- round and block will work for minimal theme only
-    separator_style = "default",
+    separator_style = "block",
     lspprogress_len = 20,
   },
 
@@ -34,7 +34,7 @@ M.ui = {
   cmp = {
     icons = true,
     lspkind_text = true,
-    style = "atom_colored", -- default/flat_light/flat_dark/atom/atom_colored
+    style = "default", -- default/flat_light/flat_dark/atom/atom_colored
     selected_item_bg = "colored", -- colored / simple
   },
 }
