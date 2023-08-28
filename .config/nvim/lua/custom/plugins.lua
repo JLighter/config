@@ -119,6 +119,7 @@ local plugins = {
     dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
     opts = {}
   },
+  { "mbbill/undotree", event = "BufEnter" },
   { "tpope/vim-sensible", event = "BufEnter" },
   {
     'echasnovski/mini.nvim',

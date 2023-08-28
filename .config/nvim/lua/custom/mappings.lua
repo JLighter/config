@@ -91,4 +91,9 @@ M.formatter = {
   }
 }
 
+M.undotree = {
+  n = {
+    ["<leader>u"] = { ":UndotreeToggle<CR>", "Undo tree", opts = { silent = true } },
+  }
+}
 return M
