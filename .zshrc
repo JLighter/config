@@ -177,9 +177,9 @@ fi
 # Fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-if [ -f ~/.local/z/z.zsh ]; then
-  . ~/.local/z/z.sh
-fi
+# Zoxide
+eval "$(zoxide init zsh)"
+
 # Prevent nested ranger instances
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
