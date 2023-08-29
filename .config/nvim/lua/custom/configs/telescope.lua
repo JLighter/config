@@ -17,6 +17,18 @@ local options = {
     },
   },
 	extensions = {
+		["ui-select"] = {
+			require("telescope.themes").get_ivy {
+        prompt_prefix = " ",
+        prompt_title = "",
+        results_title = "",
+        layout_strategy = "bottom_pane",
+				layout_config = {
+          prompt_position = "bottom",
+					height = 5,
+				},
+			},
+		},
 		project = {
 			hidden_files = false, -- default: false
 			theme = "ivy",
