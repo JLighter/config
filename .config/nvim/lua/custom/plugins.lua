@@ -26,21 +26,6 @@ local plugins = {
 		end,
 	},
 
-	-- overrided plugin configs
-	{
-		"nvim-treesitter/nvim-treesitter",
-		dependencies = {
-			{
-				"nvim-treesitter/nvim-treesitter-context",
-				opts = require("custom.configs.treesitter-context"),
-				config = function(_, opts)
-					require("treesitter-context").setup(opts)
-				end,
-			},
-		},
-		opts = overrides.treesitter,
-	},
-
 	{
 		"nvim-tree/nvim-tree.lua",
 		opts = require("custom.configs.nvimtree"),
