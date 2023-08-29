@@ -86,6 +86,7 @@ local plugins = {
 		"sindrets/diffview.nvim",
 		cmd = { "DiffviewOpen", "DiffviewFileHistory", "DiffViewLog" },
 	},
+
 	{
 		"nvim-neotest/neotest",
 		cmd = { "Neotest" },
@@ -108,6 +109,7 @@ local plugins = {
 			require("neotest").setup(opts)
 		end,
 	},
+
 	{
 		"m4xshen/hardtime.nvim",
 		event = "BufEnter",
@@ -117,8 +119,13 @@ local plugins = {
 			require("hardtime").setup(opts)
 		end,
 	},
+
 	{ "mbbill/undotree", event = "BufEnter" },
+
 	{ "tpope/vim-sensible", event = "BufEnter" },
+
+	{ "tpope/vim-repeat", event = "BufEnter", },
+
 	{
 		"echasnovski/mini.nvim",
 		event = "BufEnter",
@@ -127,6 +134,7 @@ local plugins = {
 			require("mini.align").setup()
 		end,
 	},
+
 	{
 		"folke/which-key.nvim",
 		keys = { "<leader>", "<c-r>", '"', "'", "`", "c", "v", "g" },
@@ -141,11 +149,6 @@ local plugins = {
 			-- local options = require("custom.configs.whichkey")
 			-- wk.register(options.groups)
 		end,
-	},
-
-	{
-		"tpope/vim-repeat",
-		event = "BufEnter",
 	},
 }
 
