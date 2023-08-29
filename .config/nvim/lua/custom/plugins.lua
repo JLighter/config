@@ -157,6 +157,11 @@ local plugins = {
 			-- wk.register(options.groups)
 		end,
 	},
+
+	{
+		"tpope/vim-repeat",
+		event = "BufEnter",
+	},
 }
 
 return plugins
