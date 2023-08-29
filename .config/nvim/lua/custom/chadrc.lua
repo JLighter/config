@@ -47,7 +47,8 @@ M.ui = {
   },
 
   tabufline = {
-    enabled = false,
+    enabled = true,
+    lazy_load = true
   },
 
   -- cmp themeing
