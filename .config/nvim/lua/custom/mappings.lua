@@ -79,8 +79,9 @@ M.telescope = {
 
   n = {
     -- find
-    ["<C-p>"] = { "<cmd> Telescope find_files <CR>", "Find files" },
-    ["<leader><leader>"] = { "<cmd> Telescope live_grep <CR>", "Live grep" },
+    ["<C-p>"] = { "<cmd> Telescope find_files <CR>", "Find files", opts = { silent = true } },
+    ["<leader><leader>"] = { "<cmd> Telescope live_grep <CR>", "Live grep", opts = { silent = true } },
+    ["<leader>fp"] = { "<cmd> Telescope project <CR>", "Find projects", opts = { silent = true }}
   },
 }
 -- more keybinds!
@@ -96,4 +97,5 @@ M.undotree = {
     ["<leader>u"] = { ":UndotreeToggle<CR>", "Undo tree", opts = { silent = true } },
   }
 }
+
 return M

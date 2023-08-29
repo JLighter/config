@@ -38,12 +38,24 @@ local plugins = {
 
 	{
 		"nvim-telescope/telescope.nvim",
+    event = "VimEnter",
 		opts = function()
 			local defaults = require("plugins.configs.telescope")
 			local custom = require("custom.configs.telescope")
 			return vim.tbl_deep_extend("force", defaults, custom)
 		end,
 	},
+
+  {
+    "nvim-telescope/telescope-project.nvim",
+    event = "VimEnter",
+    dependencies = {
+      "nvim-telescope/telescope.nvim"
+    },
+    config = function()
+      require("telescope").load_extension("project")
+    end,
+  },
 
 	-- Install a plugin
 	{
