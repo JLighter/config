@@ -1,21 +1,42 @@
-local actions = require "telescope.actions"
+local actions = require("telescope.actions")
 
 local options = {
-  defaults = {
-    prompt_prefix = " 󰍉 ",
-    mappings = {
-      n = {
-        ["q"] = actions.close,
-        ["<C-j>"] = actions.move_selection_worse,
-        ["<C-k>"] = actions.move_selection_better,
-      },
-      i = {
-        ["ESC"] = actions.close,
-        ["<C-j>"] = actions.move_selection_worse,
-        ["<C-k>"] = actions.move_selection_better,
-      },
-    },
-  },
+	defaults = {
+		prompt_prefix = " 󰍉 ",
+		layout_strategy = "horizontal",
+		mappings = {
+			n = {
+				["q"] = actions.close,
+				["<C-j>"] = actions.move_selection_worse,
+				["<C-k>"] = actions.move_selection_better,
+			},
+			i = {
+				["ESC"] = actions.close,
+				["<C-j>"] = actions.move_selection_worse,
+				["<C-k>"] = actions.move_selection_better,
+			},
+		},
+	},
+	pickers = {
+		find_files = {
+			theme = "ivy",
+		},
+		oldfiles = {
+			theme = "ivy",
+		},
+		buffers = {
+			theme = "ivy",
+		},
+		live_grep = {
+			theme = "ivy",
+		},
+		marks = {
+			theme = "ivy",
+		},
+		project = {
+			theme = "ivy",
+		},
+	},
 	extensions = {
 		["ui-select"] = {
 			require("telescope.themes").get_ivy {
