@@ -18,6 +18,8 @@ local plugins = {
 		end,
 	},
 
+  { 'towolf/vim-helm', event = "BufEnter" },
+
 	{
 		"mhartington/formatter.nvim",
 		cmd = { "Format", "FormatWrite", "FormatLock", "FormatLockWrite" },
