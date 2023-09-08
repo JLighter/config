@@ -7,6 +7,7 @@ M.disabled = {
 
     ["<leader>/"] = "",
     ["<leader>e"] = "",
+    ["<leader>ma"] = "",
 
     -- git
     ["<leader>cm"] = "",
@@ -39,6 +40,10 @@ M.neogit = {
     ["<leader>ghN"] = { function() package.loaded.gitsigns.previous_hunk() end, "Go to previous hunk", opts = { nowait = true } },
     ["<leader>gd"] = { ":DiffviewOpen <CR>", "Diff", opts = { nowait = true, silent = true } },
   },
+  v = {
+    ['<leader>ghs'] = { ":Git stage_hunk <CR>", "Stage", opts = { nowait = true, silent = true } },
+    ['<leader>ghr'] = { ":Git stage_hunk <CR>", "Reset", opts = { nowait = true, silent = true } }
+  }
 }
 
 M.nvimtree = {
@@ -61,16 +66,16 @@ M.tmux = {
 
 M.neotest = {
   n = {
-    ["<leader>tdf"] = { ":w|lua require('neotest').run.run({vim.fn.expand('%'), strategy = 'dap'})<cr>", "File" },
-    ["<leader>tdl"] = { ":w|lua require('neotest').run.run_last({strategy = 'dap'})<CR>",                "Last" },
-    ["<leader>tdn"] = { ":w|lua require('neotest').run.run({strategy = 'dap, opts = })<CR>",             "Nearest" },
-    ["<leader>ta"] = { ":w|lua require('neotest').run.attach()<CR>",                                     "Attach" },
-    ["<leader>tf"] = { ":w|lua require('neotest').run.run(vim.fn.expand('%'))<CR>",                      "File" },
-    ["<leader>tl"] = { ":w|lua require('neotest').run.run_last()<CR>",                                   "Last" },
-    ["<leader>tn"] = { ":w|lua require('neotest').run.run()<CR>",                                        "Nearest" },
-    ["<leader>to"] = { ":w|lua require('neotest').output.open({ enter = true })<CR>",                    "Output" },
-    ["<leader>ts"] = { ":w|lua require('neotest').run.stop()<CR>",                                       "Stop" },
-    ["<leader>tS"] = { ":w|lua require('neotest').summary.toggle()<CR>",                                 "Summary" },
+    ["<leader>Tdf"] = { ":w|lua require('neotest').run.run({vim.fn.expand('%'), strategy = 'dap'})<cr>", "File" },
+    ["<leader>Tdl"] = { ":w|lua require('neotest').run.run_last({strategy = 'dap'})<CR>",                "Last" },
+    ["<leader>Tdn"] = { ":w|lua require('neotest').run.run({strategy = 'dap, opts = })<CR>",             "Nearest" },
+    ["<leader>Ta"] = { ":w|lua require('neotest').run.attach()<CR>",                                     "Attach" },
+    ["<leader>Tf"] = { ":w|lua require('neotest').run.run(vim.fn.expand('%'))<CR>",                      "File" },
+    ["<leader>Tl"] = { ":w|lua require('neotest').run.run_last()<CR>",                                   "Last" },
+    ["<leader>Tn"] = { ":w|lua require('neotest').run.run()<CR>",                                        "Nearest" },
+    ["<leader>To"] = { ":w|lua require('neotest').output.open({ enter = true })<CR>",                    "Output" },
+    ["<leader>Ts"] = { ":w|lua require('neotest').run.stop()<CR>",                                       "Stop" },
+    ["<leader>TS"] = { ":w|lua require('neotest').summary.toggle()<CR>",                                 "Summary" },
   }
 }
 
@@ -82,14 +87,15 @@ M.telescope = {
     ["<C-p>"] = { "<cmd> Telescope find_files <CR>", "Find files", opts = { silent = true } },
     ["<leader><leader>"] = { "<cmd> Telescope live_grep <CR>", "Live grep", opts = { silent = true } },
     ["<leader>fp"] = { "<cmd> Telescope project <CR>", "Find projects", opts = { silent = true }},
-    ["<leader>ft"] = { "<cmd> Telescope terms <CR>", "Find terminals", opts = { silent = true }}
+    ["<leader>ft"] = { "<cmd> Telescope terms <CR>", "Find terminals", opts = { silent = true }},
+    ["<leader>fm"] = { "<cmd> Telescope marks <CR>", "Find marks", opts = { silent = true }},
   },
 }
 -- more keybinds!
 
 M.formatter = {
   n = {
-    ["<leader>fm"] = { ":Format<CR>", "Format", opts = { silent = true } },
+    ["<leader>F"] = { ":Format<CR>", "Format", opts = { silent = true } },
   }
 }
 
