@@ -73,6 +73,11 @@ local servers = {
 
 	-- c/cpp stuff
 	clangd = {},
+
+  -- python
+  pyright = {},
+  pylsp = {},
+
 }
 
 mason_lspconfig.setup({
@@ -88,6 +93,7 @@ mason_lspconfig.setup_handlers({
 			filetypes = (servers[server_name] or {}).filetypes,
 		}
 
+    print(server_name)
 		if servers[server_name].cmd then
 			config.cmd = servers[server_name].cmd
 		end

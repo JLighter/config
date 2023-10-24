@@ -15,5 +15,12 @@ require("formatter").setup({
 		lua = {
 			require("formatter.filetypes.lua").stylua,
 		},
+    python = {
+      {
+        exe = "black",
+        args = {"-"},
+        stdin = true,
+      }
+    }
 	},
 })

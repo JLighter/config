@@ -17,6 +17,7 @@ M.treesitter = {
 		"go",
 		"dockerfile",
 		"yaml",
+    "glimmer",
 	},
 	indent = {
 		enable = true,

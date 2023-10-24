@@ -33,6 +33,25 @@ local plugins = {
 		opts = require("custom.configs.nvimtree"),
 	},
 
+  {
+    "tpope/vim-dadbod",
+    cmd = { "DB" },
+    config = function()
+      require('dadbod')
+    end,
+  },
+
+  -- {
+  --   'stevearc/oil.nvim',
+  --   lazy = false,
+	 -- 	opts = require("custom.configs.oil"),
+  --   -- Optional dependencies
+  --   dependencies = { "nvim-tree/nvim-web-devicons" },
+  --   config = function(_, opts)
+  --     require("oil").setup(opts)
+  --   end,
+  -- },
+
 	{
 		"hrsh7th/nvim-cmp",
 		opts = require("custom.configs.cmp"),
