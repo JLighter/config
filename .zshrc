@@ -200,7 +200,7 @@ else
     if [ -f "/Users/julien/.miniforge3/etc/profile.d/conda.sh" ]; then
         . "/Users/julien/.miniforge3/etc/profile.d/conda.sh"
     else
-        export PATH="/Users/julien/.miniforge3/bin:$PATH"
+        export PATH="$PATH:/Users/julien/.miniforge3/bin"
     fi
 fi
 unset __conda_setup
@@ -211,4 +211,7 @@ unset __conda_setup
 
 # bun
 export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
+export PATH="$PATH:$BUN_INSTALL/bin"
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
