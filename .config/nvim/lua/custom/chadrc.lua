@@ -55,8 +55,8 @@ M.ui = {
   cmp = {
     icons = true,
     lspkind_text = true,
-    style = "default", -- default/flat_light/flat_dark/atom/atom_colored
-    selected_item_bg = "colored", -- colored / simple
+    style = "atom_colored", -- default/flat_light/flat_dark/atom/atom_colored
+    selected_item_bg = "simple", -- colored / simple
   },
 }
 

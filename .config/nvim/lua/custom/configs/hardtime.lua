@@ -6,7 +6,7 @@ local M = {
 	hint = true,
 	notification = true,
 	allow_different_key = false,
-  disabled_filetypes = { "NeogitStatus", "qf", "netrw", "NvimTree", "lazy", "mason", "oil" },
+  disabled_filetypes = { "neo-tree", "NeogitStatus", "qf", "netrw", "NvimTree", "lazy", "mason", "oil" },
 }
 
 return M

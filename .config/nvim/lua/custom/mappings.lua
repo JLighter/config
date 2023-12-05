@@ -46,12 +46,10 @@ M.neogit = {
   }
 }
 
-M.nvimtree = {
-  plugin = true,
-
+M.neotree = {
   n = {
     -- toggle
-    ["-"] = { ":NvimTreeToggle <CR>", "Toggle nvimtree", opts = { silent = true } },
+    ["-"] = { ":Neotree show reveal_file=% position=current<CR>", "Open neotree", opts = { silent = true } },
   },
 }
 

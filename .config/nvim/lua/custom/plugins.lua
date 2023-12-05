@@ -30,8 +30,23 @@ local plugins = {
 
 	{
 		"nvim-tree/nvim-tree.lua",
-		opts = require("custom.configs.nvimtree"),
+    enabled = false,
 	},
+
+  {
+      "nvim-neo-tree/neo-tree.nvim",
+      branch = "v3.x",
+      event = "VimEnter",
+      opts = require('custom.configs.neotree'),
+      config = function(_, opts)
+        require('neo-tree').setup(opts)
+      end,
+      dependencies = {
+        "nvim-lua/plenary.nvim",
+        "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+        "MunifTanjim/nui.nvim",
+      }
+  },
 
   {
     "tpope/vim-dadbod",
@@ -40,17 +55,6 @@ local plugins = {
       require('dadbod')
     end,
   },
-
-  -- {
-  --   'stevearc/oil.nvim',
-  --   lazy = false,
-	 -- 	opts = require("custom.configs.oil"),
-  --   -- Optional dependencies
-  --   dependencies = { "nvim-tree/nvim-web-devicons" },
-  --   config = function(_, opts)
-  --     require("oil").setup(opts)
-  --   end,
-  -- },
 
 	{
 		"hrsh7th/nvim-cmp",

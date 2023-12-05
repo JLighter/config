@@ -2,7 +2,7 @@ local on_attach = require("plugins.configs.lspconfig").on_attach
 local capabilities = require("plugins.configs.lspconfig").capabilities
 local util = require("lspconfig.util")
 
-local mason_lspconfig = require("mason-lspconfig")
+local lspconfig = require("mason-lspconfig")
 
 local servers = {
 	-- lua stuff
@@ -80,11 +80,11 @@ local servers = {
 
 }
 
-mason_lspconfig.setup({
+lspconfig.setup({
 	ensure_installed = vim.tbl_keys(servers),
 })
 
-mason_lspconfig.setup_handlers({
+lspconfig.setup_handlers({
 	function(server_name)
 		local config = {
 			capabilities = capabilities,
