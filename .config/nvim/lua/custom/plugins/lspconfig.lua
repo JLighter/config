@@ -5,6 +5,7 @@ return {
     { "williamboman/mason.nvim", config = true },
     "williamboman/mason-lspconfig.nvim",
     "folke/neodev.nvim",
+    "nvim-lua/lsp-status.nvim"
   },
   config = function()
     local on_attach = require("plugins.configs.lspconfig").on_attach
@@ -37,17 +38,40 @@ return {
       },
 
       rust_analyzer = {
+        cmd = {"rust-analyzer"};
+        root_dir = util.root_pattern("Cargo.toml", "rust_project.json"),
+        filetypes = { "rust" },
+        docs = {
+          package_json = "https://github.com/rust-analyzer/rust-analyzer/raw/master/editors/code/package.json";
+          description = [[
+      https://github.com/rust-analyzer/rust-analyzer
+
+      rust-analyzer (aka rls 2.0), a language server for Rust
+
+      See [docs](https://github.com/rust-analyzer/rust-analyzer/tree/master/docs/user#settings) for extra settings.
+          ]];
+          default_config = {
+            root_dir = [[root_pattern("Cargo.toml", "rust-project.json")]];
+          };
+        };
         settings = {
           ["rust-analyzer"] = {
-            assist = {
-              importGranularity = "module",
-              importPrefix = "by_self",
+            check = {
+              command = "clippy",
+            },
+            imports = {
+                granularity = {
+                    group = "module",
+                },
+                prefix = "self",
             },
             cargo = {
-              loadOutDirsFromCheck = true,
+                buildScripts = {
+                    enable = true,
+                },
             },
             procMacro = {
-              enable = true,
+                enable = true
             },
           },
         },
@@ -62,16 +86,16 @@ return {
             },
             schemas = {
               kubernetes = "*.{yml,yaml}",
-              ["https://json.schemastore.org/gitlab-ci"] = "*gitlab-ci*.{yml,yaml}",
-              ["http://json.schemastore.org/chart"] = "Chart.{yml,yaml}",
-              ["http://json.schemastore.org/kustomization"] = "kustomization.{yml,yaml}",
+              ["https://gitlab.com/gitlab-org/gitlab/-/raw/master/app/assets/javascripts/editor/schema/ci.json"] = "*gitlab-ci*.{yml,yaml}",
+              ["https://json.schemastore.org/chart.json"] = "Chart.{yml,yaml}",
+              ["https://json.schemastore.org/kustomization.json"] = "kustomization.{yml,yaml}",
               ["https://raw.githubusercontent.com/compose-spec/compose-spec/master/schema/compose-spec.json"] = "*docker-compose*.{yml,yaml}",
-              ["http://json.schemastore.org/github-workflow"] = ".github/workflows/*.{yml,yaml}",
-              ["http://json.schemastore.org/github-action"] = ".github/action.{yml,yaml}",
-              ["http://json.schemastore.org/ansible-stable-2.9"] = "roles/tasks/*.{yml,yaml}",
-              ["http://json.schemastore.org/prettierrc"] = ".prettierrc.{yml,yaml}",
-              ["http://json.schemastore.org/stylelintrc"] = ".stylelintrc.{yml,yaml}",
-              ["http://json.schemastore.org/circleciconfig"] = ".circleci/**/*.{yml,yaml}",
+              ["https://json.schemastore.org/github-workflow.json"] = ".github/workflows/*.{yml,yaml}",
+              ["https://json.schemastore.org/github-action.json"] = ".github/action.{yml,yaml}",
+              ["https://raw.githubusercontent.com/ansible/ansible-lint/main/src/ansiblelint/schemas/ansible.json#/$defs/tasks"] = "roles/tasks/*.{yml,yaml}",
+              ["https://json.schemastore.org/prettierrc.json"] = ".prettierrc.{yml,yaml}",
+              ["https://json.schemastore.org/stylelintrc.json"] = ".stylelintrc.{yml,yaml}",
+              ["https://json.schemastore.org/circleciconfig.json"] = ".circleci/**/*.{yml,yaml}",
             },
           },
         },
@@ -102,7 +126,6 @@ return {
           filetypes = (servers[server_name] or {}).filetypes,
         }
 
-        print(server_name)
         if servers[server_name].cmd then
           config.cmd = servers[server_name].cmd
         end
@@ -116,3 +139,4 @@ return {
     })
   end,
 }
+

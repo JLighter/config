@@ -8,9 +8,9 @@ return {
 		"MunifTanjim/nui.nvim",
 	},
 	opts = {
-		close_if_last_window = true, -- Close Neo-tree if it is the last window left in the tab
+		close_if_last_window = false, -- Close Neo-tree if it is the last window left in the tab
 		popup_border_style = "rounded",
-		enable_git_status = true,
+		enable_git_status = false,
 		enable_diagnostics = false,
 		enable_normal_mode_for_inputs = false, -- Enable normal mode for input dialogs.
 		open_files_do_not_replace_types = { "terminal", "trouble", "qf" }, -- when opening files, do not use windows containing these filetypes or buftypes
@@ -23,17 +23,34 @@ return {
 		--           return a.type > b.type
 		--       end
 		--   end , -- this sorts files and directories descendantly
+    event_handlers = {
+      {
+        event = "neo_tree_buffer_enter",
+        handler = function()
+          vim.cmd([[
+            hi Normal guibg=NONE ctermbg=NONE
+            hi ColorColumn guibg=NONE ctermbg=NONE
+            hi! link NeoTreeNormal Normal
+            hi! link NeoTreeNormalNC Normal
+            hi! link NeoTreeFileName Normal
+            hi! link NeoTreeFileNameNC Normal
+            hi! link NeoTreeTitleBar Normal
+            hi! link NeoTreeEndOfBuffer Normal
+          ]])
+        end
+      },
+    },
 		default_component_configs = {
 			container = {
-				enable_character_fade = true,
+				enable_character_fade = false,
 			},
 			indent = {
 				indent_size = 2,
 				padding = 1, -- extra padding on left hand side
 				-- indent guides
-				with_markers = true,
-				indent_marker = "│",
-				last_indent_marker = "└",
+				with_markers = false,
+				indent_marker = " ",
+				last_indent_marker = " ",
 				highlight = "NeoTreeIndentMarker",
 				-- expander config, needed for nesting files
 				with_expanders = nil, -- if nil and file nesting is enabled, will enable expanders
@@ -55,7 +72,7 @@ return {
 				highlight = "NeoTreeModified",
 			},
 			name = {
-				trailing_slash = true,
+				trailing_slash = false,
 				use_git_status_colors = true,
 				highlight = "NeoTreeFileName",
 			},
@@ -98,6 +115,11 @@ return {
 		-- A list of functions, each representing a global custom command
 		-- that will be available in all sources (if not overridden in `opts[source_name].commands`)
 		-- see `:h neo-tree-custom-commands-global`
+    source_selector = {
+      -- winbar = true,
+      -- statusline = true,
+      -- document_symbols = true,
+    },
 		commands = {},
 		window = {
 			position = "current",
@@ -107,10 +129,7 @@ return {
 				nowait = true,
 			},
 			mappings = {
-				["<space>"] = {
-					"toggle_node",
-					nowait = false, -- disable `nowait` if you have existing combos starting with this char that you want to use
-				},
+				["<space>"] = "noop",
 				["o"] = {
 					command = "open",
 					nowait = true,
@@ -124,13 +143,13 @@ return {
 				-- ["s"] = "vsplit_with_window_picker",
 				["t"] = "open_tabnew",
 				-- ["<cr>"] = "open_drop",
-				-- ["t"] = "open_tab_drop",
+				["t"] = "open_tab_drop",
 				["w"] = "open_with_window_picker",
 				--["P"] = "toggle_preview", -- enter preview mode, which shows the current node without focusing
 				["C"] = "close_node",
-				-- ['C'] = 'close_all_subnodes',
+				['C'] = 'close_all_subnodes',
 				["z"] = "close_all_nodes",
-				--["Z"] = "expand_all_nodes",
+				["Z"] = "expand_all_nodes",
 				["a"] = {
 					"add",
 					-- this command supports BASH style brace expansion ("x{a,b,c}" -> xa,xb,xc). see `:h neo-tree-file-actions` for details
@@ -142,16 +161,10 @@ return {
 				["A"] = "add_directory", -- also accepts the optional config.show_path option like "add". this also supports BASH style brace expansion.
 				["d"] = "delete",
 				["r"] = "rename",
-				["y"] = "copy_to_clipboard",
+				["c"] = "copy_to_clipboard",
 				["x"] = "cut_to_clipboard",
 				["p"] = "paste_from_clipboard",
-				["c"] = "copy", -- takes text input for destination, also accepts the optional config.show_path option like "add":
-				-- ["c"] = {
-				--  "copy",
-				--  config = {
-				--    show_path = "none" -- "none", "relative", "absolute"
-				--  }
-				--}
+				-- ["c"] = "copy", -- takes text input for destination, also accepts the optional config.show_path option like "add":
 				["m"] = "move", -- takes text input for destination, also accepts the optional config.show_path option like "add".
 				["q"] = "close_window",
 				["R"] = "refresh",

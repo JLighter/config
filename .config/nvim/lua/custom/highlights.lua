@@ -9,11 +9,23 @@ M.override = {
   Comment = {
     italic = true,
   },
+  Normal = {
+    ctermbg = "NONE",
+    bg = "NONE",
+    fg = "NONE",
+  },
+  ErrorMsg = {
+    ctermfg = "NONE",
+    ctermbg = "NONE",
+    fg = "NONE",
+    bg = "NONE",
+  },
 }
 
 ---@type HLTable
 M.add = {
   NvimTreeOpenedFolderName = { fg = "green", bold = true },
 }
+
 
 return M

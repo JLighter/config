@@ -50,7 +50,7 @@ return {
 						layout_strategy = "bottom_pane",
 						layout_config = {
 							prompt_position = "bottom",
-							height = 5,
+							height = 8,
 						},
 					}),
 				},
@@ -59,7 +59,7 @@ return {
 					theme = "ivy",
 					order_by = "recent",
 					search_by = "title",
-					sync_with_nvim_tree = true, -- default false
+					sync_with_nvim_tree = false, -- default false
 					on_project_selected = function(prompt_bufnr)
 						local project_actions = require("telescope._extensions.project.actions")
 						project_actions.change_working_directory(prompt_bufnr, false)
@@ -68,6 +68,11 @@ return {
 							position = "current",
 							source = "filesystem",
 						})
+            require('neo-tree.command').execute({
+              action = "cd",
+              position = "current",
+              source = "filesystem",
+            })
 					end,
 				},
 			},

@@ -11,6 +11,7 @@ return {
 			{ "nvim-neotest/neotest-plenary" },
 			{ "nvim-neotest/neotest-go" },
 			{ "nvim-neotest/neotest-vim-test" },
+      { "rouge8/neotest-rust" },
 		},
 		init = require("core.utils").load_mappings("neotest"),
 		opts = function()
@@ -21,9 +22,13 @@ return {
           require("neotest-python")({
             dap = { justMyCode = false },
           }),
-          require("neotest-go")
+          require("neotest-go"),
+          require("neotest-rust")({
+            args = { "--no-capture" },
+            dap_adapter = "codelldb",
+        })
         },
-        status = { virtual_text = true },
+        status = { virtual_text = false },
         output = { open_on_run = true },
       }
 		end,

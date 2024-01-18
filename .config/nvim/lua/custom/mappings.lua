@@ -8,6 +8,8 @@ M.disabled = {
     ["<leader>/"] = "",
     ["<leader>e"] = "",
     ["<leader>ma"] = "",
+    ["<leader>th"] = "",
+    ["<leader>td"] = "",
 
     -- git
     ["<leader>cm"] = "",
@@ -64,16 +66,16 @@ M.tmux = {
 
 M.neotest = {
   n = {
-    ["<leader>Tdf"] = { ":w|lua require('neotest').run.run({vim.fn.expand('%'), strategy = 'dap'})<cr>", "File" },
-    ["<leader>Tdl"] = { ":w|lua require('neotest').run.run_last({strategy = 'dap'})<CR>",                "Last" },
-    ["<leader>Tdn"] = { ":w|lua require('neotest').run.run({strategy = 'dap, opts = })<CR>",             "Nearest" },
-    ["<leader>Ta"] = { ":w|lua require('neotest').run.attach()<CR>",                                     "Attach" },
-    ["<leader>Tf"] = { ":w|lua require('neotest').run.run(vim.fn.expand('%'))<CR>",                      "File" },
-    ["<leader>Tl"] = { ":w|lua require('neotest').run.run_last()<CR>",                                   "Last" },
-    ["<leader>Tn"] = { ":w|lua require('neotest').run.run()<CR>",                                        "Nearest" },
-    ["<leader>To"] = { ":w|lua require('neotest').output.open({ enter = true })<CR>",                    "Output" },
-    ["<leader>Ts"] = { ":w|lua require('neotest').run.stop()<CR>",                                       "Stop" },
-    ["<leader>TS"] = { ":w|lua require('neotest').summary.toggle()<CR>",                                 "Summary" },
+    ["<leader>dtf"] = { ":w|lua require('neotest').run.run({vim.fn.expand('%'), strategy='dap'})<cr>", "File" },
+    ["<leader>dtl"] = { ":w|lua require('neotest').run.run_last({strategy='dap'})<CR>", "Last" },
+    ["<leader>dtn"] = { ":w|lua require('neotest').run.run({strategy='dap'})<CR>", "Nearest" },
+    ["<leader>tf"] = { ":w|lua require('neotest').run.run(vim.fn.expand('%'))<CR>", "File" },
+    ["<leader>tl"] = { ":w|lua require('neotest').run.run_last()<CR>", "Last" },
+    ["<leader>tn"] = { ":w|lua require('neotest').run.run()<CR>", "Nearest" },
+
+    ["<leader>to"] = { ":w|lua require('neotest').output.open({ enter = true })<CR>", "Output" },
+    ["<leader>ts"] = { ":w|lua require('neotest').run.stop()<CR>", "Stop" },
+    ["<leader>tu"] = { ":w|lua require('neotest').summary.toggle()<CR>", "Summary" },
   }
 }
 
@@ -100,6 +102,20 @@ M.formatter = {
 M.undotree = {
   n = {
     ["<leader>u"] = { ":UndotreeToggle<CR>", "Undo tree", opts = { silent = true } },
+  }
+}
+
+M.dap = {
+  n = {
+    ["<leader>dk"] = { ":lua require('dap').continue()<CR>", "Continue", opts = { silent = true } },
+    ["<leader>dd"]  = { ":lua require('dap').toggle_breakpoint()<CR>", "Toggle breakpoint", opts = { silent = true } },
+    ["<leader>du"]  = { ":lua require('dapui').toggle()<CR>", "Toggle UI", opts = { silent = true } },
+    ["<leader>dr"]  = { ":lua require('dap').repl.toggle()<CR>", "Toggle Repl", opts = { silent = true } },
+    ["<leader>dl"] = { ":lua require('dap').step_into()<CR>", "Step into", opts = { silent = true } },
+    ["<leader>dj"] = { ":lua require('dap').step_over()<CR>", "Step hover", opts = { silent = true } },
+    ["<leader>dh"] = { ":lua require('dap').step_out()<CR>", "Step out", opts = { silent = true } },
+    ["<leader>dc"] = { ":lua require('dap').run_to_cursor()<CR>", "Continue to cursor", opts = { silent = true } },
+    ["<leader>dR"] = { ":lua require('dap').restart()<CR>", "Restart", opts = { silent = true } },
   }
 }
 
