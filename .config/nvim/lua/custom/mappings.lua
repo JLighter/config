@@ -18,6 +18,8 @@ M.disabled = {
     ["<leader>fm"] = "",
     ["<leader>fw"] = "",
     ["<leader>gb"] = "",
+
+    ["<leader>q"] = "",
   }
 }
 
@@ -109,6 +111,7 @@ M.dap = {
   n = {
     ["<leader>dk"] = { ":lua require('dap').continue()<CR>", "Continue", opts = { silent = true } },
     ["<leader>dd"]  = { ":lua require('dap').toggle_breakpoint()<CR>", "Toggle breakpoint", opts = { silent = true } },
+    ["<leader>dD"]  = { ":lua require('dap').set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>", "Set conditional breakpoint", opts = { silent = true } },
     ["<leader>du"]  = { ":lua require('dapui').toggle()<CR>", "Toggle UI", opts = { silent = true } },
     ["<leader>dr"]  = { ":lua require('dap').repl.toggle()<CR>", "Toggle Repl", opts = { silent = true } },
     ["<leader>dl"] = { ":lua require('dap').step_into()<CR>", "Step into", opts = { silent = true } },
@@ -116,6 +119,17 @@ M.dap = {
     ["<leader>dh"] = { ":lua require('dap').step_out()<CR>", "Step out", opts = { silent = true } },
     ["<leader>dc"] = { ":lua require('dap').run_to_cursor()<CR>", "Continue to cursor", opts = { silent = true } },
     ["<leader>dR"] = { ":lua require('dap').restart()<CR>", "Restart", opts = { silent = true } },
+  }
+}
+
+M.trouble = {
+  n = {
+    ["<leader>qx"] = { "<cmd>TroubleToggle<cr>", "Trouble", opts = { silent = true } },
+    ["<leader>qw"] = { "<cmd>TroubleToggle workspace_diagnostics<cr>", "Workspace diagnostics", opts = { silent = true } },
+    ["<leader>qd"] = { "<cmd>TroubleToggle document_diagnostics<cr>", "Document diagnostics", opts = { silent = true } },
+    ["<leader>ql"] = { "<cmd>TroubleToggle loclist<cr>", "Loclist", opts = { silent = true } },
+    ["<leader>qq"] = { "<cmd>TroubleToggle quickfix<cr>", "Quickfix", opts = { silent = true } },
+    ["<leader>gr"] = { "<cmd>TroubleToggle lsp_references<cr>", "References", opts = { silent = true } },
   }
 }
 

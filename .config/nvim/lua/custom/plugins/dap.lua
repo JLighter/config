@@ -69,7 +69,7 @@ return {
 				},
 			}
 
-			dap.adapters.delve = {
+			dap.adapters.go = {
 				type = "server",
 				port = "${port}",
 				executable = {
@@ -80,21 +80,21 @@ return {
 
 			dap.configurations.go = {
 				{
-					type = "delve",
+					type = "go",
 					name = "Debug",
 					request = "launch",
 					program = "${file}",
 					args = get_args,
 				},
 				{
-					type = "delve",
+					type = "go",
 					name = "Debug test", -- configuration for debugging test files
 					request = "launch",
 					mode = "test",
 					program = "${file}",
 				},
 				{
-					type = "delve",
+					type = "go",
 					name = "Debug test (go.mod)",
 					request = "launch",
 					mode = "test",
