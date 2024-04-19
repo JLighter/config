@@ -6,3 +6,4 @@ vim.o.termguicolors = true
 vim.o.background="dark"
 vim.o.cmdheight=10
 vim.o.clipboard="unnamed"
+vim.o.cursorline=false
