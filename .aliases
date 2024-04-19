@@ -54,7 +54,7 @@ alias kxs="kubectl config use-context"
 # ----------------------
 # Terraform
 # ----------------------
-alias tf="terraform"
+alias tf="tofu"
 
 # ----------------------
 # PHP Compatibility checker

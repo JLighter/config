@@ -5,7 +5,7 @@
 .conkyrc,.conkyrc
 .aliases,.aliases
 .npmrc,.npmrc
-.config/nvim/lua/custom,.config/nvim/lua/custom
+.config/nvim,.config/nvim
 .config/termite,.config/termite
 .p10k.zsh,.p10k.zsh
 .gitconfig,.gitconfig

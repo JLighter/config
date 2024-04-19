@@ -52,7 +52,6 @@ export UPDATE_ZSH_DAYS=1
 
 # Uncomment the following line to disable auto-setting terminal title.
 DISABLE_AUTO_TITLE="true"
-
 # Uncomment the following line to enable command auto-correction.
 # ENABLE_CORRECTION="true"
 
@@ -71,9 +70,6 @@ plugins=(
   git
   git-extras
   git-flow
-  github
-  gh
-  git-open
   gitignore
   history
   kubectl
@@ -81,7 +77,6 @@ plugins=(
   npm
   docker
   pyenv
-  ng
   nmap
   node
   tmux
@@ -120,7 +115,7 @@ export LANG=en_US.UTF-8
 export EDITOR='nvim'
 
 # Compilation flags
-export ARCHFLAGS="-arch x86_64"
+# export ARCHFLAGS="-arch x86_64"
 
 # Dot configuration
 export DOT_REPO="https://github.com/jlighter/dotfiles.git"
@@ -129,7 +124,7 @@ source $HOME/.zsh/dot/dot.sh
 fpath=($HOME/.zsh/dot $fpath)  # <- for completion
 
 # Eksctl completion
-fpath=($HOME/.zsh/eksctl $fpath)  # <- for completion
+# fpath=($HOME/.zsh/eksctl $fpath)  # <- for completion
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -163,17 +158,6 @@ export PATH=$PATH:~/.npm-globals/bin
 
 source ~/.zshrc.custom
 
-if command -v ranger &>/dev/null; then
-  RANGER_PATH=$(which ranger)
-  ranger() {
-      if [ -z "$RANGER_LEVEL" ]; then
-          zsh $RANGER_PATH "$@"
-      else
-          exit
-      fi
-  }
-fi
-
 # Fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
@@ -193,17 +177,17 @@ precmd () { print -Pn "\e]0;zsh\a" }
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/julien/.miniforge3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/Users/julien/.miniforge3/etc/profile.d/conda.sh" ]; then
-        . "/Users/julien/.miniforge3/etc/profile.d/conda.sh"
-    else
-        export PATH="$PATH:/Users/julien/.miniforge3/bin"
-    fi
-fi
-unset __conda_setup
+# __conda_setup="$('/Users/julien/.miniforge3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+# if [ $? -eq 0 ]; then
+#     eval "$__conda_setup"
+# else
+#     if [ -f "/Users/julien/.miniforge3/etc/profile.d/conda.sh" ]; then
+#         . "/Users/julien/.miniforge3/etc/profile.d/conda.sh"
+#     else
+#         export PATH="$PATH:/Users/julien/.miniforge3/bin"
+#     fi
+# fi
+# unset __conda_setup
 # <<< conda initialize <<<
 
 # bun completions

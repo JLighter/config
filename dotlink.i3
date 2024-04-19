@@ -5,7 +5,7 @@
 .conkyrc,.conkyrc
 .aliases,.aliases
 .npmrc,.npmrc
-.config/nvim/lua/custom,.config/nvim/lua/custom
+.config/nvim,.config/nvim
 .config/urxvt,.config/urxvt
 .config/i3,.config/i3
 .config/rofi,.config/rofi
