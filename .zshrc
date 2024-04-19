@@ -176,18 +176,18 @@ eval "$(zoxide init zsh)"
 precmd () { print -Pn "\e]0;zsh\a" }
 
 # >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-# __conda_setup="$('/Users/julien/.miniforge3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-# if [ $? -eq 0 ]; then
-#     eval "$__conda_setup"
-# else
-#     if [ -f "/Users/julien/.miniforge3/etc/profile.d/conda.sh" ]; then
-#         . "/Users/julien/.miniforge3/etc/profile.d/conda.sh"
-#     else
-#         export PATH="$PATH:/Users/julien/.miniforge3/bin"
-#     fi
-# fi
-# unset __conda_setup
+__conda_setup="$("$HOME/.miniconda/bin/conda" 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "$HOME/.miniconda/etc/profile.d/conda.sh" ]; then
+        . "$HOME/.miniconda/etc/profile.d/conda.sh"
+    else
+        export PATH="$PATH:/Users/julien/.miniforge3/bin"
+        export PATH="$HOME/.miniconda/bin:$PATH"
+    fi
+fi
+unset __conda_setup
 # <<< conda initialize <<<
 
 # bun completions
@@ -199,3 +199,6 @@ export PATH="$PATH:$BUN_INSTALL/bin"
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
+source /usr/share/nvm/init-nvm.sh
+
+source ~/.ssh_aliases
