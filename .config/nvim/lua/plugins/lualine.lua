@@ -1,15 +1,5 @@
--- local ns = vim.api.nvim_create_namespace('showcmd_msg')
--- local showcmd_msg
--- vim.ui_attach(ns, {ext_messages=true}, function(event, ...)
---   if event == 'msg_showcmd' then
---     showcmd_msg = vim.inspect(...)
---     -- showcmd_msg = #content > 0 and content or ''
---   end
--- end)
-
 return {
   "nvim-lualine/lualine.nvim",
-  event = "VeryLazy",
   init = function()
     vim.g.lualine_laststatus = vim.o.laststatus
     if vim.fn.argc(-1) > 0 then
@@ -28,6 +18,38 @@ return {
     local icons = require("lazyvim.config").icons
 
     vim.o.laststatus = vim.g.lualine_laststatus
+
+    local colors = {
+      [""] = LazyVim.ui.fg("Special"),
+      ["Normal"] = LazyVim.ui.fg("Special"),
+      ["Warning"] = LazyVim.ui.fg("DiagnosticError"),
+      ["InProgress"] = LazyVim.ui.fg("DiagnosticWarn"),
+    }
+
+    local copilot_section = {
+      function()
+        local icon = require("lazyvim.config").icons.kinds.Copilot
+        local status = require("copilot.api").status.data
+        return icon .. (status.message or "")
+      end,
+      cond = function()
+        if not package.loaded["copilot"] then
+          return
+        end
+        local ok, clients = pcall(LazyVim.lsp.get_clients, { name = "copilot", bufnr = 0 })
+        if not ok then
+          return false
+        end
+        return ok and #clients > 0
+      end,
+      color = function()
+        if not package.loaded["copilot"] then
+          return
+        end
+        local status = require("copilot.api").status.data
+        return colors[status.status] or colors[""]
+      end,
+    }
 
     return {
       options = {
@@ -61,6 +83,7 @@ return {
             cond = function () return package.loaded["dap"] and require("dap").status() ~= "" end,
             color = LazyVim.ui.fg("Debug"),
           },
+          copilot_section,
           {
             require("noice").api.statusline.mode.get,
             cond = require("noice").api.statusline.mode.has,

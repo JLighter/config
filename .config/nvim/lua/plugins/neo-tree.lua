@@ -1,17 +1,16 @@
 return {
   "nvim-neo-tree/neo-tree.nvim",
   branch = "v3.x",
-  event = "VimEnter",
   dependencies = {
     "nvim-lua/plenary.nvim",
     "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
     "MunifTanjim/nui.nvim",
   },
   opts = {
-    close_if_last_window = false, -- Close Neo-tree if it is the last window left in the tab
-    popup_border_style = "rounded",
+    close_if_last_window = true, -- Close Neo-tree if it is the last window left in the tab
+    popup_border_style = "solid",
     enable_git_status = false,
-    enable_diagnostics = true,
+    enable_diagnostics = false,
     open_files_do_not_replace_types = { "terminal", "trouble", "qf" }, -- when opening files, do not use windows containing these filetypes or buftypes
     sort_case_insensitive = false, -- used when sorting files and directories in the tree
     sort_function = nil, -- use a custom function for sorting files and directories in the tree
@@ -25,7 +24,7 @@ return {
     event_handlers = {},
     default_component_configs = {
       container = {
-        enable_character_fade = false,
+        enable_character_fade = true,
       },
       indent = {
         indent_size = 2,
@@ -92,7 +91,7 @@ return {
         required_width = 110, -- min width of window required to show this column
       },
       symlink_target = {
-        enabled = false,
+        enabled = true,
       },
     },
     -- A list of functions, each representing a global custom command
@@ -106,7 +105,6 @@ return {
     commands = {},
     window = {
       position = "current",
-      width = 40,
       mapping_options = {
         noremap = true,
         nowait = true,
@@ -118,7 +116,7 @@ return {
           nowait = true,
         },
         ["q"] = "cancel", -- close preview or floating neo-tree window
-        ["P"] = { "toggle_preview", config = { use_float = true } },
+        -- ["P"] = { "toggle_preview", config = { use_float = true } },
         ["l"] = "focus_preview",
         ["S"] = "open_split",
         ["s"] = "open_vsplit",
@@ -138,7 +136,7 @@ return {
           -- this command supports BASH style brace expansion ("x{a,b,c}" -> xa,xb,xc). see `:h neo-tree-file-actions` for details
           -- some commands may take optional config options, see `:h neo-tree-mappings` for details
           config = {
-            show_path = "none", -- "none", "relative", "absolute"
+            show_path = "relative", -- "none", "relative", "absolute"
           },
         },
         ["A"] = "add_directory", -- also accepts the optional config.show_path option like "add". this also supports BASH style brace expansion.
@@ -188,7 +186,7 @@ return {
         leave_dirs_open = false, -- `false` closes auto expanded dirs, such as with `:Neotree reveal`
       },
       group_empty_dirs = false, -- when true, empty folders will be grouped together
-      -- "open_default", -- netrw disabled, opening a directory opens neo-tree
+      "open_default", -- netrw disabled, opening a directory opens neo-tree
       -- in whatever position is specified in window.position
       hijack_netrw_behavior = "open_current", -- netrw disabled, opening a directory opens within the
       -- window like netrw would, regardless of window.position

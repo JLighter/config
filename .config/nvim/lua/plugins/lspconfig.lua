@@ -20,7 +20,25 @@ return {
       },
       diagnostics = {
         virtual_text = false,
+        float = {
+          border = "single",
+        },
       },
     },
   },
+  {
+    "mfussenegger/nvim-jdtls",
+    opts = {
+      jdtls = {
+        handlers = {
+          ["language/status"] = function(_, result)
+            -- Print or whatever.
+          end,
+          ["$/progress"] = function(_, result, ctx)
+            -- disable progress updates.
+          end,
+        },
+      },
+    },
+  }
 }

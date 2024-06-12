@@ -1,6 +1,5 @@
 return {
   "folke/noice.nvim",
-  event = "VeryLazy",
   opts = {
     cmdline = {
       enabled = true, -- enables the Noice cmdline UI
@@ -23,6 +22,15 @@ return {
         input = {}, -- Used by input()
         -- lua = false, -- to disable a format, set to `false`
       },
+    },
+    notify = {
+      -- Noice can be used as `vim.notify` so you can route any notification like other messages
+      -- Notification messages have their level and other properties set.
+      -- event is always "notify" and kind can be any log level as a string
+      -- The default routes will forward notifications to nvim-notify
+      -- Benefit of using Noice for this is the routing and consistent history view
+      enabled = true,
+      view = "mini",
     },
     lsp = {
       override = {
@@ -47,16 +55,15 @@ return {
         ---@type NoiceViewOptions
         opts = {
           scrollbar = true,
-          anchor = "SW",
           relative = "cursor",
           size = {
             width = "auto",
             height = "auto",
             max_height = 10,
-            max_width = 80,
+            max_width = 70,
           },
           border = {
-            style = "single",
+            style = "solid",
             padding = { 0, 0 },
           },
         },
@@ -67,13 +74,52 @@ return {
       command_palette = false,
       long_message_to_split = true,
       inc_rename = true,
-      lsp_doc_border = false,
+      lsp_doc_border = true,
     },
-  },
-  view = {
-    split = {
+    ---@type NoiceConfigViews
+    views = {
+      mini = {
+        backend = "mini",
+        relative = "editor",
+        align = "message-right",
+        timeout = 2000,
+        reverse = true,
+        focusable = false,
+        position = {
+          row = -2,
+          col = -1,
+        },
+        size = "auto",
+        border = {
+          style = "solid",
+          padding = { 0, 0 }
+        },
+        zindex = 60,
+        win_options = {
+          winbar = "",
+          foldenable = true,
+          winblend = 30,
+          winhighlight = {
+            Normal = "NormalFloat",
+            IncSearch = "",
+            CurSearch = "",
+            Search = "",
+          },
+        },
+      },
     },
   },
   -- stylua: ignore
-  keys = { },
+  keys = {
+    { "<leader>unl", function() require("noice").cmd("last") end, desc = "Noice Last Message" },
+    { "<leader>unh", function() require("noice").cmd("history") end, desc = "Noice History" },
+    { "<leader>una", function() require("noice").cmd("all") end, desc = "Noice All" },
+    { "<leader>und", function() require("noice").cmd("dismiss") end, desc = "Dismiss All" },
+    { "<leader>unt", function() require("noice").cmd("telescope") end, desc = "Noice Telescope" },
+    { "<leader>snl" },
+    { "<leader>snh" },
+    { "<leader>sna" },
+    { "<leader>snd" },
+    { "<leader>snt" },
+  },
 }

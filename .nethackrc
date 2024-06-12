@@ -61,9 +61,10 @@ OPTIONS=windowtype:curses
 OPTIONS=symset:curses
 OPTIONS=splash_screen	
 OPTIONS=mouse_support
-# OPTIONS=perm_invent
+OPTIONS=perm_invent
 OPTIONS=msg_window:single
 OPTIONS=fixinv
+OPTIONS=classic_status
 
 # Always show pets as the proper color.
 OPTIONS=hilite_pet

@@ -197,6 +197,10 @@ unset __conda_setup
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$PATH:$BUN_INSTALL/bin"
 
+# bat
+
+export BAT_THEME="kanagawa"
+
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 source /usr/share/nvm/init-nvm.sh

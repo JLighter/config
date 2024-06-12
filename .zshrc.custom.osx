@@ -39,6 +39,10 @@ if command -v aws &>/dev/null; then
   complete -C $(which aws_completer) aws
 fi
 
+if command -v mvn &>/dev/null; then
+  export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-17.jdk/Contents/Home
+fi
+
 # Kind
 if command -v kind &>/dev/null; then
   source <(kind completion zsh)

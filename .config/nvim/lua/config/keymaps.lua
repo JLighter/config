@@ -31,7 +31,20 @@ map( "n", "<C-l>", ":NvimTmuxNavigateRight <CR>", { desc = "Move to right tmux p
 map( "n", "<C-h>", ":NvimTmuxNavigateLeft <CR>", { desc = "Move to left tmux pane", nowait = true, silent = true, noremap = true })
 
 -- Lsp
-map("n", "D", "<cmd>")
+local openDiagnostic = function ()
+  local opts = {
+    focusable = false,
+    close_events = { "BufLeave", "CursorMoved", "InsertEnter", "FocusLost" },
+    header = "",
+    source = 'if_many',
+    prefix = ' ',
+    suffix = ' ',
+    scope = 'cursor',
+    border = "solid"
+  }
+  vim.diagnostic.open_float(nil, opts)
+end
+map("n", "D", openDiagnostic, { desc = "Show diagnostic", nowait = true, silent = true, noremap = true })
 
 -- Disabled
 vim.keymap.del("n", "<leader>cd")

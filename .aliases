@@ -8,23 +8,10 @@ alias la='ls -la'
 # -----------
 # Composer and Symfony
 # -----------
-alias gim='vim . +Git +only'
+alias gim='vim . +Neogit +only'
 # Quit console like in vim
 alias :q='exit'
 alias q='exit'
-
-
-# -----------
-# Composer and Symfony
-# -----------
-alias syconsole="php bin/console"
-
-# ----------------------
-# Angular Functions
-# ----------------------
-alias ngsp='ng serve --port'
-alias ngsa='ng serve --port 80 --host 0.0.0.0'
-alias ngs='ng serve'
 
 # ----------------------
 # Tmux shortcuts
@@ -54,20 +41,16 @@ alias kxs="kubectl config use-context"
 # ----------------------
 # Terraform
 # ----------------------
-alias tf="tofu"
-
-# ----------------------
-# PHP Compatibility checker
-# ----------------------
-alias phpcc='docker run --rm -it --init -v "$PWD:$PWD" -w "$PWD" jlighter/phpcs:latest -p -n --extensions="inc,php,php3,php4,php5,php7,php8,phtml"'
-alias phpstan='docker run --rm -v $(pwd):/app -v $(pwd)/../../phpstan.neon:/tmp/phpstan.neon ghcr.io/phpstan/phpstan analyse -c /tmp/phpstan.neon /app'
+alias tf="terraform"
 
 # ----------------------
 # vim
 # ----------------------
-alias vim='nvim'
-alias v='nvim'
-alias vi='nvim'
+if command -v nvim &>/dev/null; then
+  alias vim='nvim'
+  alias v='nvim'
+  alias vi='nvim'
+fi
 
 # ----------------------
 # Ranger
@@ -77,4 +60,13 @@ alias r='ranger'
 # ----------------------
 # Bat
 # ----------------------
-alias cat='bat --color=always'
+if command -v bat &>/dev/null; then
+  alias cat='bat --color=always'
+fi
+
+# ----------------------
+# Eza
+# ----------------------
+if command -v bat &>/dev/null; then
+  alias ls='eza --git --icons=always'
+fi
