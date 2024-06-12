@@ -29,13 +29,17 @@ return {
           border = "solid",
           winhighlight = "NormalFloat:NormalFloat",
         }),
-        documentation = vim.tbl_deep_extend('force', cmp.config.window.bordered({
-          border = "solid",
-          winhighlight = "NormalFloat:NormalFloat",
-        }), {
-          max_height = 10,
-          max_width = 70,
-        }),
+        documentation = vim.tbl_deep_extend(
+          "force",
+          cmp.config.window.bordered({
+            border = "solid",
+            winhighlight = "NormalFloat:NormalFloat",
+          }),
+          {
+            max_height = 10,
+            max_width = 70,
+          }
+        ),
       }
 
       opts.formatting = {
@@ -66,6 +70,19 @@ return {
 
           return item
         end,
+      }
+
+      local compare = require("cmp").config.compare
+
+      opts.sorting = {
+        priority_weight = 1.0,
+        comparators = {
+          compare.locality,
+          compare.recently_used,
+          compare.score,
+          compare.offset,
+          compare.order,
+        },
       }
 
       opts.mapping = vim.tbl_extend("force", opts.mapping, {
