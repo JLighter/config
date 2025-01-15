@@ -1,26 +1,10 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
-
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-#
-# This theme comes from github
-# Here is the command to install it
-# git clone https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
-export ZSH_THEME="powerlevel10k/powerlevel10k"
+eval "$(starship init zsh)"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -53,7 +37,7 @@ export UPDATE_ZSH_DAYS=1
 # Uncomment the following line to disable auto-setting terminal title.
 DISABLE_AUTO_TITLE="true"
 # Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
+ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 COMPLETION_WAITING_DOTS="true"
@@ -66,21 +50,8 @@ COMPLETION_WAITING_DOTS="true"
 # For the last plugins, they need to be installed manually
 # See the link next : https://github.com/ohmyzsh/ohmyzsh/issues/7688#issuecomment-477340254
 plugins=(
+  vi-mode
   macos
-  git
-  git-extras
-  git-flow
-  gitignore
-  history
-  kubectl
-  helm
-  npm
-  docker
-  pyenv
-  nmap
-  node
-  tmux
-  python
   fzf
   zsh-autosuggestions
   zsh-completions
@@ -99,7 +70,7 @@ plugins=(
 # "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
 # or set a custom format using the strftime function format specifications,
 # see 'man strftime' for details.
-HIST_STAMPS="mm/dd/yyyy"
+# HIST_STAMPS="mm/dd/yyyy"
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
@@ -123,16 +94,12 @@ export DOT_DIR="$HOME/.dotfiles"
 source $HOME/.zsh/dot/dot.sh
 fpath=($HOME/.zsh/dot $fpath)  # <- for completion
 
-# Eksctl completion
-# fpath=($HOME/.zsh/eksctl $fpath)  # <- for completion
-
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
-#
-# Example aliases
 source $HOME/.aliases
+source $HOME/.ssh_aliases
 
 # TERM var
 export TERM='screen-256color'
@@ -144,30 +111,14 @@ zmodload zsh/complist
 compinit
 _comp_options+=(globdots)       #Include hidden files
 
-#Vi mode
-bindkey -M menuselect 'h' vi-backward-char
-bindkey -M menuselect 'k' vi-up-line-or-history
-bindkey -M menuselect 'l' vi-forward-char
-bindkey -M menuselect 'j' vi-down-line-or-history
-bindkey -v '^?' backward-delete-char
-
-bindkey -v
-export KEYTIMEOUT=1
-
-export PATH=$PATH:~/.npm-globals/bin
-
 source ~/.zshrc.custom
 
 # Fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -f ~/.fzf.zsh ] && FZF_DEFAULT_OPTS="--bind ctrl-a:select-all,ctrl-d:deselect-all,ctrl-t:toggle-all"
 
 # Zoxide
 eval "$(zoxide init zsh)"
-
-# Prevent nested ranger instances
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # Generated for envman. Do not edit.
 [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
@@ -175,34 +126,31 @@ eval "$(zoxide init zsh)"
 # DISABLE_AUTO_TITLE="true"
 precmd () { print -Pn "\e]0;zsh\a" }
 
-# >>> conda initialize >>>
-__conda_setup="$("$HOME/.miniconda/bin/conda" 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "$HOME/.miniconda/etc/profile.d/conda.sh" ]; then
-        . "$HOME/.miniconda/etc/profile.d/conda.sh"
-    else
-        export PATH="$PATH:/Users/julien/.miniforge3/bin"
-        export PATH="$HOME/.miniconda/bin:$PATH"
-    fi
+if command -v conda 1>/dev/null 2>&1; then
+  # >>> conda initialize >>>
+  __conda_setup="$("$HOME/.miniconda/bin/conda" 'shell.zsh' 'hook' 2> /dev/null)"
+  if [ $? -eq 0 ]; then
+      eval "$__conda_setup"
+  else
+      if [ -f "$HOME/.miniconda/etc/profile.d/conda.sh" ]; then
+          . "$HOME/.miniconda/etc/profile.d/conda.sh"
+      else
+          export PATH="$PATH:/Users/julien/.miniforge3/bin"
+          export PATH="$HOME/.miniconda/bin:$PATH"
+      fi
+  fi
+  unset __conda_setup
 fi
-unset __conda_setup
-# <<< conda initialize <<<
 
-# bun completions
-[ -s "/Users/julien/.bun/_bun" ] && source "/Users/julien/.bun/_bun"
+if command -v bun 1>/dev/null 2>&1; then
+  # bun completions
+  [ -s "/Users/julien/.bun/_bun" ] && source "/Users/julien/.bun/_bun"
 
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$PATH:$BUN_INSTALL/bin"
+  # bun
+  export BUN_INSTALL="$HOME/.bun"
+  export PATH="$PATH:$BUN_INSTALL/bin"
+fi
 
-# bat
-
-export BAT_THEME="kanagawa"
-
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
-source /usr/share/nvm/init-nvm.sh
-
-source ~/.ssh_aliases
+if command -v bat &>/dev/null; then
+  export BAT_THEME="kanagawa"
+fi

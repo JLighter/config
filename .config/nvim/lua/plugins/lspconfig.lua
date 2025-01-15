@@ -1,5 +1,8 @@
 --
 -- add pyright to lspconfig
+
+local util = require("lspconfig.util")
+
 return {
   {
     "neovim/nvim-lspconfig",
@@ -17,12 +20,37 @@ return {
       servers = {
         -- pyright will be automatically installed with mason and loaded with lspconfig
         pyright = {},
+        bufls = {},
+        cssls = {
+          settings = {
+            css = {
+              validate = true,
+              lint = {
+                unknownAtRules = "ignore",
+              },
+            },
+            scss = {
+              validate = true,
+              lint = {
+                unknownAtRules = "ignore",
+              },
+            },
+            less = {
+              validate = true,
+              lint = {
+                unknownAtRules = "ignore",
+              },
+            },
+          },
+        },
+        angularls = {
+          root_dir = function(filename, bufnr)
+            return util.root_pattern("angular.json")(filename) or util.root_pattern("project.json")(filename)
+          end,
+        },
       },
       diagnostics = {
         virtual_text = false,
-        float = {
-          border = "single",
-        },
       },
     },
   },
@@ -31,14 +59,10 @@ return {
     opts = {
       jdtls = {
         handlers = {
-          ["language/status"] = function(_, result)
-            -- Print or whatever.
-          end,
-          ["$/progress"] = function(_, result, ctx)
-            -- disable progress updates.
-          end,
+          ["language/status"] = function(_, result) end,
+          ["$/progress"] = function(_, result, ctx) end,
         },
       },
     },
-  }
+  },
 }

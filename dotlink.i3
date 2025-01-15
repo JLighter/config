@@ -11,3 +11,5 @@
 .config/rofi,.config/rofi
 .config/polybar,.config/polybar
 .config/tmuxinator,.config/tmuxinator
+.hushlogin,.hushlogin
+.config/ghostty,.config/ghostty

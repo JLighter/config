@@ -18,13 +18,18 @@ return {
         },
       },
       indicator = {
-        style = "none"
+        style = "none",
       },
+      buffer_close_icon = "󰅖",
+      modified_icon = "●",
+      close_icon = "",
+      left_trunc_marker = "",
+      right_trunc_marker = "",
       themable = true,
-      mode = "buffers",
+      mode = "tabs",
       show_buffer_icons = false,
       separator_style = { "", "" },
-      show_close_icon = false,
+      show_close_icon = true,
       always_show_bufferline = true,
       offsets = {},
       -- enforce_regular_tabs = true

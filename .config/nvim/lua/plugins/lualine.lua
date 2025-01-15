@@ -20,10 +20,10 @@ return {
     vim.o.laststatus = vim.g.lualine_laststatus
 
     local colors = {
-      [""] = LazyVim.ui.fg("Special"),
-      ["Normal"] = LazyVim.ui.fg("Special"),
-      ["Warning"] = LazyVim.ui.fg("DiagnosticError"),
-      ["InProgress"] = LazyVim.ui.fg("DiagnosticWarn"),
+      [""] = { fg = Snacks.util.color("Special") },
+      ["Normal"] = { fg = Snacks.util.color("Special") },
+      ["Warning"] = { fg = Snacks.util.color("DiagnosticError") },
+      ["InProgress"] = { fg = Snacks.util.color("DiagnosticWarn") },
     }
 
     local copilot_section = {
@@ -51,17 +51,28 @@ return {
       end,
     }
 
+    local function location()
+      local line = vim.fn.line(".")
+      local col = vim.fn.charcol(".")
+      return string.format("%d:%d", line, col)
+    end
+
+    local function progress()
+      local cur = vim.fn.line(".")
+      local total = vim.fn.line("$")
+      return string.format("%d%%%%", math.floor(cur / total * 100))
+    end
+
     return {
       options = {
         globalstatus = true,
         disabled_filetypes = { statusline = { "dashboard", "alpha", "starter" } },
         component_separators = { left = "|", right = "|" },
-        section_separators = { left = " ", right = " " },
+        section_separators = { left = "", right = "" },
       },
       sections = {
         lualine_a = { "mode" },
-        lualine_b = { "branch" },
-
+        lualine_b = { { "branch", padding = { left = 1, right = 1 } } },
         lualine_c = {
           LazyVim.lualine.root_dir(),
           {
@@ -72,6 +83,7 @@ return {
               info = icons.diagnostics.Info,
               hint = icons.diagnostics.Hint,
             },
+            padding = { left = 1, right = 1 },
           },
           { "filetype", separator = "", padding = { left = 1, right = 0 } },
           { LazyVim.lualine.pretty_path() },
@@ -80,20 +92,17 @@ return {
           -- stylua: ignore
           {
             function() return "  " .. require("dap").status() end,
-            cond = function () return package.loaded["dap"] and require("dap").status() ~= "" end,
-            color = LazyVim.ui.fg("Debug"),
+            cond = function() return package.loaded["dap"] and require("dap").status() ~= "" end,
+            color = function() return {fg = Snacks.util.color("Debug")} end ,
           },
-          copilot_section,
           {
             require("noice").api.statusline.mode.get,
             cond = require("noice").api.statusline.mode.has,
-            color = { fg = "#ff9e64" },
+            color = function()
+              return { fg = Snacks.util.color("Debug") }
+            end,
           },
-          {
-            require("lazy.status").updates,
-            cond = require("lazy.status").has_updates,
-            color = LazyVim.ui.fg("Special"),
-          },
+          copilot_section,
           {
             "diff",
             symbols = {
@@ -114,8 +123,10 @@ return {
           },
         },
         lualine_y = {
-          { "progress", separator = " ", padding = { left = 1, right = 0 } },
-          { "location", padding = { left = 0, right = 1 } },
+          { progress, separator = "|", padding = { left = 1, right = 1 } },
+          { "selectioncount", separator = "-", padding = { left = 1, right = 1 } },
+          { location, padding = { left = 1, right = 1 } },
+          { "searchcount", padding = { left = 1, right = 1 } },
         },
         lualine_z = {
           function()

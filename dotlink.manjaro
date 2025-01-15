@@ -10,3 +10,5 @@
 .p10k.zsh,.p10k.zsh
 .gitconfig,.gitconfig
 .config/tmuxinator,.config/tmuxinator
+.hushlogin,.hushlogin
+.config/ghostty,.config/ghostty

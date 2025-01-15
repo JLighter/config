@@ -10,3 +10,5 @@
 .gitconfig,.gitconfig
 .hyper.js,.hyper.js
 .config/tmuxinator,.config/tmuxinator
+.hushlogin,.hushlogin
+.config/ghostty,.config/ghostty

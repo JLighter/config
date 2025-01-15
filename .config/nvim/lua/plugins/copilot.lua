@@ -1,25 +1,25 @@
-local ToggleCopilot = function ()
-  local client = require('copilot.client')
-  local commands = require('copilot.command')
-
-  if client.is_disabled() then
-    commands.enable()
-    vim.print(' Enabling copilot')
-  else
-    commands.disable()
-    vim.print(' Disabling copilot')
-  end
-end
-
 return {
   "zbirenbaum/copilot.lua",
   event = "BufEnter",
-  keys = {
-    { "<leader>cO", ToggleCopilot, desc = "Toggle copilot" },
-  },
-  config = function (_, opts)
-    local copilot = require('copilot')
+  config = function(_, opts)
+    local copilot = require("copilot")
     copilot.setup(opts)
-    require('copilot.command').disable()
-  end
+
+    local command = Snacks.toggle.new({
+      id = "copilot",
+      name = "Copilot",
+      get = function()
+        return require("copilot.client").is_disabled() == false
+      end,
+      set = function(state)
+        if state then
+          require("copilot.command").enable()
+        else
+          require("copilot.command").disable()
+        end
+      end,
+    })
+
+    command:map("<leader>uO")
+  end,
 }

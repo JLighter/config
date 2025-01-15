@@ -10,6 +10,15 @@ return {
       win_config = { border = { "" } }, -- window configuration for floating windows. See |nvim_open_win()|.
       auto_fold = true,
       cycle_results = false,
+      ---@type table<string, trouble.Mode>
+      modes = {
+        symbols = {
+          win = {
+            position = "right",
+            size = 50
+          },
+        },
+      },
     },
   },
 }
